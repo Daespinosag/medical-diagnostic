@@ -16,7 +16,7 @@ class Variable extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'name_json', 'calculated','calculation_operation',
+        'name', 'json_name', 'calculated','calculation_operation', 'description'
     ];
 
     /**
@@ -34,7 +34,7 @@ class Variable extends Model
     public function levels()
     {
         return $this->belongsToMany(Level::class,'criterion','variable_id','level_id')
-                    ->withPivot(['value_1','value_2','operator_comparison','unit','gender'])
+                    ->withPivot(['value_1','value_2','comparison_operator','unit'])
                     ->withTimestamps();
     }
 
@@ -44,7 +44,7 @@ class Variable extends Model
     public function patients()
     {
         return $this->belongsToMany(Patient::class,'variable_patient','variable_id','patient_id')
-                    ->withPivot(['value','date_completed'])
+                    ->withPivot(['value','completed_date'])
                     ->withTimestamps();
     }
 }

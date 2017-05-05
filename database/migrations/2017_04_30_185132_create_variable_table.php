@@ -17,9 +17,10 @@ class CreateVariableTable extends Migration
 
             $table->increments('id');
             $table->string('name');
-            $table->string('name_json');
+            $table->string('json_name');
             $table->string('calculated');
             $table->string('calculation_operation');
+            $table->string('description');
 
             $table->timestamps();
         });

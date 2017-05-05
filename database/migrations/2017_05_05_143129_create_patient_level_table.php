@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCriterionTable extends Migration
+class CreatePatientLevelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateCriterionTable extends Migration
      */
     public function up()
     {
-        Schema::create('criterion', function (Blueprint $table) {
+        Schema::create('patient_level', function (Blueprint $table) {
 
             $table->increments('id');
             $table->unsignedInteger('level_id');
-            $table->unsignedInteger('variable_id');
-            $table->string('value_1')->default(null)->nullable();
-            $table->string('value_2')->default(null)->nullable();
-            $table->string('comparison_operator');
-            $table->string('unit');
+            $table->unsignedInteger('patient_id');
+
+            $table->date('diagnosis_date')->default(null)->nullable();
 
             $table->foreign('level_id')->references('id')->on('level')->onDelete('cascade');
-            $table->foreign('variable_id')->references('id')->on('variable')->onDelete('cascade');
+            $table->foreign('patient_id')->references('id')->on('patient')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -37,6 +35,6 @@ class CreateCriterionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criterion');
+        Schema::dropIfExists('patient_level');
     }
 }
