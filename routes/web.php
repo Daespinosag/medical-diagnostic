@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    dd(\App\Entities\User::with('role')->find(1));
-});
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
