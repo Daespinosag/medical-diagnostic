@@ -4,7 +4,7 @@
 		@include('template.initialScripts')
 	@show
 
-	<body class="menubar-hoverable header-fixed menubar-pin ">
+	<body class="menubar-hoverable header-fixed menubar-pin menubar-first">
 
 		<!-- BEGIN HEADER-->
 		@section('header')
