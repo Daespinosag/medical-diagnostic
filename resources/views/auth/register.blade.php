@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    {!! Form::open(['route'=> 'register','method'=> 'POST', 'class'=> 'form-horizontal form-validate floating-label','novalidate'=>'novalidate']) !!}
+                    {!! Form::open(['route'=> 'register','method'=> 'POST', 'class'=> 'form-horizontal form-validate floating-label']) !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 

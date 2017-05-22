@@ -22,8 +22,25 @@
 			<!-- BEGIN CONTENT-->
 			<div id="content">
 
+				<section>
+					<div class="section-header">
+						<ol class="breadcrumb">
+							<li><a href="../../html/.html">home</a></li>
+							<li class="active">Blank page</li>
+						</ol>
+					</div><!--end .section-header -->
+					<div class="section-body">
+						<div class="card card-underline style-default-bright">
+
+							@yield('headerCard')
+
+							<div class="card-body">
+								@yield('content')
+							</div>
+						</div>
+					</div><!--end .section-body -->
+				</section>
 				<!-- BEGIN BLANK SECTION -->
-				@yield('content')
 
 			</div><!--end #content-->
 
