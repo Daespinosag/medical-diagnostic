@@ -7,8 +7,8 @@
             </a>
         </div>
         <div class="expanded">
-            <a href="../../html/dashboards/dashboard.html">
-                <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+            <a href="{{ route('public.index') }}">
+                <span class="text-lg text-bold text-primary">Geriatría y Gerontología</span>
             </a>
         </div>
     </div>
@@ -17,14 +17,26 @@
         <!-- BEGIN MAIN MENU -->
         <ul id="main-menu" class="gui-controls">
 
-            <!-- BEGIN DASHBOARD -->
-            <li>
-                <a href="../../html/dashboards/dashboard.html" >
+            <!-- BEGIN GROUP INFORMATION -->
+            <li class="gui-folder">
+                <a>
                     <div class="gui-icon"><i class="md md-home"></i></div>
-                    <span class="title">Dashboard</span>
+                    <span class="title">Información del grupo</span>
                 </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="{{ route('public.index') }}" ><span class="title">Inicio</span></a></li>
+                    <li><a href="{{ route('public.about') }}" ><span class="title">¿Quiénes somos?</span></a></li>
+                    <li><a href="{{ route('public.teaching') }}" ><span class="title">Docencia</span></a></li>
+                    <li><a href="{{ route('public.research') }}" ><span class="title">Investigación</span></a></li>
+                    <li><a href="{{ route('public.extension') }}" ><span class="title">Extensión</span></a></li>
+                    <li><a href="{{ route('public.projects') }}" ><span class="title">Proyectos</span></a></li>
+                    <li><a href="{{ route('public.publications') }}" ><span class="title">Publicaciones científicas</span></a></li>
+                    <li><a href="{{ route('public.community') }}" ><span class="title">Comunidades</span></a></li>
+                    <li><a href="{{ route('public.events') }}" ><span class="title">Eventos</span></a></li>
+                </ul><!--end /submenu -->
             </li><!--end /menu-li -->
-            <!-- END DASHBOARD -->
+            <!-- END GROUP INFORMATION -->
 
             <!-- BEGIN EMAIL -->
             <li class="gui-folder">
