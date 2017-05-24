@@ -30,7 +30,7 @@
                     <li><a href="{{ route('public.teaching') }}" ><span class="title">Docencia</span></a></li>
                     <li><a href="{{ route('public.research') }}" ><span class="title">Investigación</span></a></li>
                     <li><a href="{{ route('public.extension') }}" ><span class="title">Extensión</span></a></li>
-                    <li><a href="{{ route('public.projects') }}" ><span class="title">Proyectos</span></a></li>
+                    <li><a href="{{ route('public.projects') }}" ><span class="title">Proyectos internacionales</span></a></li>
                     <li><a href="{{ route('public.publications') }}" ><span class="title">Publicaciones científicas</span></a></li>
                     <li><a href="{{ route('public.community') }}" ><span class="title">Comunidades</span></a></li>
                     <li><a href="{{ route('public.events') }}" ><span class="title">Eventos</span></a></li>

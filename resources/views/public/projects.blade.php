@@ -1,20 +1,20 @@
 @extends('template.main')
 
-@section('title', 'Proyectos')
+@section('title', 'Proyectos internacionales')
 
 @section('content')
 
     <section>
         <div class="section-header">
             <ol class="breadcrumb">
-                <li><a href="{{ route('public.projects') }}">Proyectos</a></li>
+                <li><a href="{{ route('public.projects') }}">Proyectos internacionales</a></li>
                 <li class="active">Blank page</li>
             </ol>
         </div><!--end .section-header -->
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="text-primary">Proyectos</h1>
+                    <h1 class="text-primary">Proyectos internacionales</h1>
                 </div><!--end .col -->
             </div>
 

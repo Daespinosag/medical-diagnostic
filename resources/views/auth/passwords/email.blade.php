@@ -1,46 +1,62 @@
-@extends('template.plane')
+<!DOCTYPE html>
+<html lang="en">
+	@section('initialScripts')
+		@include('template.initialScripts')
+	@show
+	<body class="menubar-hoverable header-fixed ">
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+		<!-- BEGIN LOGIN SECTION -->
+		<section class="section-account">
+			<div class="img-backdrop" style="background-image: url('{{ asset('assets/img/logo_imias.png') }}'); background-size: auto;"></div>
+			<div class="spacer"></div>
+			<div class="card contain-sm style-transparent">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-6">
+							<br/>
+							<span class="text-lg text-bold text-primary">Restablecer contraseña</span>
+							<br/><br/>
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+							@if (session('status'))
+								<div class="alert alert-success">
+									{{ session('status') }}
+								</div>
+							@endif
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+							<form class="form floating-label" action="{{ route('password.email') }}" accept-charset="utf-8" method="post">
+                                {{ csrf_field() }}
+								<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+									<input type="text" class="form-control" id="username" name="username" value="{{ old('email') }}" required autofocus>
+									<label for="username">Correo electrónico</label>
+									@if ($errors->has('email'))
+										<span class="help-block">
+											<strong>{{ $errors->first('email') }}</strong>
+										</span>
+									@endif
+								</div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+								<br/>
+								<div class="row">
+									<div class="col-xs-6 text-right">
+										<button class="btn btn-primary btn-raised" type="submit">Enviar enlace para restablecer contraseña</button>
+									</div><!--end .col -->
+								</div><!--end .row -->
+							</form>
+						</div><!--end .col -->
+                    </div><!--end .row -->
+                </div><!--end .card-body -->
+            </div><!--end .card -->
+        </section>
+        <!-- END LOGIN SECTION -->
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+        <!-- BEGIN JAVASCRIPT -->
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+        @section('finalScripts')
+            @include('template.finalScripts')
+        @show
+
+        @yield('javascript')
+        <!-- END JAVASCRIPT -->
+
+    </body>
+</html>
