@@ -11,9 +11,50 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+    'uses' 	=> 'PublicController@index',
+    'as'	=> 'public.index'
+]);
+
+Route::get('/about',[
+    'uses' 	=> 'PublicController@about',
+    'as'	=> 'public.about'
+]);
+
+Route::get('/community',[
+    'uses' 	=> 'PublicController@community',
+    'as'	=> 'public.community'
+]);
+
+Route::get('/events',[
+    'uses' 	=> 'PublicController@events',
+    'as'	=> 'public.events'
+]);
+
+Route::get('/extension',[
+    'uses' 	=> 'PublicController@extension',
+    'as'	=> 'public.extension'
+]);
+
+Route::get('/projects',[
+    'uses' 	=> 'PublicController@projects',
+    'as'	=> 'public.projects'
+]);
+
+Route::get('/publications',[
+    'uses' 	=> 'PublicController@publications',
+    'as'	=> 'public.publications'
+]);
+
+Route::get('/research',[
+    'uses' 	=> 'PublicController@research',
+    'as'	=> 'public.research'
+]);
+
+Route::get('/teaching',[
+    'uses' 	=> 'PublicController@teaching',
+    'as'	=> 'public.teaching'
+]);
 
 Auth::routes();
 

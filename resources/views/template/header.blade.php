@@ -5,7 +5,7 @@
             <ul class="header-nav header-nav-options">
                 <li class="header-nav-brand" >
                     <div class="brand-holder">
-                        <a href="../../html/dashboards/dashboard.html">
+                        <a href="{{ route('public.index') }}">
                             <span class="text-lg text-bold text-primary">Geriatría y Gerontología</span>
                         </a>
                     </div>
