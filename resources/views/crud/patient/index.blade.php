@@ -38,12 +38,10 @@
                         <td>{{$patient->last_name_2}}</td>
                         <td>{{$patient->email}}</td>
                         <td>{{$patient->identification_card}}</td>
-                        @if($patient->gender == 'M')
-                            <td> {{$patient->gender}}</td>
-                        @elseif($patient->gender == 'F')
-                            <td> {{$patient->gender}}</td>
+                        @if($patient->gender == 'F')
+                            <td><img src="{{ asset('assets/img/female-gender-symbol.png') }}" alt=""></td>
                         @else
-                            <td> {{$patient->gender}}</td>
+                            <td><img src="{{ asset('assets/img/male-gender-symbol.png') }}" alt=""></td>
                         @endif
                         <td>
                             {{ Form::open(['route'=> ['admin.patient.destroy', $patient->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}

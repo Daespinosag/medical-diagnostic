@@ -3,14 +3,26 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Routing\Route;
 
 class RolRequest extends FormRequest
 {
+    private $route;
+
+    /**
+     * RolRequest constructor.
+     * @param Route $route
+     */
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
+
     public function authorize()
     {
         return true;
@@ -23,9 +35,15 @@ class RolRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->route->getActionMethod() ===  'update'){
+            return [
+                'name' => 'required|min:3|unique:rol,name,'.$this->route('rol'),
+                'description' => 'sometimes|min:3'
+            ];
+        }
         return [
-            'name' => 'required|min:3',
-            'description' => 'min:3'
+            'name' => 'required|min:3|unique:rol',
+            'description' => 'sometimes|min:3'
         ];
     }
 }

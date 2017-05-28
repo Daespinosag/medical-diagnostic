@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class TypeDiagnosisRequest extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class TypeDiagnosisRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'description' => 'min:3'
+            'description' => 'sometimes|min:3'
         ];
     }
 }
