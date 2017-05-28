@@ -21,7 +21,6 @@
 
 			<!-- BEGIN CONTENT-->
 			<div id="content">
-
 				<section>
 					<div class="section-header">
 						<ol class="breadcrumb">
@@ -30,19 +29,15 @@
 						</ol>
 					</div><!--end .section-header -->
 					<div class="section-body">
-						<div class="card card-underline style-default-bright">
-
-							@yield('headerCard')
-
-							<div class="card-body">
-								@yield('content')
-							</div>
-						</div>
+						@yield('content')
 					</div><!--end .section-body -->
 				</section>
 				<!-- BEGIN BLANK SECTION -->
 
+
+
 			</div><!--end #content-->
+
 
 			<!-- END CONTENT -->
 			@section('menu')

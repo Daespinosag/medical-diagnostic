@@ -73,5 +73,25 @@ Route::group(['prefix' => 'admin','name' => 'admin'], function(){
         'destroy'   => 'admin.rol.destroy'
     ]]);
 
+    Route::resource('typeDiagnosis','TypeDiagnosisController',['names' => [
+        'index'     => 'admin.typeDiagnosis.index',
+        'create'    => 'admin.typeDiagnosis.create',
+        'store'     => 'admin.typeDiagnosis.store',
+        'show'      => 'admin.typeDiagnosis.show',
+        'edit'      => 'admin.typeDiagnosis.edit',
+        'update'    => 'admin.typeDiagnosis.update',
+        'destroy'   => 'admin.typeDiagnosis.destroy'
+    ]]);
+
+    Route::resource('patient','PatientController',['names' => [
+        'index'     => 'admin.patient.index',
+        'create'    => 'admin.patient.create',
+        'store'     => 'admin.patient.store',
+        'show'      => 'admin.patient.show',
+        'edit'      => 'admin.patient.edit',
+        'update'    => 'admin.patient.update',
+        'destroy'   => 'admin.patient.destroy'
+    ]]);
+
 });
 

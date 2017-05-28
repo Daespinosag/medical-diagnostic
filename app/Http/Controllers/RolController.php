@@ -30,6 +30,18 @@ class RolController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $rol = Rol::findOrFail($id);
+        return view('crud.rol.show',compact('rol'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param RolRequest|Request $request
@@ -49,7 +61,7 @@ class RolController extends Controller
      */
     public function edit($id)
     {
-        $rol = Rol::find($id);
+        $rol = Rol::findOrFail($id);
         return view('crud.rol.edit',compact('rol'));
     }
 

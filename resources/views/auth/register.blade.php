@@ -69,7 +69,7 @@
                             {!! Form::label('gender','Gender',['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
 
                             <div class="col-md-6">
-                                {!! Form::select('gender', ['M' => 'Male','F'=>'Female','O' =>'Other'] ,['class' => 'form-control','required']) !!}
+                                {!! Form::select('gender', ['M' => 'Male','F'=>'Female','O' =>'Other'],' ' ,['class' => 'form-control','required']) !!}
                                 @if ($errors->has('gender'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('gender') }}</strong>

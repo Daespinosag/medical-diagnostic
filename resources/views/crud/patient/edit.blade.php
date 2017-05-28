@@ -11,12 +11,12 @@
 @section('bodyCard')
 
     <div class="col-lg-8 col-lg-offset-2">
-        {!! Form::open(['route'=> 'admin.rol.store','method'=> 'POST', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
+        {!! Form::model($patient,['route'=> ['admin.patient.update',$patient],'method'=> 'PUT', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
 
-            @include('forms.rol.rolForm')
+        @include('forms.patient.patientForm')
 
             <div class="card-actionbar-row">
-                <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
+                <a href="{{ route('admin.patient.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
                 <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">Save</button>
             </div>
 

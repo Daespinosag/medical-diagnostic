@@ -1,4 +1,4 @@
-@extends('template.main')
+@extends('template.globalCard')
 
 
 @section('headerCard')
@@ -13,8 +13,7 @@
     </div>
 @endsection
 
-
-@section('content')
+@section('bodyCard')
 
     <div id="role">
         <table class="table table-hover">
@@ -33,9 +32,11 @@
                         <td>{{$rol->name }}</td>
                         <td>{{$rol->description}}</td>
                         <td>
-                            <button type="button" class="btn btn-icon-toggle"  data-toggle="modal" data-target="#modalShow"data-original-title="Show {{$rol->name}}"><i class="fa fa-eye"></i></button>
-                            <a href="{{ route('admin.rol.edit',$rol->id) }}" type="button" class="btn btn-icon-toggle"  data-toggle="tooltip" data-placement="top" data-original-title="Edit {{$rol->name}}"><i class="fa fa-pencil"></i></a>
-                            <button type="button" class="btn btn-icon-toggle" data-toggle="modal" data-target="#modalDelete" data-original-title="Delete {{$rol->name}}"><i class="fa fa-trash-o"></i></button>
+                            {{ Form::open(['route'=> ['admin.rol.destroy', $rol->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
+                                <a href="{{ route('admin.rol.show',$rol->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Show {{$rol->name}}"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.rol.edit',$rol->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Edit {{$rol->name}}"><i class="fa fa-pencil"></i></a>
+                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Delete {{$rol->name}}"><i class="fa fa-trash-o"></i></button>
+                            {!! Form::close() !!}
                         </td>
                     </tr>
                 @endforeach
@@ -44,31 +45,7 @@
         </table>
         {!! $role->render() !!}
     </div>
-
-
-    <!-- Modal Show-->
-    <div id="modalShow" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Role </h4>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
 @endsection
-
 
 @section('javascript')
 

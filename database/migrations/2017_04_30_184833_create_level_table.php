@@ -17,7 +17,7 @@ class CreateLevelTable extends Migration
 
             $table->increments('id');
             $table->unsignedInteger('diagnosis_id');
-            $table->enum('gender',['M','F','O'])->defalut('O');
+            $table->enum('gender',['M','F']);
             $table->string('formula');
             $table->string('response');
 
