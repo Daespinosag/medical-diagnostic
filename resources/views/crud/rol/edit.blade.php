@@ -3,7 +3,7 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">Create Role</header>
+        <header class="text-primary-dark">Edit Role</header>
     </div>
 @endsection
 

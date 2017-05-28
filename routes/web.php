@@ -93,5 +93,15 @@ Route::group(['prefix' => 'admin','name' => 'admin'], function(){
         'destroy'   => 'admin.patient.destroy'
     ]]);
 
+    Route::resource('diagnosis','DiagnosisController',['names' => [
+        'index'     => 'admin.diagnosis.index',
+        'create'    => 'admin.diagnosis.create',
+        'store'     => 'admin.diagnosis.store',
+        'show'      => 'admin.diagnosis.show',
+        'edit'      => 'admin.diagnosis.edit',
+        'update'    => 'admin.diagnosis.update',
+        'destroy'   => 'admin.diagnosis.destroy'
+    ]]);
+
 });
 

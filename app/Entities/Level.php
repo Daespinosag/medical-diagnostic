@@ -29,11 +29,11 @@ class Level extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function diagnosis()
     {
-        return $this->hasMany(Diagnosis::class,'id','diagnosis_id');
+        return $this->belongsTo(Diagnosis::class,'diagnosis_id');
     }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

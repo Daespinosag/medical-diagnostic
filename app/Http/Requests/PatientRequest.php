@@ -13,6 +13,10 @@ class PatientRequest extends FormRequest
      */
     private $route;
 
+    /**
+     * PatientRequest constructor.
+     * @param Route $route
+     */
     public function __construct(Route $route)
     {
         $this->route = $route;
