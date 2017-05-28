@@ -15,8 +15,8 @@ class RolController extends Controller
      */
     public function index()
     {
-        $role = Rol::all();
-        return view('crud.rol.index')->with('role',$role);
+        $role = Rol::paginate(10);
+        return view('crud.rol.index',compact('role'));
     }
 
     /**
@@ -38,7 +38,7 @@ class RolController extends Controller
     public function store(RolRequest $request)
     {
         Rol::create($request->all());
-        return redirect()->route('rol.index');
+        return redirect()->route('admin.rol.index');
     }
 
     /**
@@ -50,7 +50,7 @@ class RolController extends Controller
     public function edit($id)
     {
         $rol = Rol::find($id);
-        return view('crud.rol.edit')->with('rol',$rol);
+        return view('crud.rol.edit',compact('rol'));
     }
 
     /**
@@ -66,7 +66,7 @@ class RolController extends Controller
         $rol->fill($request->all());
         $rol->save();
 
-        return redirect()->route('rol.index');
+        return redirect()->route('admin.rol.index');
     }
 
     /**
@@ -78,6 +78,6 @@ class RolController extends Controller
     public function destroy($id)
     {
         Rol::destroy($id);
-        return redirect()->route('rol.index');
+        return redirect()->route('admin.rol.index');
     }
 }

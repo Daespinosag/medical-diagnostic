@@ -37,11 +37,4 @@ class Rol extends Model
         return $this->belongsToMany(User::class,'user_rol','rol_id','user_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function typesDiagnostics()
-    {
-        return $this->belongsToMany(TypeDiagnosis::class,'type_diagnosis_rol','rol_id','type_diagnosis_id');
-    }
 }

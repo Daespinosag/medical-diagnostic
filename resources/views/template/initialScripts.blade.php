@@ -15,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/theme-default/material-design-iconic-font.min.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/theme-default/libs/rickshaw/rickshaw.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/theme-default/libs/morris/morris.core.css') }}" />
+    <script src="https://unpkg.com/vue"></script>
     <!-- END STYLESHEETS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

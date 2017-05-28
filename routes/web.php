@@ -19,4 +19,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('rol','RolController');
+
+Route::group(['prefix' => 'admin','name' => 'admin'], function(){
+
+    Route::resource('rol', 'RolController', ['names' => [
+        'index'     => 'admin.rol.index',
+        'create'    => 'admin.rol.create',
+        'store'     => 'admin.rol.store',
+        'show'      => 'admin.rol.show',
+        'edit'      => 'admin.rol.edit',
+        'update'    => 'admin.rol.update',
+        'destroy'   => 'admin.rol.destroy'
+    ]]);
+
+});
+
