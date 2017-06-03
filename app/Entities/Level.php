@@ -16,7 +16,7 @@ class Level extends Model
      * @var array
      */
     protected $fillable = [
-        'gender', 'formula', 'response',
+        'diagnosis_id','gender', 'formula', 'response',
     ];
 
     /**

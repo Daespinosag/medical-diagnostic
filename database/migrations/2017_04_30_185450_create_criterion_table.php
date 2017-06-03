@@ -18,10 +18,10 @@ class CreateCriterionTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('level_id');
             $table->unsignedInteger('variable_id');
-            $table->string('value_1')->default(null)->nullable();
-            $table->string('value_2')->default(null)->nullable();
-            $table->string('comparison_operator');
-            $table->string('unit');
+            $table->string('value_1')->nullable();
+            $table->string('value_2')->nullable();
+            $table->string('comparison_operator')->nullable();
+            $table->string('unit')->nullable();
 
             $table->foreign('level_id')->references('id')->on('level')->onDelete('cascade');
             $table->foreign('variable_id')->references('id')->on('variable')->onDelete('cascade');

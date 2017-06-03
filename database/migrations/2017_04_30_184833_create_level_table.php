@@ -17,9 +17,9 @@ class CreateLevelTable extends Migration
 
             $table->increments('id');
             $table->unsignedInteger('diagnosis_id');
-            $table->enum('gender',['M','F']);
-            $table->string('formula');
-            $table->string('response');
+            $table->enum('gender',['M','F'])->default('M');
+            $table->string('formula')->nullable();
+            $table->string('response')->nullable();
 
             $table->foreign('diagnosis_id')->references('id')->on('diagnosis')->onDelete('cascade');
 
