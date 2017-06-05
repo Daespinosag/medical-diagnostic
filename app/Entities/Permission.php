@@ -2,14 +2,11 @@
 
 namespace App\Entities;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Permission extends Model
 {
-    use Notifiable;
-
-    protected $table = 'users';
+    protected $table = 'permissions';
 
     protected $primaryKey = 'id';
 
@@ -19,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username','email','gender','identification_card', 'password',
+        'id','name','display_name' ,'description',
     ];
 
     /**
@@ -28,14 +25,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function roles()
+    public function Roles()
     {
-        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+        return $this->belongsToMany(Role::class,'permission_role','permission_id','role_id');
     }
 }

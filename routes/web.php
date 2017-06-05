@@ -61,47 +61,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin','name' => 'admin'], function(){
+Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){
 
-    Route::resource('rol', 'RolController', ['names' => [
-        'index'     => 'admin.rol.index',
-        'create'    => 'admin.rol.create',
-        'store'     => 'admin.rol.store',
-        'show'      => 'admin.rol.show',
-        'edit'      => 'admin.rol.edit',
-        'update'    => 'admin.rol.update',
-        'destroy'   => 'admin.rol.destroy'
-    ]]);
+    Route::resource('rol', 'RolController');
 
-    Route::resource('typeDiagnosis','TypeDiagnosisController',['names' => [
-        'index'     => 'admin.typeDiagnosis.index',
-        'create'    => 'admin.typeDiagnosis.create',
-        'store'     => 'admin.typeDiagnosis.store',
-        'show'      => 'admin.typeDiagnosis.show',
-        'edit'      => 'admin.typeDiagnosis.edit',
-        'update'    => 'admin.typeDiagnosis.update',
-        'destroy'   => 'admin.typeDiagnosis.destroy'
-    ]]);
+    Route::resource('typeDiagnosis','TypeDiagnosisController');
 
-    Route::resource('patient','PatientController',['names' => [
-        'index'     => 'admin.patient.index',
-        'create'    => 'admin.patient.create',
-        'store'     => 'admin.patient.store',
-        'show'      => 'admin.patient.show',
-        'edit'      => 'admin.patient.edit',
-        'update'    => 'admin.patient.update',
-        'destroy'   => 'admin.patient.destroy'
-    ]]);
+    Route::resource('patient','PatientController');
 
-    Route::resource('diagnosis','DiagnosisController',['names' => [
-        'index'     => 'admin.diagnosis.index',
-        'create'    => 'admin.diagnosis.create',
-        'store'     => 'admin.diagnosis.store',
-        'show'      => 'admin.diagnosis.show',
-        'edit'      => 'admin.diagnosis.edit',
-        'update'    => 'admin.diagnosis.update',
-        'destroy'   => 'admin.diagnosis.destroy'
-    ]]);
+    Route::resource('diagnosis','DiagnosisController');
+
+    Route::resource('permission','PermissionController');
 
 });
 

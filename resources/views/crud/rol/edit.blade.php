@@ -13,7 +13,7 @@
     <div class="col-lg-8 col-lg-offset-2">
         {!! Form::model($rol,['route'=> ['admin.rol.update',$rol],'method'=> 'PUT', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
 
-        @include('forms.rol.rolForm')
+        @include('forms.rol.rolForm',['actualityPermission'=> $rol->permissions->pluck('id')->toArray()])
 
             <div class="card-actionbar-row">
                 <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
@@ -22,5 +22,9 @@
 
         {!! Form::close() !!}
     </div>
+
+@endsection
+
+@section('javascript')
 
 @endsection

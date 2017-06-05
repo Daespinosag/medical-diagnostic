@@ -19,8 +19,8 @@
 							<form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="post">
                                 {{ csrf_field() }}
 								<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-									<input type="text" class="form-control" id="username" name="username" value="{{ old('email') }}" required autofocus>
-									<label for="username">Usuario o correo electrónico</label>
+									<input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required autofocus>
+									<label for="email">Usuario o correo electrónico</label>
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>

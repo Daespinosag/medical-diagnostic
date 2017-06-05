@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\RolRequest;
-use App\Entities\Rol;
+use App\Entities\Role;
+use App\Entities\Permission;
 
 class RolController extends Controller
 {
@@ -15,7 +16,7 @@ class RolController extends Controller
      */
     public function index()
     {
-        $role = Rol::paginate(10);
+        $role = Role::paginate(10);
         return view('crud.rol.index',compact('role'));
     }
 
@@ -26,7 +27,8 @@ class RolController extends Controller
      */
     public function create()
     {
-        return view('crud.rol.create');
+        $permission = Permission::orderby('name','ASC')->pluck('display_name','id')->toArray();
+        return view('crud.rol.create',compact('permission'));
     }
 
     /**
@@ -37,7 +39,7 @@ class RolController extends Controller
      */
     public function show($id)
     {
-        $rol = Rol::findOrFail($id);
+        $rol = Role::findOrFail($id);
         return view('crud.rol.show',compact('rol'));
     }
 
@@ -49,7 +51,8 @@ class RolController extends Controller
      */
     public function store(RolRequest $request)
     {
-        Rol::create($request->all());
+        $role = Role::create($request->all());
+        $role->permissions()->sync($request->all()['permission_role']);
         return redirect()->route('admin.rol.index');
     }
 
@@ -61,8 +64,9 @@ class RolController extends Controller
      */
     public function edit($id)
     {
-        $rol = Rol::findOrFail($id);
-        return view('crud.rol.edit',compact('rol'));
+        $rol = Role::with('permissions')->findOrFail($id);
+        $permission = Permission::orderby('name','ASC')->pluck('display_name','id')->toArray();
+        return view('crud.rol.edit',compact('rol'),compact('permission'));
     }
 
     /**
@@ -74,10 +78,10 @@ class RolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rol = Rol::findOrFail($id);
-        $rol->fill($request->all());
-        $rol->save();
-
+        $role = Role::findOrFail($id);
+        $role->fill($request->all());
+        $role->save();
+        $role->permissions()->sync($request->all()['permission_role']);
         return redirect()->route('admin.rol.index');
     }
 
@@ -89,7 +93,10 @@ class RolController extends Controller
      */
     public function destroy($id)
     {
-        Rol::destroy($id);
+        $role = Role::findOrFail($id);
+        $role->permissions()->detach();
+        $role->users()->detech();
+        Role::destroy($id);
         return redirect()->route('admin.rol.index');
     }
 }

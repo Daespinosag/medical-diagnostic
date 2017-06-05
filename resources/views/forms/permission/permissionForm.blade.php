@@ -45,20 +45,6 @@
         </div>
     </div>
 
-    <div class="form-group{{ $errors->has('permission_role') ? ' has-error' : '' }}">
-        {!! Form::label('permission_role','Permission',['class' => 'col-md-4 control-label', 'for' =>'permission_role']) !!}
-
-        <div class="form-control">
-            {{ Form::select('permission_role',$permission,$actualityPermission,['multiple' => 'multiple','name'=>'permission_role[]','placeholder' => 'selected permissions','class' => '']) }}
-            @if ($errors->has('permission_role'))
-                <span class="help-block">
-                      <strong>{{ $errors->first('permission_role') }}</strong>
-                 </span>
-            @endif
-        </div>
-    </div>
-
 </section>
-
 
 

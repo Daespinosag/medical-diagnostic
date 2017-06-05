@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
-class RolRequest extends FormRequest
+class PermissionRequest extends FormRequest
 {
     private $route;
 
@@ -22,7 +22,6 @@ class RolRequest extends FormRequest
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -35,15 +34,15 @@ class RolRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->route->getActionMethod() ===  'update'){
+        if ($this->route()->getActionMethod() ===  'update'){
             return [
-                'name' => 'required|min:3|unique:roles,name,'.$this->route('rol'),
+                'name' => 'required|min:3|unique:permissions,name,'.$this->route('permission'),
                 'display_name'  => 'required',
                 'description' => 'sometimes|min:3'
             ];
         }
         return [
-            'name' => 'required|min:3|unique:roles',
+            'name' => 'required|min:3|unique:permissions',
             'description' => 'sometimes|min:3'
         ];
     }

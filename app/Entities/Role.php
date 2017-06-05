@@ -5,9 +5,9 @@ namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Rol extends Model
+class Role extends Model
 {
-    protected $table = 'rol';
+    protected $table = 'roles';
 
     protected $primaryKey = 'id';
 
@@ -17,7 +17,7 @@ class Rol extends Model
      * @var array
      */
     protected $fillable = [
-        'id','name', 'description',
+        'id','name','display_name' ,'description',
     ];
 
     /**
@@ -34,7 +34,15 @@ class Rol extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class,'user_rol','rol_id','user_id');
+        return $this->belongsToMany(User::class,'role_user','role_id','user_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class,'permission_role','role_id','permission_id');
     }
 
 }
