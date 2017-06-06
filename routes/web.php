@@ -75,5 +75,8 @@ Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function
 
     Route::resource('user','UserController');
 
+    Route::resource('level','LevelController');
+
+    Route::resource('variable','VariableController');
 });
 

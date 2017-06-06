@@ -24,7 +24,10 @@ class LevelRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'diagnosis_id'  => 'required',
+            'gender'        => 'required',
+            'formula'       => 'required',
+            'response'      => 'required'
         ];
     }
 }

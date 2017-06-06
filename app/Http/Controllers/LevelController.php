@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Diagnosis;
 use Illuminate\Http\Request;
+use App\Entities\Level;
+use App\Http\Requests\LevelRequest;
 
 class LevelController extends Controller
 {
@@ -13,7 +16,8 @@ class LevelController extends Controller
      */
     public function index()
     {
-        //
+        $levels = Level::with('diagnosis')->paginate(10);
+        return view('crud.level.index',compact('levels'));
     }
 
     /**
@@ -23,18 +27,20 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        $diagnosis = Diagnosis::orderby('name','ASC')->pluck('name','id')->toArray();
+        return view('crud.level.create',compact('diagnosis'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param LevelRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LevelRequest $request)
     {
-        //
+        Level::create($request->all());
+        return redirect()->route('admin.level.index');
     }
 
     /**
@@ -45,7 +51,8 @@ class LevelController extends Controller
      */
     public function show($id)
     {
-        //
+        $level = Level::findOrFail($id);
+        return view('crud.level.show',compact('level'));
     }
 
     /**
@@ -56,19 +63,24 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $level = Level::with('diagnosis')->findOrFail($id);
+        $diagnosis = Diagnosis::orderby('name','ASC')->pluck('name','id')->toArray();
+        return view('crud.level.edit',compact('level'),compact('diagnosis'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param LevelRequest|Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LevelRequest $request, $id)
     {
-        //
+        $level = Level::findOrFail($id);
+        $level->fill($request->all());
+        $level->save();
+        return redirect()->route('admin.level.index');
     }
 
     /**
@@ -79,6 +91,7 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Level::destroy($id);
+        return redirect()->route('admin.level.index');
     }
 }

@@ -1,0 +1,79 @@
+
+<section>
+    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+
+        {!! Form::label('name','Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
+
+        <div class="col-md-6">
+            {!! Form::text('name', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('name'))
+                <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('json_name') ? ' has-error' : '' }}">
+
+        {!! Form::label('json_name','Json Name',['class' => 'col-md-4 control-label', 'for' =>'json_name']) !!}
+
+        <div class="col-md-6">
+            {!! Form::text('json_name', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('json_name'))
+                <span class="help-block">
+                <strong>{{ $errors->first('json_name') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group {{ $errors->has('calculated') ? ' has-error' : '' }}">
+
+        {!! Form::label('calculated','Calculated',['class' => 'col-md-4 control-label', 'for' =>'calculated']) !!}
+
+        <div class="col-md-6">
+            {!! Form::text('calculated', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('calculated'))
+                <span class="help-block">
+                <strong>{{ $errors->first('calculated') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group {{ $errors->has('calculation_operation') ? ' has-error' : '' }}">
+
+        {!! Form::label('calculation_operation','Calculation Operation',['class' => 'col-md-4 control-label', 'for' =>'calculation_operation']) !!}
+
+        <div class="col-md-6">
+            {!! Form::text('calculation_operation', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('calculation_operation'))
+                <span class="help-block">
+                <strong>{{ $errors->first('calculation_operation') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
+
+        {!! Form::label('description','Description',['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
+
+        <div class="col-md-6">
+            {!! Form::textarea('description', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('description'))
+                <span class="help-block">
+                <strong>{{ $errors->first('description') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
+</section>
+
+

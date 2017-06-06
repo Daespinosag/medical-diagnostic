@@ -16,7 +16,6 @@ class CreateVariableTable extends Migration
         Schema::create('variable', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->integer('user_id');
             $table->string('name');
             $table->string('json_name')->nullable();
             $table->string('calculated')->nullable();
@@ -24,8 +23,6 @@ class CreateVariableTable extends Migration
             $table->string('description')->nullable();
 
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -35,7 +35,7 @@ class RolRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->route->getActionMethod() ===  'update'){
+        if ($this->route()->getActionMethod() ===  'update'){
             return [
                 'name' => 'required|min:3|unique:roles,name,'.$this->route('rol'),
                 'display_name'  => 'required',
