@@ -48,4 +48,14 @@ class Patient extends Model
             ->withPivot(['diagnosis_date'])
             ->withTimestamps();
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'variable_patient','patient_id','user_id')
+                    ->withPivot(['diagnosis_date'])
+                    ->withTimestamps();
+    }
 }

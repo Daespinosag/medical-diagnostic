@@ -73,5 +73,7 @@ Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function
 
     Route::resource('permission','PermissionController');
 
+    Route::resource('user','UserController');
+
 });
 
