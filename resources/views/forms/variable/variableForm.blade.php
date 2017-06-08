@@ -29,17 +29,20 @@
         </div>
     </div>
 
-    <div class="form-group {{ $errors->has('calculated') ? ' has-error' : '' }}">
-
-        {!! Form::label('calculated','Calculated',['class' => 'col-md-4 control-label', 'for' =>'calculated']) !!}
+    <div class="form-group{{ $errors->has('calculated') ? ' has-error' : '' }}">
+        {!! Form::label('calculated','Calculated',['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
 
         <div class="col-md-6">
-            {!! Form::text('calculated', null ,['class' => 'form-control','required']) !!}
-
-            @if ($errors->has('calculated'))
+            <label class="radio-inline radio-styled">
+                {{ Form::radio('calculated', true, true) }}<span>Yes</span>
+            </label>
+            <label class="radio-inline radio-styled">
+                {{ Form::radio('calculated', false, true,['chequent' => '']) }}<span>No</span>
+            </label>
+            @if ($errors->has('gender'))
                 <span class="help-block">
-                <strong>{{ $errors->first('calculated') }}</strong>
-            </span>
+                      <strong>{{ $errors->first('gender') }}</strong>
+                 </span>
             @endif
         </div>
     </div>

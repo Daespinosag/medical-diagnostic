@@ -37,6 +37,7 @@ class VariableController extends Controller
      */
     public function store(VariableRequest $request)
     {
+        //dd($request->all());
         Variable::create($request->all());
         return redirect()->route('admin.variable.index');
     }

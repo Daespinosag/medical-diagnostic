@@ -33,7 +33,11 @@
                         <td>{{$variable->id}}</td>
                         <td>{{$variable->name }}</td>
                         <td>{{$variable->json_name}}</td>
-                        <td>{{$variable->calculated}}</td>
+                        @if($variable->calculated)
+                            <td class=""><span class="tag label label-success">True</span></td>
+                        @else
+                            <td><span class="tag label label-danger">False</span></td>
+                        @endif
                         <td>{{$variable->calculation_operation}}</td>
                         <td>
                             {{ Form::open(['route'=> ['admin.variable.destroy', $variable->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
