@@ -61,7 +61,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){ //'middleware'=>['auth'],
 
     Route::resource('rol', 'RolController');
     Route::resource('typeDiagnosis','TypeDiagnosisController');
@@ -72,5 +72,6 @@ Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function
     Route::resource('level','LevelController');
     Route::resource('variable','VariableController');
     Route::resource('criterion','CriterionController');
+    Route::resource('variablePatient','VariablePatientController');
+    Route::resource('patientLevel','PatientLevelController');
 });
-
