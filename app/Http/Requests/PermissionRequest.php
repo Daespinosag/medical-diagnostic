@@ -3,20 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Route;
+
 
 class PermissionRequest extends FormRequest
 {
-    private $route;
-
-    /**
-     * RolRequest constructor.
-     * @param Route $route
-     */
-    public function __construct(Route $route)
-    {
-        $this->route = $route;
-    }
     /**
      * Determine if the user is authorized to make this request.
      *

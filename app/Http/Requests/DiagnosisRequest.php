@@ -3,23 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Routing\Route;
+
 
 class DiagnosisRequest extends FormRequest
 {
-    /**
-     * @var Route
-     */
-    private $route;
 
-    /**
-     * DiagnosisRequest constructor.
-     * @param Route $route
-     */
-    public function __construct(Route $route)
-    {
-        $this->route = $route;
-    }
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,7 +25,7 @@ class DiagnosisRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->route->getActionMethod() ===  'update'){
+        if ($this->route()->getActionMethod() ===  'update'){
             return [
                 'type_diagnosis_id' => 'required',
                 'name' => 'required|min:3|unique:diagnosis,name,'.$this->route('diagnosi'),

@@ -3,24 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Routing\Route;
+
 
 class PatientRequest extends FormRequest
 {
-
-    /**
-     * @var Route
-     */
-    private $route;
-
-    /**
-     * PatientRequest constructor.
-     * @param Route $route
-     */
-    public function __construct(Route $route)
-    {
-        $this->route = $route;
-    }
 
     /**
      * Determine if the user is authorized to make this request.
@@ -39,7 +25,7 @@ class PatientRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->route->getActionMethod() ===  'update'){
+        if ($this->route()->getActionMethod() ===  'update'){
             return [
                 'name'                  => 'required',
                 'last_name_1'           => 'required',

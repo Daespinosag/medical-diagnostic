@@ -4,16 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class RolRequest extends FormRequest
+class CriterionRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -26,16 +23,15 @@ class RolRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->route()->getActionMethod() ===  'update'){
-            return [
-                'name' => 'required|min:3|unique:roles,name,'.$this->route('rol'),
-                'display_name'  => 'required',
-                'description' => 'sometimes|min:3'
-            ];
-        }
         return [
-            'name' => 'required|min:3|unique:roles',
-            'description' => 'sometimes|min:3'
+            'variable_id'           => 'required',
+            'level_id'              => 'required',
+            'value_1'               => 'required',
+            'value_2'               =>'',
+            'comparison_operator'   => 'required',
+            'unit'                  => ''
+
         ];
+
     }
 }
