@@ -61,7 +61,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){ //'middleware'=>['auth'],
+Route::group(['middleware'=>['auth'],'prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){ //
 
     Route::resource('rol', 'RolController');
     Route::resource('typeDiagnosis','TypeDiagnosisController');

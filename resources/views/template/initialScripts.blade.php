@@ -19,7 +19,7 @@
     <!-- END STYLESHEETS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]-->
     <script type="text/javascript" src="{{ asset('assets/js/libs/utils/html5shiv.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/libs/utils/respond.min.js') }}"></script>
     <![endif]-->
