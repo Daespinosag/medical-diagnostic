@@ -17,7 +17,7 @@ class Patient extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'last_name_1','last_name_2','email','identification_card'
+        'name', 'last_name_1','last_name_2','email','identification_card','gender'
     ];
 
     /**
@@ -47,5 +47,15 @@ class Patient extends Model
         return $this->belongsToMany(Level::class,'patient_level','patient_id','level_id')
             ->withPivot(['diagnosis_date'])
             ->withTimestamps();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'variable_patient','patient_id','user_id')
+                    ->withPivot(['diagnosis_date'])
+                    ->withTimestamps();
     }
 }

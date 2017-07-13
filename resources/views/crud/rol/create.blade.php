@@ -1,4 +1,4 @@
-@extends('template.main')
+@extends('template.globalCard')
 
 
 @section('headerCard')
@@ -8,19 +8,17 @@
 @endsection
 
 
-@section('content')
+@section('bodyCard')
 
     <div class="col-lg-8 col-lg-offset-2">
-        {!! Form::open(['route'=> 'rol.store','method'=> 'POST', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
+        {!! Form::open(['route'=> 'admin.rol.store','method'=> 'POST', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
 
-            @include('forms.rol.rolForm')
+            @include('forms.rol.rolForm',['actualityPermission'=> null])
 
-        <div class="col-lg-offset-8">
-            <div class="btn-group">
-                <a href="{{ route('rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
+            <div class="card-actionbar-row">
+                <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
                 <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">Save</button>
             </div>
-        </div>
 
         {!! Form::close() !!}
     </div>

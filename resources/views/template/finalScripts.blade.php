@@ -12,3 +12,7 @@
 <script src="{{ asset('assets/js/core/source/AppNavSearch.js') }}"></script>
 <script src="{{ asset('assets/js/core/source/AppVendor.js') }}"></script>
 <script src="{{ asset('assets/js/core/demo/Demo.js') }}"></script>
+<script src="{{ asset('assets/js/libs/select2/select2.js') }}"></script>
+
+<script src="{{ mix('js/app.js') }}"></script>
+

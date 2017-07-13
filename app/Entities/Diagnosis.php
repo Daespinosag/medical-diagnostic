@@ -16,7 +16,7 @@ class Diagnosis extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description',
+        'type_diagnosis_id','name', 'description',
     ];
 
     /**
@@ -29,15 +29,15 @@ class Diagnosis extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function typeDiagnosis()
     {
-        return $this->hasMany(TypeDiagnosis::class,'id','type_diagnosis_id');
+        return $this->belongsTo(TypeDiagnosis::class,'type_diagnosis_id');
     }
 
     public function levels()
     {
-        return $this->belongsTo(Level::class,'diagnosis_id');
+        return $this->hasMany(Level::class,'diagnosis_id','id');
     }
 }

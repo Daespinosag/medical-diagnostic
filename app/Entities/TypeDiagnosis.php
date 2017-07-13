@@ -29,18 +29,10 @@ class TypeDiagnosis extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function roles()
-    {
-        return $this->belongsToMany(Rol::class,'type_diagnosis_rol','type_diagnosis_id','rol_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function diagnostics()
     {
-        return $this->belongsTo(Diagnosis::class,'type_diagnosis_id');
+        return $this->hasMany(Diagnosis::class,'type_diagnosis_id','id');
     }
 }

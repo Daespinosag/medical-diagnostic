@@ -13,12 +13,11 @@ class CreateTypeDiagnosisTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_type_diagnosis', function (Blueprint $table) {
+        Schema::create('type_diagnosis', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('name');
-            $table->string('description')->default(null)->nullable();
-
+            $table->string('description')->nullable();
 
             $table->timestamps();
 
@@ -32,6 +31,6 @@ class CreateTypeDiagnosisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_type_diagnosis');
+        Schema::dropIfExists('type_diagnosis');
     }
 }

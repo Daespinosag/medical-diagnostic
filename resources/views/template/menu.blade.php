@@ -41,15 +41,23 @@
             <!-- BEGIN EMAIL -->
             <li class="gui-folder">
                 <a>
-                    <div class="gui-icon"><i class="md md-email"></i></div>
-                    <span class="title">Email</span>
+                    <div class="gui-icon"><i class="md md-vpn-key"></i></div>
+                    <span class="title">Administrator</span>
                 </a>
                 <!--start submenu -->
                 <ul>
-                    <li><a href="../../html/mail/inbox.html" ><span class="title">Inbox</span></a></li>
-                    <li><a href="../../html/mail/compose.html" ><span class="title">Compose</span></a></li>
-                    <li><a href="../../html/mail/reply.html" ><span class="title">Reply</span></a></li>
-                    <li><a href="../../html/mail/message.html" ><span class="title">View message</span></a></li>
+                    <li><a href="{{ route('admin.rol.index') }}" ><span class="title">Role</span></a></li>
+                    <li><a href="{{ route('admin.permission.index') }}" ><span class="title">permissions</span></a></li>
+                    <li><a href="{{ route('admin.user.index') }}" ><span class="title">Users</span></a></li>
+                    <li><a href="{{ route('admin.patient.index') }}" ><span class="title">Patients</span></a></li>
+                    <li><a href="{{ route('admin.typeDiagnosis.index') }}" ><span class="title">Type Diagnosis</span></a></li>
+                    <li><a href="{{ route('admin.diagnosis.index') }}" ><span class="title">Diagnosis</span></a></li>
+                    <li><a href="{{ route('admin.level.index') }}" ><span class="title">Levels</span></a></li>
+                    <li><a href="{{ route('admin.variable.index') }}" ><span class="title">Variables</span></a></li>
+                    <li><a href="{{ route('admin.criterion.index') }}" ><span class="title">Attach Criterion</span></a></li>
+                    <li><a href="{{ route('admin.variablePatient.index') }}" ><span class="title">Attach Variable Patient</span></a></li>
+                    <li><a href="{{ route('admin.patientLevel.index') }}" ><span class="title">Attach Patient Level</span></a></li>
+
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->
             <!-- END EMAIL -->

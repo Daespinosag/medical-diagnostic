@@ -2,7 +2,7 @@
 <section>
     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
 
-        {!! Form::label('name','Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
+        {!! Form::label('name','Key Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
 
         <div class="col-md-6">
             {!! Form::text('name', null ,['class' => 'form-control','required']) !!}
@@ -15,12 +15,27 @@
         </div>
     </div>
 
+    <div class="form-group {{ $errors->has('display_name') ? ' has-error' : '' }}">
+
+        {!! Form::label('display_name','Complete Name',['class' => 'col-md-4 control-label', 'for' =>'display_name']) !!}
+
+        <div class="col-md-6">
+            {!! Form::text('display_name', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('display_name'))
+                <span class="help-block">
+                <strong>{{ $errors->first('display_name') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
 
         {!! Form::label('description','Description',['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
 
         <div class="col-md-6">
-            {!! Form::text('description', null ,['class' => 'form-control','required']) !!}
+            {!! Form::textarea('description', null ,['class' => 'form-control','required']) !!}
 
             @if ($errors->has('description'))
                 <span class="help-block">
@@ -30,6 +45,20 @@
         </div>
     </div>
 
+    <div class="form-group{{ $errors->has('permission_role') ? ' has-error' : '' }}">
+        {!! Form::label('permission_role','Permission',['class' => 'col-md-4 control-label', 'for' =>'permission_role']) !!}
+
+        <div class="form-control">
+            {{ Form::select('permission_role',$permission,$actualityPermission,['multiple' => 'multiple','name'=>'permission_role[]','placeholder' => 'selected permissions','class' => '']) }}
+            @if ($errors->has('permission_role'))
+                <span class="help-block">
+                      <strong>{{ $errors->first('permission_role') }}</strong>
+                 </span>
+            @endif
+        </div>
+    </div>
+
 </section>
+
 
 

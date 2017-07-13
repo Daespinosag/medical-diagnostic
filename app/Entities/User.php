@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username','email','gender','identification_card', 'password',
+        'name', 'username','email','profession','gender','identification_card', 'password',
     ];
 
     /**
@@ -36,6 +36,26 @@ class User extends Authenticatable
      */
     public function roles()
     {
-        return $this->belongsToMany(Rol::class,'user_rol','user_id','rol_id');
+        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class,'variable_patient','user_id','patient_id')
+                    ->withPivot(['diagnosis_date'])
+                    ->withTimestamps();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function variables()
+    {
+        return $this->belongsToMany(Variable::class,'variable_patient','user_id','variable_id')
+                    ->withPivot(['diagnosis_date'])
+                    ->withTimestamps();
     }
 }

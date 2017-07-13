@@ -18,7 +18,7 @@ class CreateDiagnosisTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('type_diagnosis_id');
             $table->string('name');
-            $table->string('description')->default(null)->nullable();
+            $table->string('description')->nullable();
 
             $table->foreign('type_diagnosis_id')->references('id')->on('type_diagnosis')->onDelete('cascade');
 

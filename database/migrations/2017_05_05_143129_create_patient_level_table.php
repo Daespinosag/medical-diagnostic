@@ -19,7 +19,7 @@ class CreatePatientLevelTable extends Migration
             $table->unsignedInteger('level_id');
             $table->unsignedInteger('patient_id');
 
-            $table->date('diagnosis_date')->default(null)->nullable();
+            $table->date('diagnosis_date')->nullable();
 
             $table->foreign('level_id')->references('id')->on('level')->onDelete('cascade');
             $table->foreign('patient_id')->references('id')->on('patient')->onDelete('cascade');
