@@ -74,4 +74,6 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','name' => 'admin', 'as'
     Route::resource('criterion','CriterionController');
     Route::resource('variablePatient','VariablePatientController');
     Route::resource('patientLevel','PatientLevelController');
+
+    Route::get('processLevel','ProcessLevelController@index');
 });
