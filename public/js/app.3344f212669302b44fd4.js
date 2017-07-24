@@ -1646,10 +1646,154 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            typesSelected: null,
+            diagnosisSelected: null,
+            typesDisplayForm: false,
+            diagnosisDisplayForm: false,
+            buttonDiagnosisDisplay: false,
+            typeDiagnosisName: '',
+            diagnosisName: '',
+            typeDiagnosisDescription: '',
+            diagnosisDescription: '',
+            typesOptions: [],
+            diagnosisOptions: []
+        };
+    },
+
+    methods: {
+        stateTypeDiagnosis: function stateTypeDiagnosis() {
+            this.typesDisplayForm = !this.typesDisplayForm;
+        },
+        saveTypeDiagnosis: function saveTypeDiagnosis() {
+            var _this = this;
+
+            axios.post('http://medical-diagnostic.app/admin/processLevel/createTypeDiagnosis', { name: this.typeDiagnosisName, description: this.typeDiagnosisDescription }).then(function (response) {
+                _this.typesDisplayForm = !_this.typesDisplayForm;
+                _this.typesOptions.push({ id: response.data.id, name: _this.typeDiagnosisName });
+                _this.typesSelected = response.data.id;
+            });
+        },
+        loadDiagnosis: function loadDiagnosis() {
+            var _this2 = this;
+
+            axios.post('http://medical-diagnostic.app/admin/processLevel/loadDiagnosis', { id: this.typesSelected }).then(function (response) {
+                _this2.diagnosisOptions = response.data;
+                _this2.buttonDiagnosisDisplay = true;
+            });
+        },
+        stateDiagnosis: function stateDiagnosis() {
+            this.diagnosisDisplayForm = !this.diagnosisDisplayForm;
+        },
+        saveDiagnosis: function saveDiagnosis() {
+            var _this3 = this;
+
+            axios.post('http://medical-diagnostic.app/admin/processLevel/createDiagnosis', { type_diagnosis_id: this.typesSelected, name: this.diagnosisName, description: this.diagnosisDescription }).then(function (response) {
+                _this3.diagnosisDisplayForm = !_this3.diagnosisDisplayForm;
+                _this3.diagnosisOptions.push({ id: response.data.id, name: _this3.diagnosisName });
+                _this3.diagnosisSelected = response.data.id;
+            });
+        }
+    },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        var _this4 = this;
+
+        axios.post('http://medical-diagnostic.app/admin/processLevel/typeDiagnosis').then(function (response) {
+            _this4.typesOptions = response.data;
+        });
     }
 });
 
@@ -31646,10 +31790,288 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "col-md-5"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_vm._m(0), _vm._v(" "), (!_vm.typesDisplayForm) ? _c('div', {
+    staticClass: "card-body"
+  }, [_c('div', {
+    staticClass: "form-group col-md-10"
+  }, [_c('label', {
+    staticClass: "control-label col-md-4"
+  }, [_vm._v("Type Diagnosis")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.typesSelected),
+      expression: "typesSelected"
+    }],
+    staticClass: "form-control col-md-8",
+    on: {
+      "change": [function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.typesSelected = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }, _vm.loadDiagnosis]
+    }
+  }, _vm._l((_vm.typesOptions), function(typesOption) {
+    return _c('option', {
+      domProps: {
+        "value": typesOption.id
+      }
+    }, [_vm._v("\n                            " + _vm._s(typesOption.name) + "\n                         ")])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('button', {
+    staticClass: "btn btn-raised btn-primary btn-inline ink-reaction",
+    on: {
+      "click": _vm.stateTypeDiagnosis
+    }
+  }, [_vm._v("New")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.typesDisplayForm),
+      expression: "typesDisplayForm"
+    }]
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('section', [_c('div', {
+    staticClass: "form-group "
+  }, [_c('label', {
+    staticClass: "col-md-2 control-label",
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Name")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-10"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.typeDiagnosisName),
+      expression: "typeDiagnosisName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "required": "",
+      "name": "name",
+      "type": "text",
+      "id": "name"
+    },
+    domProps: {
+      "value": (_vm.typeDiagnosisName)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.typeDiagnosisName = $event.target.value
+      }
+    }
+  }), _c('div', {
+    staticClass: "form-control-line"
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group "
+  }, [_c('label', {
+    staticClass: "col-md-2 control-label",
+    attrs: {
+      "for": "description"
+    }
+  }, [_vm._v("Description")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-10"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.typeDiagnosisDescription),
+      expression: "typeDiagnosisDescription"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "required": "",
+      "name": "description",
+      "cols": "15",
+      "rows": "10",
+      "id": "description"
+    },
+    domProps: {
+      "value": (_vm.typeDiagnosisDescription)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.typeDiagnosisDescription = $event.target.value
+      }
+    }
+  }), _c('div', {
+    staticClass: "form-control-line"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "card-actionbar-row"
+  }, [_c('a', {
+    staticClass: "btn btn-raised btn-default btn-inline ink-reaction",
+    on: {
+      "click": _vm.stateTypeDiagnosis
+    }
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-raised btn-primary btn-inline ink-reaction",
+    on: {
+      "click": _vm.saveTypeDiagnosis
+    }
+  }, [_vm._v("Save")])])])]), _vm._v(" "), _c('span', [_vm._v(" Selected: " + _vm._s(_vm.typesSelected))])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-5 col-md-offset-1"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_vm._m(1), _vm._v(" "), (!_vm.diagnosisDisplayForm) ? _c('div', {
+    staticClass: "card-body"
+  }, [_c('div', {
+    staticClass: "form-group col-md-10"
+  }, [_c('label', {
+    staticClass: "control-label col-md-4"
+  }, [_vm._v("Diagnosis")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.diagnosisSelected),
+      expression: "diagnosisSelected"
+    }],
+    staticClass: "form-control col-md-8",
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.diagnosisSelected = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, _vm._l((_vm.diagnosisOptions), function(diagnosisOption) {
+    return _c('option', {
+      domProps: {
+        "value": diagnosisOption.id
+      }
+    }, [_vm._v("\n                            " + _vm._s(diagnosisOption.name) + "\n                         ")])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('button', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.buttonDiagnosisDisplay),
+      expression: "buttonDiagnosisDisplay"
+    }],
+    staticClass: "btn btn-raised btn-primary btn-inline ink-reaction",
+    on: {
+      "click": _vm.stateDiagnosis
+    }
+  }, [_vm._v("New")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.diagnosisDisplayForm),
+      expression: "diagnosisDisplayForm"
+    }]
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('section', [_c('div', {
+    staticClass: "form-group "
+  }, [_c('label', {
+    staticClass: "col-md-2 control-label",
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Name")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-10"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.diagnosisName),
+      expression: "diagnosisName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "required": "",
+      "name": "name",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.diagnosisName)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.diagnosisName = $event.target.value
+      }
+    }
+  }), _c('div', {
+    staticClass: "form-control-line"
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group "
+  }, [_c('label', {
+    staticClass: "col-md-2 control-label",
+    attrs: {
+      "for": "description"
+    }
+  }, [_vm._v("Description")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-10"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.diagnosisDescription),
+      expression: "diagnosisDescription"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "required": "",
+      "name": "description",
+      "cols": "15",
+      "rows": "10"
+    },
+    domProps: {
+      "value": (_vm.diagnosisDescription)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.diagnosisDescription = $event.target.value
+      }
+    }
+  }), _c('div', {
+    staticClass: "form-control-line"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "card-actionbar-row"
+  }, [_c('a', {
+    staticClass: "btn btn-raised btn-default btn-inline ink-reaction",
+    on: {
+      "click": _vm.stateDiagnosis
+    }
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-raised btn-primary btn-inline ink-reaction",
+    on: {
+      "click": _vm.saveDiagnosis
+    }
+  }, [_vm._v("Save")])])])]), _vm._v(" "), _c('span', [_vm._v(" Selected: " + _vm._s(_vm.diagnosisSelected))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container"
-  }, [_vm._v("\n    component init\n")])
-},staticRenderFns: []}
+    staticClass: "card-head card-head-xs style-primary"
+  }, [_c('label', {
+    staticClass: "control-label col-md-4"
+  }, [_vm._v("Type Diagnosis")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card-head card-head-xs style-primary"
+  }, [_c('label', {
+    staticClass: "control-label col-md-4"
+  }, [_vm._v("Diagnosis")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
