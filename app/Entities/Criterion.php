@@ -16,7 +16,7 @@ class Criterion extends Model
      * @var array
      */
     protected $fillable = [
-        'id','level_id','variable_id' ,'value_1','value_2','comparison_operator','unit'
+        'id','level_id','variable_id' ,'name','value_1','value_2','comparison_operator','unit'
     ];
 
     /**

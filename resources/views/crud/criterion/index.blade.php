@@ -20,8 +20,9 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Formula</td>
                     <td>Variable</td>
+                    <td>Name</td>
+                    <td>Formula</td>
                     <td>Value One</td>
                     <td>Value Two</td>
                     <td>Comparison Operator</td>
@@ -33,8 +34,9 @@
                 @foreach($criteria as $criterion)
                     <tr class="">
                         <td>{{$criterion->id}}</td>
-                        <td>{{$criterion->level->formula }}</td>
                         <td>{{$criterion->variable->name}}</td>
+                        <td>{{$criterion->name}}</td>
+                        <td>{{$criterion->level->formula }}</td>
                         <td>{{$criterion->value_1}}</td>
                         <td>{{$criterion->value_2}}</td>
                         <td>{{$criterion->comparison_operator}}</td>

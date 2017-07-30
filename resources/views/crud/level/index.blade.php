@@ -21,6 +21,7 @@
                 <tr>
                     <td>Id</td>
                     <td>Diagnosis</td>
+                    <td>Name</td>
                     <td>Formula</td>
                     <td>Response</td>
                     <td>Gender</td>
@@ -32,6 +33,7 @@
                     <tr class="">
                         <td>{{$level->id}}</td>
                         <td>{{$level->diagnosis->name }}</td>
+                        <td>{{$level->name }}</td>
                         <td>{{$level->formula}}</td>
                         <td>{{$level->response}}</td>
                         @if($level->gender == 'F')

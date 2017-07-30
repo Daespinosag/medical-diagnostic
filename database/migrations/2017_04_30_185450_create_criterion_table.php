@@ -18,6 +18,7 @@ class CreateCriterionTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('level_id');
             $table->unsignedInteger('variable_id');
+            $table->string('name')->nullable();
             $table->string('value_1')->nullable();
             $table->string('value_2')->nullable();
             $table->string('comparison_operator')->nullable();

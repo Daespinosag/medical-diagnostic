@@ -14,6 +14,8 @@ class ProcessLevelController extends Controller
         return view('processLevel.index');
     }
 
+    /* inicio de funcionalidades para step-one*/
+
     public function getTypeDiagnosis()
     {
         return TypeDiagnosis::orderby('name','ASC')->get(['name','id'])->toArray();
@@ -33,4 +35,6 @@ class ProcessLevelController extends Controller
     {
         return Diagnosis::create($request->all());
     }
+
+    /* fin de funcionalidades para step-one*/
 }

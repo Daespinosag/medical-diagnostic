@@ -75,9 +75,14 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','name' => 'admin', 'as'
     Route::resource('variablePatient','VariablePatientController');
     Route::resource('patientLevel','PatientLevelController');
 
+
     Route::get('processLevel','ProcessLevelController@index');
+
+    /* inicio rutas para step-one*/
     Route::post('processLevel/typeDiagnosis','ProcessLevelController@getTypeDiagnosis');
     Route::post('processLevel/createTypeDiagnosis','ProcessLevelController@createTypeDiagnosis');
     Route::post('processLevel/loadDiagnosis','ProcessLevelController@loadDiagnosis');
     Route::post('processLevel/createDiagnosis','ProcessLevelController@createDiagnosis');
+
+    /* inicio fin para step-one*/
 });

@@ -1,10 +1,10 @@
 
 <section>
-    <div class="form-group{{ $errors->has('level_id') ? ' has-error' : '' }}">
+    <div class="form-group {{ $errors->has('level_id') ? ' has-error' : '' }}">
         {!! Form::label('level_id','Level',['class' => 'col-md-4 control-label', 'for' =>'level']) !!}
 
-        <div class="form-control">
-            {{ Form::select('level_id',$levels,null,['placeholder' => 'selected level','class' => '']) }}
+        <div class="col-md-6">
+            {{ Form::select('level_id',$levels,null,['placeholder' => 'selected level','class' => 'form-control']) }}
             @if ($errors->has('level_id'))
                 <span class="help-block">
                       <strong>{{ $errors->first('level_id') }}</strong>
@@ -12,11 +12,11 @@
             @endif
         </div>
     </div>
-    <div class="form-group{{ $errors->has('variable_id') ? ' has-error' : '' }}">
+    <div class="form-group {{ $errors->has('variable_id') ? ' has-error' : '' }}">
         {!! Form::label('variable_id','Variable',['class' => 'col-md-4 control-label', 'for' =>'variable']) !!}
 
-        <div class="form-control">
-            {{ Form::select('variable_id',$variables,null,['placeholder' => 'selected variable','class' => '']) }}
+        <div class="col-md-6">
+            {{ Form::select('variable_id',$variables,null,['placeholder' => 'selected variable','class' => 'form-control']) }}
             @if ($errors->has('variable_id'))
                 <span class="help-block">
                       <strong>{{ $errors->first('variable_id') }}</strong>
@@ -27,8 +27,8 @@
     <div class="form-group{{ $errors->has('comparison_operator') ? ' has-error' : '' }}">
         {!! Form::label('comparison_operator','Comparison Operator',['class' => 'col-md-4 control-label', 'for' =>'comparison operator']) !!}
 
-        <div class="form-control">
-            {{ Form::select('comparison_operator',['==' => 'igual', '>' => 'mayor', '>=' => 'mayor que','<'=>'menor','<=' => 'menor que','!='=>'Different','<>' => 'entre'],null,['placeholder' => 'selected comparison operator','class' => '']) }}
+        <div class="col-md-6">
+            {{ Form::select('comparison_operator',['==' => 'igual', '>' => 'mayor', '>=' => 'mayor que','<'=>'menor','<=' => 'menor que','!='=>'diferente','<>' => 'entre'],null,['placeholder' => 'selected comparison operator','class' => 'form-control']) }}
             @if ($errors->has('comparison_operator'))
                 <span class="help-block">
                       <strong>{{ $errors->first('comparison_operator') }}</strong>

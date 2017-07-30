@@ -39,7 +39,9 @@ class LevelController extends Controller
      */
     public function store(LevelRequest $request)
     {
-        Level::create($request->all());
+        $levelCreated = Level::create($request->all());
+        $levelCreated->name = str_replace(' ','-',$levelCreated->diagnosis->name).'-'.$levelCreated->id;
+        $levelCreated->save();
         return redirect()->route('admin.level.index');
     }
 
