@@ -26,9 +26,9 @@ class LevelRequest extends FormRequest
         return [
             'diagnosis_id'  => 'required',
             'name'          => '',
-            'gender'        => 'required',
-            'formula'       => 'required',
-            'response'      => 'required'
+            'gender'        => '',
+            'formula'       => '',
+            'response'      => ''
         ];
     }
 }

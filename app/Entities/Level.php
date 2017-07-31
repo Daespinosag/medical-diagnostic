@@ -16,7 +16,7 @@ class Level extends Model
      * @var array
      */
     protected $fillable = [
-        'diagnosis_id','name','gender', 'formula', 'response',
+        'id','diagnosis_id','name','gender', 'formula', 'response',
     ];
 
     /**
@@ -25,7 +25,7 @@ class Level extends Model
      * @var array
      */
     protected $hidden = [
-
+        'updated_at','created_at'
     ];
 
     /**

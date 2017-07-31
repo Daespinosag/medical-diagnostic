@@ -6,7 +6,7 @@
 @endsection
 
 @section('bodyCard')
-    <div id="app">
+    <div>
         <step-step></step-step>
     </div>
 @endsection

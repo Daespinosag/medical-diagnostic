@@ -85,4 +85,10 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','name' => 'admin', 'as'
     Route::post('processLevel/createDiagnosis','ProcessLevelController@createDiagnosis');
 
     /* inicio fin para step-one*/
+    Route::post('processLevel/createLevel','ProcessLevelController@createLevel');
+    Route::post('processLevel/getVariables','ProcessLevelController@getVariables');
+    Route::post('processLevel/getListCriterion','ProcessLevelController@getListCriterion');
+    Route::post('processLevel/getCriterion','ProcessLevelController@getCriterion');
+    Route::post('processLevel/saveCriterion','ProcessLevelController@saveCriterion');
+
 });

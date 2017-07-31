@@ -1,76 +1,165 @@
 <template>
     <div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
 
-                <table class="table table-striped">
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Nota</th>
-                        <th width="50px">&nbsp;</th>
-                    </tr>
-                    <tr v-for="note in notes" is="note-row" :note.sync="note" :categories="categories"></tr>
-                    <tr>
-                        <td><select-category :categories="categories" :id.sync="new_note.category_id"></select-category></td>
-                        <td><input type="text" v-model="new_note.note" class="form-control"></td>
-                        <td>
-                            <a href="#" @click="createNote()">
-                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <div class="col-lg-12">
+            <slot name="title"></slot>
         </div>
 
-        <pre>{{ $data | json }}</pre>
+        <div class="col-lg-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Variable</td>
+                        <td>Criterion Name</td>
+                        <td>Value One</td>
+                        <td>Value Two</td>
+                        <td>Comparison Operator</td>
+                        <td>Unit</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="criterion in localCriterion" >
+                        <td>{{ criterion.variable.name }}</td>
+                        <td>{{ criterion.name }}</td>
+                        <td>{{ criterion.value_1 }}</td>
+                        <td>{{ criterion.value_2 }}</td>
+                        <td>{{ criterion.comparison_operator }}</td>
+                        <td>{{ criterion.unit}}</td>
+                        <td>
+                            <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left" >Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <select class="form-control col-md-8" v-model="variableSelected" v-on:change="getListCriterion">
+                                <option v-for="variable in variables" v-bind:value="variable.id">
+                                        {{ variable.name }}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control col-md-8" v-model="criterionSelected" v-on:change="getCriterion">
+                                <option v-for="criterion in listCriterionSelect" v-bind:value="criterion.id">
+                                    {{ criterion.name }}
+                                </option>
+                            </select>
+                        </td>
+                        <td>{{ criterion.value_1 }}</td>
+                        <td>{{ criterion.value_2 }}</td>
+                        <td>{{ criterion.comparison_operator }}</td>
+                        <td>{{ criterion.unit }}</td>
+                        <td>
+                            <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left" @click="copyCriterion">Copy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control col-md-8" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
+                                <option v-for="variable in variables" v-bind:value="variable.id">
+                                    {{ variable.name }}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
 
-        <template id="select_category_tpl">
-            <select v-model="id" class="form-control">
-                <option value="">- Selecciona una categoría</option>
-                <option v-for="category in categories" :value="category.id">
-                    {{ category.name }}
-            </option>
-            </select>
-        </template>
+        </div>
 
-        <template id="note_row_tpl">
-            <tr>
-                <template v-if="! editing">
-                    <td>{{ note.category_id | category }}</td>
-                    <td>{{ note.note }}</td>
-                    <td>
-                        <a href="#" @click="edit()"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <a href="#" @click="remove()">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </a>
-                    </td>
-                </template>
-                <template v-else>
-                    <td>
-                        <select-category :categories="categories" :id.sync="note.category_id"></select-category>
-                    </td>
-                    <td><input type="text" v-model="note.note" class="form-control"></td>
-                    <td><a href="#" @click="update()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a></td>
-                </template>
-            </tr>
-        </template>
-
+        <div class="col-lg-12">
+            <div class="card-actionbar-row">
+                <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
+                        @click="clickButtonCancel"
+                >Cancel</button>
+                <button class="btn btn-raised btn-primary btn-inline ink-reaction"
+                        @click="clickButtonNext"
+                >Next</button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
+        props:['dataStepOne','level'],
         data() {
             return{
+                variables: [],
+                localCriterion: [],
 
+                listCriterionSelect:[],
+                variableSelected: null,
+                criterion: { value_1: null,value_2: null,comparison_operator : null,unit: null,},
+                criterionSelected : null,
+
+                variableCreateSelected:null,
+                criterionCreateSelected : null,
             }
         },
-        methods() {
+        methods: {
+            clickButtonCancel(){
+                console.log('hola desde hijo cancel')
+            },
+            clickButtonNext(){
+                this.$emit('clickButtonNext');
+            },
+            getListCriterion(){
+                axios.post(`http://medical-diagnostic.app/admin/processLevel/getListCriterion`,
+                    { variable_id: this.variableSelected}
+                    ).then(response => {
+                        this.listCriterionSelect =  response.data;
+                    })
+            },
+            getCriterion(){
+                axios.post(`http://medical-diagnostic.app/admin/processLevel/getCriterion`,
+                    { id: this.criterionSelected}
+                ).then(response => {
+                    this.criterion = response.data[0];
+                })
+            },
+            changeCreateVariableSelected(){
+                //this.listCriterionCreate = this.getListCriterion(this.variableCreateSelected);
+            },
+            changeCreateCriterionSelected(){
+
+            },
+            changeCriterionSelected(){
+
+            },
+            copyCriterion(){
+                axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
+                    {
+                        level_id : this.level.id,
+                        variable_id : this.variableSelected,
+                        value_1 : this.criterion.value_1,
+                        value_2 : this.criterion.value_2,
+                        comparison_operator : this.criterion.comparison_operator,
+                        unit : this.criterion.unit
+                    }).then(response => {
+                        this.localCriterion.push(response.data);
+                        this.listCriterionSelect = [];
+                        this.variableSelected =  null;
+                        this.criterion =  { value_1: null,value_2: null,comparison_operator : null,unit: null,};
+                        this.criterionSelected = null;
+                    });
+            }
 
         },
         mounted() {
-
+            axios.post(`http://medical-diagnostic.app/admin/processLevel/getVariables`)
+                .then(response => {
+                    this.variables = response.data;
+                })
         }
     }
 </script>
