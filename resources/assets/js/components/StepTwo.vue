@@ -5,7 +5,7 @@
             <slot name="title"></slot>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 card">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -27,21 +27,32 @@
                         <td>{{ criterion.comparison_operator }}</td>
                         <td>{{ criterion.unit}}</td>
                         <td>
-                            <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left" >Delete</button>
+                            <button class="btn btn-rounded btn-danger btn-inline ink-reaction pull-left"
+                                    @click="deleteCriterion( criterion.id, localCriterion)" >
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
                         </td>
+                    </tr>
+                    <tr class="">
+                        <td colspan="7" ></td>
                     </tr>
                 </tbody>
                 <tfoot>
+                    <tr class="style-primary" >
+                        <td colspan="7">
+                            <strong>Copiar : </strong> Utilizar un criterio ya creado
+                         </td>
+                    </tr>
                     <tr>
                         <td>
-                            <select class="form-control col-md-8" v-model="variableSelected" v-on:change="getListCriterion">
+                            <select class="form-control" v-model="variableSelected" v-on:change="getListCriterion">
                                 <option v-for="variable in variables" v-bind:value="variable.id">
                                         {{ variable.name }}
                                 </option>
                             </select>
                         </td>
                         <td>
-                            <select class="form-control col-md-8" v-model="criterionSelected" v-on:change="getCriterion">
+                            <select class="form-control" v-model="criterionSelected" v-on:change="getCriterion">
                                 <option v-for="criterion in listCriterionSelect" v-bind:value="criterion.id">
                                     {{ criterion.name }}
                                 </option>
@@ -52,24 +63,55 @@
                         <td>{{ criterion.comparison_operator }}</td>
                         <td>{{ criterion.unit }}</td>
                         <td>
-                            <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left" @click="copyCriterion">Copy</button>
+                            <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
+                                    @click="copyCriterion">
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </button>
                         </td>
+                    </tr>
+                    <tr class="style-primary" >
+                        <td colspan="7" >
+                            <strong>Create : </strong> Crear un criterio desde cero
+                        </td>
+
                     </tr>
                     <tr>
                         <td>
-                            <select class="form-control col-md-8" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
+                            <select class="form-control" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
                                 <option v-for="variable in variables" v-bind:value="variable.id">
                                     {{ variable.name }}
                                 </option>
                             </select>
                         </td>
                         <td>
+                            <span class="tag label label-danger">Esta propiedad es calculada</span>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <input type="number" class="form-control" v-model="criterionInCreation.value_1" placeholder="ingrese un valor">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" v-model="criterionInCreation.value_2" placeholder="ingrese un valor">
+                        </td>
+                        <td>
+                            <select class="form-control" v-model="criterionInCreation.comparison_operator">
+                                <option :value="'='">Igual</option>
+                                <option :value="'>'">Mayor que</option>
+                                <option :value="'>='">Mayor o igual</option>
+                                <option :value="'<'">Menor que</option>
+                                <option :value="'<='">Menor o igual</option>
+                                <option :value="'!='">Diferente</option>
+                                <option :value="'<>'">Entre</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control" v-model="criterionInCreation.unit" placeholder="ingrese una unidad">
+                        </td>
+                        <td>
+                            <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
+                                    @click="createCriterion">
+                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tfoot>
             </table>
@@ -99,11 +141,12 @@
 
                 listCriterionSelect:[],
                 variableSelected: null,
-                criterion: { value_1: null,value_2: null,comparison_operator : null,unit: null,},
+                criterion: { name:'-',value_1: '-',value_2: '-',comparison_operator : '-',unit: '-',},
                 criterionSelected : null,
 
                 variableCreateSelected:null,
                 criterionCreateSelected : null,
+                criterionInCreation: { value_1: null,value_2: null,comparison_operator : null,unit: null,},
             }
         },
         methods: {
@@ -111,21 +154,30 @@
                 console.log('hola desde hijo cancel')
             },
             clickButtonNext(){
-                this.$emit('clickButtonNext');
+                if (this.localCriterion.length > 0){
+                    this.$emit('clickButtonNext',this.localCriterion);
+                }else{
+                    //TODO
+                    console.log('debes seleccionar o crear almenos un criterio');
+                }
             },
             getListCriterion(){
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/getListCriterion`,
-                    { variable_id: this.variableSelected}
+                if (this.variableSelected) {
+                    axios.post(`http://medical-diagnostic.app/admin/processLevel/getListCriterion`,
+                        {variable_id: this.variableSelected}
                     ).then(response => {
-                        this.listCriterionSelect =  response.data;
+                        this.listCriterionSelect = response.data;
                     })
+                }
             },
             getCriterion(){
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/getCriterion`,
-                    { id: this.criterionSelected}
-                ).then(response => {
-                    this.criterion = response.data[0];
-                })
+                if(this.criterionSelected) {
+                    axios.post(`http://medical-diagnostic.app/admin/processLevel/getCriterion`,
+                        {id: this.criterionSelected}
+                    ).then(response => {
+                        this.criterion = response.data[0];
+                    })
+                }
             },
             changeCreateVariableSelected(){
                 //this.listCriterionCreate = this.getListCriterion(this.variableCreateSelected);
@@ -137,20 +189,56 @@
 
             },
             copyCriterion(){
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
-                    {
-                        level_id : this.level.id,
-                        variable_id : this.variableSelected,
-                        value_1 : this.criterion.value_1,
-                        value_2 : this.criterion.value_2,
-                        comparison_operator : this.criterion.comparison_operator,
-                        unit : this.criterion.unit
-                    }).then(response => {
+                if (this.variableSelected && this.criterionSelected) {
+                    axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
+                        {
+                            level_id: this.level.id,
+                            variable_id: this.variableSelected,
+                            value_1: this.criterion.value_1,
+                            value_2: this.criterion.value_2,
+                            comparison_operator: this.criterion.comparison_operator,
+                            unit: this.criterion.unit
+                        }).then(response => {
                         this.localCriterion.push(response.data);
                         this.listCriterionSelect = [];
-                        this.variableSelected =  null;
-                        this.criterion =  { value_1: null,value_2: null,comparison_operator : null,unit: null,};
+                        this.variableSelected = null;
+                        this.criterion = {value_1: null, value_2: null, comparison_operator: null, unit: null,};
                         this.criterionSelected = null;
+                    });
+                }else {
+                    //TODO
+                }
+            },
+            createCriterion(){
+                if(this.variableCreateSelected) {
+                    axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
+                        {
+                            level_id: this.level.id,
+                            variable_id: this.variableCreateSelected,
+                            value_1: this.criterionInCreation.value_1,
+                            value_2: this.criterionInCreation.value_2,
+                            comparison_operator: this.criterionInCreation.comparison_operator,
+                            unit: this.criterionInCreation.unit
+                        }).then(response => {
+                        this.localCriterion.push(response.data);
+                        this.variableCreateSelected = null;
+                        this.criterionInCreation = {
+                            value_1: null,
+                            value_2: null,
+                            comparison_operator: null,
+                            unit: null,
+                        };
+                    });
+                }else {
+                    //TODO
+                }
+            },
+            deleteCriterion(id,index){
+                axios.post(`http://medical-diagnostic.app/admin/processLevel/deleteCriterion`,{id})
+                    .then(response => {
+                        if (response.data){
+                            this.localCriterion.splice(index, 1);
+                        }
                     });
             }
 

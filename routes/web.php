@@ -90,5 +90,6 @@ Route::group(['middleware'=>['auth'],'prefix' => 'admin','name' => 'admin', 'as'
     Route::post('processLevel/getListCriterion','ProcessLevelController@getListCriterion');
     Route::post('processLevel/getCriterion','ProcessLevelController@getCriterion');
     Route::post('processLevel/saveCriterion','ProcessLevelController@saveCriterion');
+    Route::post('processLevel/deleteCriterion','ProcessLevelController@deleteCriterion');
 
 });

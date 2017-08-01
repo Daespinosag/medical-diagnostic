@@ -78,4 +78,9 @@ class ProcessLevelController extends Controller
        $criterion->save();
        return $criterion;
     }
+
+    public function deleteCriterion(Request $request)
+    {
+         return Criterion::destroy($request->all()['id']);
+    }
 }

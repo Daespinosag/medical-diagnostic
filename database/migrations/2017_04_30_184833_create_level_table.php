@@ -18,7 +18,7 @@ class CreateLevelTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('diagnosis_id');
             $table->string('name')->nullable();
-            $table->enum('gender',['M','F'])->default('M');
+            $table->enum('gender',['M','F','ALL'])->default('ALL');
             $table->string('formula')->nullable();
             $table->string('response')->nullable();
 

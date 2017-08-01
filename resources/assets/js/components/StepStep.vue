@@ -5,6 +5,7 @@
                     :is="activeComponent"
                     :dataStepOne="dataStepOne"
                     :level="level"
+                    :criterionList="criterionList"
                     @clickButtonCancel="clickButtonCancel"
                     @clickButtonNext="clickButtonNext"
             >
@@ -26,6 +27,7 @@
     //import {store} from "../store/store";
     Vue.component('step-one',require('../components/StepOne.vue'));
     Vue.component('step-two',require('../components/StepTwo.vue'));
+    Vue.component('step-three',require('../components/StepThree.vue'));
 
     export default {
         //store,
@@ -37,7 +39,8 @@
                 stepTree: false,
                 step: 1,
                 level: null,
-                dataStepOne: []
+                dataStepOne: [],
+                criterionList:[],
             }
         },
         methods: {
@@ -77,8 +80,8 @@
                         this.stepTwo = true;
                         break;
                     case 2:
-
-                        this.activeComponent = 'step-tree';
+                        this.criterionList = value;
+                        this.activeComponent = 'step-three';
                         this.step = 3;
                         this.stepTwo = false;
                         this.stepTree = true;

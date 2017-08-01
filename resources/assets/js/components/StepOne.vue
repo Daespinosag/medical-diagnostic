@@ -135,18 +135,13 @@
                         this.typesDisplayForm = !this.typesDisplayForm;
                         this.typesOptions.push({id : response.data.id, name: this.typeDiagnosisName});
                         this.localTypesSelected = response.data.id;
-                        //this.$emit('updateTypesSelected',this.localTypesSelected );
                         this.localDiagnosisSelected = null;
-                        //this.$emit('updateDiagnosisSelected',this.localDiagnosisSelected);
                         this.diagnosisOptions = [];
+                        this.buttonDiagnosisDisplay = true;
                     })
             },
             loadDiagnosis(){
-
-                //this.$emit('updateTypesSelected',this.localTypesSelected);
                 this.localDiagnosisSelected = null;
-                //this.$emit('updateDiagnosisSelected',this.localDiagnosisSelected);
-
                 axios.post(`http://medical-diagnostic.app/admin/processLevel/loadDiagnosis`,{id: this.localTypesSelected})
                     .then(response => {
                         this.diagnosisOptions = response.data;
@@ -159,30 +154,40 @@
             saveDiagnosis(){
                 axios.post(
                     `http://medical-diagnostic.app/admin/processLevel/createDiagnosis`,
-                    { type_diagnosis_id: this.typesSelected, name: this.diagnosisName, description: this.diagnosisDescription }
+                    { type_diagnosis_id: this.localTypesSelected, name: this.diagnosisName, description: this.diagnosisDescription }
                 )
                     .then(response => {
                         this.diagnosisDisplayForm = !this.diagnosisDisplayForm;
                         this.diagnosisOptions.push({id : response.data.id, name: this.diagnosisName});
                         this.localDiagnosisSelected = response.data.id;
-                        //this.$emit('updateDiagnosisSelected',this.localDiagnosisSelected);
                     })
             },
             changeDiagnosis(){
-                //this.$emit('updateDiagnosisSelected',this.localDiagnosisSelected);
+                //TODO
             },
             clickButtonCancel(){
-                console.log('hola desde hijo cancel')
+                //TODO
+                console.log('click in cancel button')
             },
             clickButtonNext(){
-                var value =  {
-                    diagnosisSelected: this.localDiagnosisSelected,
-                    diagnosisName: this.diagnosisName,
-                    typesSelected: this.localTypesSelected,
-                    typeDiagnosisName: this.typeDiagnosisName
-                };
+                if (this.localTypesSelected){
+                    if (this.localDiagnosisSelected){
+                        var value =  {
+                            diagnosisSelected: this.localDiagnosisSelected,
+                            diagnosisName: this.diagnosisName,
+                            typesSelected: this.localTypesSelected,
+                            typeDiagnosisName: this.typeDiagnosisName
+                        };
 
-                this.$emit('clickButtonNext',value);
+                        this.$emit('clickButtonNext',value);
+                    }else {
+                        //TODO
+                        console.log('Error debes selecceionar un diagnostico');
+                    }
+                }else {
+                    //TODO
+                    console.log('Error Debes seleccionar un typo de diadnostico');
+                }
             }
         },
         mounted() {
