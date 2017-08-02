@@ -9,9 +9,16 @@
                     <option v-bind:value="'ALL'">Unisex</option>
                 </select>
             </div>
-            <div class="card form-group  col-lg-8 col-lg-offset-2">
-                <label class="form-group">Formula</label>
-                <input type="text"  class="form-control" v-model="form">
+            <div class="card  col-lg-10 col-lg-offset-1">
+                <div class="form-group" >
+                    <label class="form-group">Formula</label>
+                    <textarea name="Text" class="form-control" cols="40" rows="2" v-model="form" disabled></textarea>
+                    <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-right"
+                            style=""
+                            @click="deleteForm">
+                        Borrar
+                    </button>
+                </div>
             </div>
             <div class="col-lg-12">
                 <div class="col-lg-5">
@@ -22,7 +29,7 @@
                         <div class="card-body">
                                 <button class="btn btn-default btn-block"
                                         v-for="criterion in criterionList"
-                                        @click="addCriterion(criterion in criterionList)"
+                                        @click="addCriterion(criterion)"
                                 >
                                     {{ criterion.name }}
                                 </button>
@@ -37,7 +44,7 @@
                         <div class="card-body">
                                 <button class="btn btn-raised btn-primary btn-inline ink-reaction pull-left"
                                         v-for="operator in operatorList"
-                                        @click="addOperator(operator in operatorList)"
+                                        @click="addOperator(operator)"
                                 >
                                     {{ operator.name }}
                                 </button>
@@ -51,6 +58,18 @@
                 <input type="text" class="form-control" v-model="response">
             </div>
         </div>
+
+        <div class="col-lg-12">
+            <div class="card-actionbar-row">
+                <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
+                        @click="clickButtonCancel"
+                >Cancel</button>
+                <button class="btn btn-raised btn-primary btn-inline ink-reaction"
+                        @click="clickButtonNext"
+                >Next</button>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -60,26 +79,64 @@
         data(){
             return{
                 gender: 'ALL',
-                form : null,
+                form : "",
+                formBack: "",
                 response: null,
+                formArray:[],
+                autoIncrementForm: 0,
                 operatorList:[
                     { name: '(', value: '('},
-                    { name: ')', value: ')'}
+                    { name: ')', value: ')'},
+                    { name: 'AND' , value: 'AND'},
+                    { name: 'OR' ,  value: 'OR'}
                 ],
 
             }
         },
         methods:{
-            addCriterion(criterion, criterionList){
-                //TODO
+            addCriterion(criterion){
+                 this.form += criterion.name + ' ';
+                 this.formBack += "_" + criterion.id + "_ ";
+                 this.formArray[this.autoIncrementForm] = criterion.name;
+                this.autoIncrementForm++;
             },
-            addOperator(operator, operatorList){
+            addOperator(operator){
+                this.form += operator.name + ' ';
+                this.formBack += operator.value + ' ';
+                this.formArray[this.autoIncrementForm] = operator.value;
+                this.autoIncrementForm++;
+            },
+            deleteForm(){
+                this.form = '';
+                this.formBack = '';
+                this.formArray = [];
+                this.autoIncrementForm = 0;
+            },
+            clickButtonCancel(){
                 //TODO
-            }
 
+            },
+            validateForm(){
+                //TODO return true or false
+            },
+            updateLevel(){
+
+            },
+            clickButtonNext(){
+
+                if (this.response ){
+                    if  (this.validateForm()){
+                        this.updateLevel();
+                        this.$emit('clickButtonNext',true);
+                    }
+                }else {
+                    //TODO
+                    console.log('error debe ingresar una respuesta')
+                }
+            }
         },
         mounted() {
-            console.log('Component mounted.')
+
         }
     }
 </script>
