@@ -84,4 +84,12 @@ class ProcessLevelController extends Controller
     {
          return Criterion::destroy($request->all()['id']);
     }
+
+    public function updateLevel(LevelRequest $request)
+    {
+        $level = Level::findOrFail($request->all()['id']);
+        $level->fill($request->all());
+        $level->save();
+        return redirect()->route('admin.level.index');
+    }
 }

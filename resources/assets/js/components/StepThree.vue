@@ -82,7 +82,7 @@
 
 <script>
     export default {
-        props:['criterionList'],
+        props:['criterionList','level'],
         data(){
             return{
                 gender: 'ALL',
@@ -140,18 +140,29 @@
             },
 
             updateLevel(){
+                axios.post(`/admin/processLevel/updateLevel`,
+                    {
+                        id: this.level.id,
+                        diagnosis_id: this.level.diagnosis_id,
+                        name: this.level.name,
+                        gender: this.gender,
+                        formula:this.formBack,
+                        response:this.response
+                    })
+                    .then(response => {
 
+                    })
             },
             clickButtonNext(){
                 this.errors = [];
                 if (this.response ){
                     if  (this.validateForm()){
                         this.updateLevel();
-                        //TODO GUARDAR FORMULA
-                        //this.$emit('clickButtonNext',true);
+                        window.location.replace(`/admin/level`);
                     }
                 }else {this.errors.push({0 : 'El campo respuesta es obligatorio'})}
             },
+
             validateSequence(){
                 let i = 1;
                 let limit = this.formArray.length -1;

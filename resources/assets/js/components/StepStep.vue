@@ -85,6 +85,7 @@
                         this.step = 3;
                         this.stepTwo = false;
                         this.stepTree = true;
+                    case 3:
 
                         break;
                     default:
