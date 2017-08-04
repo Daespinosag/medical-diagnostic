@@ -85,10 +85,10 @@
                 formArray:[],
                 autoIncrementForm: 0,
                 operatorList:[
-                    { name: '(', value: '('},
-                    { name: ')', value: ')'},
-                    { name: 'AND' , value: 'AND'},
-                    { name: 'OR' ,  value: 'OR'}
+                    { name: '(', value: '(' , type:'group'},
+                    { name: ')', value: ')' , type:'group'},
+                    { name: 'AND' , value: 'AND', type:'logic'},
+                    { name: 'OR' ,  value: 'OR', type:'logic'}
                 ],
 
             }
@@ -97,13 +97,13 @@
             addCriterion(criterion){
                  this.form += criterion.name + ' ';
                  this.formBack += "_" + criterion.id + "_ ";
-                 this.formArray[this.autoIncrementForm] = criterion.name;
+                 this.formArray[this.autoIncrementForm] = {value: criterion.name , type: 'criterion' , extra: null};
                 this.autoIncrementForm++;
             },
             addOperator(operator){
                 this.form += operator.name + ' ';
                 this.formBack += operator.value + ' ';
-                this.formArray[this.autoIncrementForm] = operator.value;
+                this.formArray[this.autoIncrementForm] = {value :operator.value ,type: 'operator', extra: operator.type};
                 this.autoIncrementForm++;
             },
             deleteForm(){
@@ -117,8 +117,30 @@
 
             },
             validateForm(){
-                //TODO return true or false
+                let flag = false;
+                if (this.validateParenthesis()){
+                    if (this.validateVariableExistence()){
+                        if (this.validateSequence()){
+                            flag = true;
+                            console.log('Todo correcto')
+                        }else {
+                            console.log('Error en la formula revise las indicaciones de creacion de formulas');
+                            //TODO
+                        }
+
+                    }else {
+                        console.log('Error Debe existir almenos una variable');
+                        //TODO
+                    }
+
+                }else {
+                    console.log('Error en la distrubucion de los parentesis');
+                    //TODO
+                }
+
+                return flag;
             },
+
             updateLevel(){
 
             },
@@ -127,14 +149,63 @@
                 if (this.response ){
                     if  (this.validateForm()){
                         this.updateLevel();
-                        this.$emit('clickButtonNext',true);
+                        //this.$emit('clickButtonNext',true);
                     }
                 }else {
                     //TODO
                     console.log('error debe ingresar una respuesta')
                 }
-            }
+            },
+            validateSequence(){
+                let i = 1;
+                let limit = this.formArray.length -1;
+                let flag = true;
+                while (i <= limit && flag){
+                    console.log(i+' '+limit)
+                    let a = this.formArray[i-1];
+                    let b = this.formArray[i];
+                    if (i === 1 && a.extra === 'logic'){flag = false}
+                    if (i === limit && this.formArray[limit].extra === 'logic'){flag = false}
+                    if ( a.type === b.type){
+                        if (a.type === 'criterion'){flag = false}else if(a.extra === 'logic'){flag = false}
+                    }else {
+                        if(a.type === 'criterion' && b.value === '('){flag = false}
+                        if(a.value === ')' && b.type === 'criterion'){flag = false}
+                        if(a.type === 'operator' && a.extra === 'logic' && b.value === ')'){flag = false}
+                    }
+                    i++;
+                }
+                return flag;
+            },
+            validateVariableExistence(){
+                let i = 0;
+                this.formArray.forEach(function (element) {if(element.type === 'criterion'){i++}});
+                return !(i === 0);
+            },
+            validateParenthesis(){
+                let i = 0;
+                let cont = 0;
+                let flag = true;
+
+                while (cont < this.formArray.length && flag){
+                    if ( i === 0){
+                        if (this.formArray[cont].value === "("){
+                            i++;
+                        }else if(this.formArray[cont].value === ")"){
+                            i++;
+                            flag = false;
+                        }
+                    }else {
+                        if (this.formArray[cont].value === "("){i++;}else if(this.formArray[cont].value === ")"){i--;}
+                    }
+                    cont++;
+                }
+
+                return (i === 0);
+
+            },
         },
+
         mounted() {
 
         }
