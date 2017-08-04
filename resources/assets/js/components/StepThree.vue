@@ -60,6 +60,13 @@
         </div>
 
         <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-3">
+                <ul>
+                    <li v-for="error in errors" class="text-danger">
+                        {{ error[0] }}
+                    </li>
+                </ul>
+            </div>
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
@@ -90,6 +97,7 @@
                     { name: 'AND' , value: 'AND', type:'logic'},
                     { name: 'OR' ,  value: 'OR', type:'logic'}
                 ],
+                errors: [],
 
             }
         },
@@ -111,32 +119,22 @@
                 this.formBack = '';
                 this.formArray = [];
                 this.autoIncrementForm = 0;
+                this.errors= [];
             },
             clickButtonCancel(){
                 //TODO
 
             },
             validateForm(){
+                this.errors = [];
                 let flag = false;
                 if (this.validateParenthesis()){
                     if (this.validateVariableExistence()){
                         if (this.validateSequence()){
                             flag = true;
-                            console.log('Todo correcto')
-                        }else {
-                            console.log('Error en la formula revise las indicaciones de creacion de formulas');
-                            //TODO
-                        }
-
-                    }else {
-                        console.log('Error Debe existir almenos una variable');
-                        //TODO
-                    }
-
-                }else {
-                    console.log('Error en la distrubucion de los parentesis');
-                    //TODO
-                }
+                        }else {this.errors.push({0 : 'Error en la formula revise las indicaciones para su creación'})}
+                    }else {this.errors.push({0 : 'Error en la formula revise las indicaciones para su creación'})}
+                }else {this.errors.push({0 : 'Error en la formula: La distribución de parentesis es incorrecta'})}
 
                 return flag;
             },
@@ -145,23 +143,20 @@
 
             },
             clickButtonNext(){
-
+                this.errors = [];
                 if (this.response ){
                     if  (this.validateForm()){
                         this.updateLevel();
+                        //TODO GUARDAR FORMULA
                         //this.$emit('clickButtonNext',true);
                     }
-                }else {
-                    //TODO
-                    console.log('error debe ingresar una respuesta')
-                }
+                }else {this.errors.push({0 : 'El campo respuesta es obligatorio'})}
             },
             validateSequence(){
                 let i = 1;
                 let limit = this.formArray.length -1;
                 let flag = true;
                 while (i <= limit && flag){
-                    console.log(i+' '+limit)
                     let a = this.formArray[i-1];
                     let b = this.formArray[i];
                     if (i === 1 && a.extra === 'logic'){flag = false}
@@ -200,9 +195,7 @@
                     }
                     cont++;
                 }
-
                 return (i === 0);
-
             },
         },
 

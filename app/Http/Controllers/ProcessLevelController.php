@@ -33,6 +33,7 @@ class ProcessLevelController extends Controller
 
     public function loadDiagnosis(Request $request)
     {
+
         return Diagnosis::orderby('name','ASC')->where('type_diagnosis_id',$request->all()['id'])->get(['name','id'])->toArray();
     }
 

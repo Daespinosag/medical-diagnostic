@@ -119,6 +119,13 @@
         </div>
 
         <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-3">
+                <ul>
+                    <li v-for="error in errors" class="text-danger">
+                        {{ error[0] }}
+                    </li>
+                </ul>
+            </div>
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
@@ -147,6 +154,7 @@
                 variableCreateSelected:null,
                 criterionCreateSelected : null,
                 criterionInCreation: { value_1: null,value_2: null,comparison_operator : null,unit: null,},
+                errors: [],
             }
         },
         methods: {
@@ -154,29 +162,38 @@
                 console.log('hola desde hijo cancel')
             },
             clickButtonNext(){
+                this.errors = [];
                 if (this.localCriterion.length > 0){
                     this.$emit('clickButtonNext',this.localCriterion);
                 }else{
-                    //TODO
-                    console.log('debes seleccionar o crear almenos un criterio');
+                    this.errors.push({0 : 'Debes seleccionar o crear al menos un criterio'});
                 }
             },
             getListCriterion(){
+                this.errors = [];
                 if (this.variableSelected) {
-                    axios.post(`http://medical-diagnostic.app/admin/processLevel/getListCriterion`,
+                    axios.post(`/admin/processLevel/getListCriterion`,
                         {variable_id: this.variableSelected}
                     ).then(response => {
                         this.listCriterionSelect = response.data;
                     })
+                    .catch(error => {
+                        this.errors = error.response.data;
+                    });
+
                 }
             },
             getCriterion(){
+                this.errors = [];
                 if(this.criterionSelected) {
-                    axios.post(`http://medical-diagnostic.app/admin/processLevel/getCriterion`,
+                    axios.post(`/admin/processLevel/getCriterion`,
                         {id: this.criterionSelected}
                     ).then(response => {
                         this.criterion = response.data[0];
                     })
+                    .catch(error => {
+                        this.errors = error.response.data;
+                    });
                 }
             },
             changeCreateVariableSelected(){
@@ -189,8 +206,9 @@
 
             },
             copyCriterion(){
+                this.errors = [];
                 if (this.variableSelected && this.criterionSelected) {
-                    axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
+                    axios.post(`/admin/processLevel/saveCriterion`,
                         {
                             level_id: this.level.id,
                             variable_id: this.variableSelected,
@@ -199,19 +217,23 @@
                             comparison_operator: this.criterion.comparison_operator,
                             unit: this.criterion.unit
                         }).then(response => {
-                        this.localCriterion.push(response.data);
-                        this.listCriterionSelect = [];
-                        this.variableSelected = null;
-                        this.criterion = {value_1: null, value_2: null, comparison_operator: null, unit: null,};
-                        this.criterionSelected = null;
-                    });
+                            this.localCriterion.push(response.data);
+                            this.listCriterionSelect = [];
+                            this.variableSelected = null;
+                            this.criterion = {value_1: null, value_2: null, comparison_operator: null, unit: null,};
+                            this.criterionSelected = null;
+                        })
+                        .catch(error => {
+                            this.errors = error.response.data;
+                        });
                 }else {
-                    //TODO
+                    this.errors.push({0 : 'Debes seleccionar una variable y un criterio'});
                 }
             },
             createCriterion(){
+                this.errors = [];
                 if(this.variableCreateSelected) {
-                    axios.post(`http://medical-diagnostic.app/admin/processLevel/saveCriterion`,
+                    axios.post(`/admin/processLevel/saveCriterion`,
                         {
                             level_id: this.level.id,
                             variable_id: this.variableCreateSelected,
@@ -220,34 +242,38 @@
                             comparison_operator: this.criterionInCreation.comparison_operator,
                             unit: this.criterionInCreation.unit
                         }).then(response => {
-                        this.localCriterion.push(response.data);
-                        this.variableCreateSelected = null;
-                        this.criterionInCreation = {
-                            value_1: null,
-                            value_2: null,
-                            comparison_operator: null,
-                            unit: null,
-                        };
-                    });
+                            this.localCriterion.push(response.data);
+                            this.variableCreateSelected = null;
+                            this.criterionInCreation = {value_1: null,value_2: null,comparison_operator: null,unit: null,};
+                        }).catch(error => {
+                            this.errors = error.response.data;
+                        });
                 }else {
-                    //TODO
+                    this.errors.push({0 : 'Debes seleccionar una variable'});
                 }
             },
             deleteCriterion(id,index){
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/deleteCriterion`,{id})
+                this.errors = [];
+                axios.post(`/admin/processLevel/deleteCriterion`,{id})
                     .then(response => {
                         if (response.data){
                             this.localCriterion.splice(index, 1);
                         }
+                    })
+                    .catch(error => {
+                        this.errors = error.response.data;
                     });
             }
 
         },
         mounted() {
-            axios.post(`http://medical-diagnostic.app/admin/processLevel/getVariables`)
+            axios.post(`/admin/processLevel/getVariables`)
                 .then(response => {
                     this.variables = response.data;
                 })
+                .catch(error => {
+                    this.errors = error.response.data;
+                });
         }
     }
 </script>

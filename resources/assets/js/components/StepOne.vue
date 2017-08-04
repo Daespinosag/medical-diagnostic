@@ -41,7 +41,6 @@
                             </div>
                         </div>
                     </div>
-                    <span> Selected: {{ localTypesSelected }}</span>
                 </div>
             </div>
 
@@ -86,12 +85,17 @@
                             </div>
                         </div>
                     </div>
-
-                    <span> Selected: {{ localDiagnosisSelected }}</span>
                 </div>
             </div>
         </div>
         <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-3">
+                <ul>
+                    <li v-for="error in errors" class="text-danger">
+                        {{ error[0] }}
+                    </li>
+                </ul>
+            </div>
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
@@ -120,6 +124,7 @@
                 diagnosisOptions: [],
                 localTypesSelected: null,
                 localDiagnosisSelected: null,
+                errors: [],
             }
         },
         methods: {
@@ -127,8 +132,9 @@
                 this.typesDisplayForm = !this.typesDisplayForm;
             },
             saveTypeDiagnosis(){
+                this.errors = [];
                 axios.post(
-                    `http://medical-diagnostic.app/admin/processLevel/createTypeDiagnosis`,
+                    `/admin/processLevel/createTypeDiagnosis`,
                     { name: this.typeDiagnosisName, description: this.typeDiagnosisDescription }
                 )
                     .then(response => {
@@ -139,10 +145,14 @@
                         this.diagnosisOptions = [];
                         this.buttonDiagnosisDisplay = true;
                     })
+                    .catch(error => {
+                        this.errors = error.response.data;
+                    });
             },
             loadDiagnosis(){
+                this.errors = [];
                 this.localDiagnosisSelected = null;
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/loadDiagnosis`,{id: this.localTypesSelected})
+                axios.post(`/admin/processLevel/loadDiagnosis`,{id: this.localTypesSelected})
                     .then(response => {
                         this.diagnosisOptions = response.data;
                         this.buttonDiagnosisDisplay = true;
@@ -152,8 +162,9 @@
                 this.diagnosisDisplayForm = !this.diagnosisDisplayForm;
             },
             saveDiagnosis(){
+                this.errors = [];
                 axios.post(
-                    `http://medical-diagnostic.app/admin/processLevel/createDiagnosis`,
+                    `/admin/processLevel/createDiagnosis`,
                     { type_diagnosis_id: this.localTypesSelected, name: this.diagnosisName, description: this.diagnosisDescription }
                 )
                     .then(response => {
@@ -161,6 +172,9 @@
                         this.diagnosisOptions.push({id : response.data.id, name: this.diagnosisName});
                         this.localDiagnosisSelected = response.data.id;
                     })
+                    .catch(error => {
+                        this.errors = error.response.data;
+                    });
             },
             changeDiagnosis(){
                 //TODO
@@ -170,9 +184,10 @@
                 console.log('click in cancel button')
             },
             clickButtonNext(){
+                this.errors = [];
                 if (this.localTypesSelected){
                     if (this.localDiagnosisSelected){
-                        var value =  {
+                        let value =  {
                             diagnosisSelected: this.localDiagnosisSelected,
                             diagnosisName: this.diagnosisName,
                             typesSelected: this.localTypesSelected,
@@ -181,17 +196,15 @@
 
                         this.$emit('clickButtonNext',value);
                     }else {
-                        //TODO
-                        console.log('Error debes selecceionar un diagnostico');
+                        this.errors.push({0 : 'Debes seleccionar un diagnostico'});
                     }
                 }else {
-                    //TODO
-                    console.log('Error Debes seleccionar un typo de diadnostico');
+                    this.errors.push({0 : 'Debes seleccionar un tipo de diagnostico'});
                 }
             }
         },
         mounted() {
-            axios.post(`http://medical-diagnostic.app/admin/processLevel/typeDiagnosis`)
+            axios.post(`/admin/processLevel/typeDiagnosis`)
                 .then(response => {
                     this.typesOptions = response.data;
                 })
