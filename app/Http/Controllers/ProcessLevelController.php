@@ -92,4 +92,12 @@ class ProcessLevelController extends Controller
         $level->save();
         return redirect()->route('admin.level.index');
     }
+
+    public function deleteLevel(Request $request)
+    {
+        $level = Level::find($request->all()['level_id']);
+        $level->variables()->detach();
+        Level::destroy($request->all()['level_id']);
+        return;
+    }
 }

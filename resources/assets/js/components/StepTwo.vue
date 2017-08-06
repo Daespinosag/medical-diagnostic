@@ -1,126 +1,125 @@
 <template>
     <div>
-
         <div class="col-lg-12">
-            <p class="text-center">Nivel: {{ level.name }}</p>
+            <span class="tag label label-danger">Nivel: {{ level.name }}</span>
         </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Variable</td>
+                            <td>Nombre Criterio</td>
+                            <td>Primer Valor</td>
+                            <td>Segundo Valor</td>
+                            <td>Operador de Compraración</td>
+                            <td>Unidad</td>
+                            <td>Acciones</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="criterion in localCriterion" >
+                            <td>{{ criterion.variable.name }}</td>
+                            <td>{{ criterion.name }}</td>
+                            <td>{{ criterion.value_1 }}</td>
+                            <td>{{ criterion.value_2 }}</td>
+                            <td>{{ criterion.comparison_operator }}</td>
+                            <td>{{ criterion.unit}}</td>
+                            <td>
+                                <button class="btn btn-rounded btn-danger btn-inline ink-reaction pull-left"
+                                        @click="deleteCriterion( criterion.id, localCriterion)" >
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td colspan="7" ></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="style-primary" >
+                            <td colspan="7">
+                                <strong>Copiar : </strong> Utilizar un criterio ya creado
+                             </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" v-model="variableSelected" v-on:change="getListCriterion">
+                                    <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
+                                    <option v-for="variable in variables" v-bind:value="variable.id">
+                                            {{ variable.name }}
+                                    </option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" v-model="criterionSelected" v-on:change="getCriterion">
+                                    <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione un Criterio</option>
+                                    <option v-for="criterion in listCriterionSelect" v-bind:value="criterion.id">
+                                        {{ criterion.name }}
+                                    </option>
+                                </select>
+                            </td>
+                            <td>{{ criterion.value_1 }}</td>
+                            <td>{{ criterion.value_2 }}</td>
+                            <td>{{ criterion.comparison_operator }}</td>
+                            <td>{{ criterion.unit }}</td>
+                            <td>
+                                <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
+                                        @click="copyCriterion">
+                                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="style-primary" >
+                            <td colspan="7" >
+                                <strong>Create : </strong> Crear un criterio desde cero
+                            </td>
 
-        <div class="col-lg-12 card">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <td>Variable</td>
-                        <td>Nombre Criterio</td>
-                        <td>Primer Valor</td>
-                        <td>Segundo Valor</td>
-                        <td>Operador de Compraración</td>
-                        <td>Unidad</td>
-                        <td>Acciones</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="criterion in localCriterion" >
-                        <td>{{ criterion.variable.name }}</td>
-                        <td>{{ criterion.name }}</td>
-                        <td>{{ criterion.value_1 }}</td>
-                        <td>{{ criterion.value_2 }}</td>
-                        <td>{{ criterion.comparison_operator }}</td>
-                        <td>{{ criterion.unit}}</td>
-                        <td>
-                            <button class="btn btn-rounded btn-danger btn-inline ink-reaction pull-left"
-                                    @click="deleteCriterion( criterion.id, localCriterion)" >
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="">
-                        <td colspan="7" ></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr class="style-primary" >
-                        <td colspan="7">
-                            <strong>Copiar : </strong> Utilizar un criterio ya creado
-                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select class="form-control" v-model="variableSelected" v-on:change="getListCriterion">
-                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
-                                <option v-for="variable in variables" v-bind:value="variable.id">
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
+                                    <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
+                                    <option v-for="variable in variables" v-bind:value="variable.id">
                                         {{ variable.name }}
-                                </option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control" v-model="criterionSelected" v-on:change="getCriterion">
-                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione un Criterio</option>
-                                <option v-for="criterion in listCriterionSelect" v-bind:value="criterion.id">
-                                    {{ criterion.name }}
-                                </option>
-                            </select>
-                        </td>
-                        <td>{{ criterion.value_1 }}</td>
-                        <td>{{ criterion.value_2 }}</td>
-                        <td>{{ criterion.comparison_operator }}</td>
-                        <td>{{ criterion.unit }}</td>
-                        <td>
-                            <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
-                                    @click="copyCriterion">
-                                    <i class="fa fa-external-link" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="style-primary" >
-                        <td colspan="7" >
-                            <strong>Create : </strong> Crear un criterio desde cero
-                        </td>
+                                    </option>
+                                </select>
+                            </td>
+                            <td>
+                                <span class="tag label label-danger">Esta propiedad es calculada</span>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" v-model="criterionInCreation.value_1" placeholder="ingrese un valor">
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" v-model="criterionInCreation.value_2" placeholder="ingrese un valor">
+                            </td>
+                            <td>
+                                <select class="form-control" v-model="criterionInCreation.comparison_operator">
+                                    <option :value="'='">Igual</option>
+                                    <option :value="'>'">Mayor que</option>
+                                    <option :value="'>='">Mayor o igual</option>
+                                    <option :value="'<'">Menor que</option>
+                                    <option :value="'<='">Menor o igual</option>
+                                    <option :value="'!='">Diferente</option>
+                                    <option :value="'<>'">Entre</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input class="form-control" v-model="criterionInCreation.unit" placeholder="ingrese una unidad">
+                            </td>
+                            <td>
+                                <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
+                                        @click="createCriterion">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <select class="form-control" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
-                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
-                                <option v-for="variable in variables" v-bind:value="variable.id">
-                                    {{ variable.name }}
-                                </option>
-                            </select>
-                        </td>
-                        <td>
-                            <span class="tag label label-danger">Esta propiedad es calculada</span>
-                        </td>
-                        <td>
-                            <input type="number" class="form-control" v-model="criterionInCreation.value_1" placeholder="ingrese un valor">
-                        </td>
-                        <td>
-                            <input type="number" class="form-control" v-model="criterionInCreation.value_2" placeholder="ingrese un valor">
-                        </td>
-                        <td>
-                            <select class="form-control" v-model="criterionInCreation.comparison_operator">
-                                <option :value="'='">Igual</option>
-                                <option :value="'>'">Mayor que</option>
-                                <option :value="'>='">Mayor o igual</option>
-                                <option :value="'<'">Menor que</option>
-                                <option :value="'<='">Menor o igual</option>
-                                <option :value="'!='">Diferente</option>
-                                <option :value="'<>'">Entre</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input class="form-control" v-model="criterionInCreation.unit" placeholder="ingrese una unidad">
-                        </td>
-                        <td>
-                            <button class="btn btn-rounded btn-primary btn-inline ink-reaction pull-left"
-                                    @click="createCriterion">
-                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-
+            </div>
         </div>
-
         <div class="col-lg-12">
             <div class="col-lg-8 col-lg-offset-3">
                 <ul>
@@ -162,7 +161,13 @@
         },
         methods: {
             clickButtonCancel(){
-                console.log('hola desde hijo cancel')
+                this.errors = [];
+                axios.post(`/admin/processLevel/deleteLevel`,
+                    {level_id: this.level.id}
+                ).then(response => {
+                    window.location.replace(`/admin/level`);
+                })
+
             },
             clickButtonNext(){
                 this.errors = [];

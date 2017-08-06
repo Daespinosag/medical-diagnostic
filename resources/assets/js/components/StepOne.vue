@@ -188,8 +188,7 @@
                 //TODO
             },
             clickButtonCancel(){
-                //TODO
-                console.log('click in cancel button')
+                window.location.replace(`/admin/level`);
             },
             clickButtonNext(){
                 this.errors = [];

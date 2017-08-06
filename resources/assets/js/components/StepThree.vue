@@ -122,8 +122,12 @@
                 this.errors= [];
             },
             clickButtonCancel(){
-                //TODO
-
+                this.errors = [];
+                axios.post(`/admin/processLevel/deleteLevel`,
+                    {level_id: this.level.id}
+                ).then(response => {
+                    window.location.replace(`/admin/level`);
+                })
             },
             validateForm(){
                 this.errors = [];
