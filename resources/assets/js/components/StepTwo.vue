@@ -2,7 +2,7 @@
     <div>
 
         <div class="col-lg-12">
-            <slot name="title"></slot>
+            <p class="text-center">Nivel: {{ level.name }}</p>
         </div>
 
         <div class="col-lg-12 card">
@@ -10,12 +10,12 @@
                 <thead>
                     <tr>
                         <td>Variable</td>
-                        <td>Criterion Name</td>
-                        <td>Value One</td>
-                        <td>Value Two</td>
-                        <td>Comparison Operator</td>
-                        <td>Unit</td>
-                        <td>Actions</td>
+                        <td>Nombre Criterio</td>
+                        <td>Primer Valor</td>
+                        <td>Segundo Valor</td>
+                        <td>Operador de Compraración</td>
+                        <td>Unidad</td>
+                        <td>Acciones</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +46,7 @@
                     <tr>
                         <td>
                             <select class="form-control" v-model="variableSelected" v-on:change="getListCriterion">
+                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
                                 <option v-for="variable in variables" v-bind:value="variable.id">
                                         {{ variable.name }}
                                 </option>
@@ -53,6 +54,7 @@
                         </td>
                         <td>
                             <select class="form-control" v-model="criterionSelected" v-on:change="getCriterion">
+                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione un Criterio</option>
                                 <option v-for="criterion in listCriterionSelect" v-bind:value="criterion.id">
                                     {{ criterion.name }}
                                 </option>
@@ -78,6 +80,7 @@
                     <tr>
                         <td>
                             <select class="form-control" v-model="variableCreateSelected" v-on:change="changeCreateCriterionSelected">
+                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione una Variable</option>
                                 <option v-for="variable in variables" v-bind:value="variable.id">
                                     {{ variable.name }}
                                 </option>
@@ -129,10 +132,10 @@
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
-                >Cancel</button>
+                >Cancelar</button>
                 <button class="btn btn-raised btn-primary btn-inline ink-reaction"
                         @click="clickButtonNext"
-                >Next</button>
+                >Siguiente</button>
             </div>
         </div>
     </div>

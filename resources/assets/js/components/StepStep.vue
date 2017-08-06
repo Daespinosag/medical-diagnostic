@@ -1,5 +1,24 @@
 <template>
     <div>
+        <div>
+            <div class="col-lg-4 ">
+                <div class="col-log-10 col-lg-offset-1 text-center"  v-bind:class="{'style-primary' : stepOne,'style-default': !stepOne}" >
+                    <p>Paso Uno: <strong>Elección Diagnóstico</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-4  text-center" >
+                <div class="col-log-10 col-lg-offset-1 text-center"  v-bind:class="{'style-primary' : stepTwo, 'style-default': !stepTwo}" >
+                    <p>Paso Dos: <strong>Elección de Criterios</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="col-log-10 col-lg-offset-1 text-center"   v-bind:class="{'style-primary' : stepTree,'style-default': !stepTree}" >
+                    <p>Paso Tres: <strong>Crear Fórmula</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
         <div class="col-md-12">
             <component
                     :is="activeComponent"
@@ -9,7 +28,6 @@
                     @clickButtonCancel="clickButtonCancel"
                     @clickButtonNext="clickButtonNext"
             >
-                <h1 v-show="stepTwo" slot="title">step title in pattern</h1>
 
             </component>
 

@@ -3,63 +3,66 @@
         <div class="col-lg-12">
             <div class="col-md-5">
                 <div class="card">
-                    <div class="card-head card-head-xs style-primary">
-                        <label class="control-label col-md-4">Type Diagnosis</label>
+                    <div class="card-head card-head-xs style-primary text-center">
+                        <label class="control-label card-tiles">Tipo de Diagnóstico</label>
                     </div>
                     <div class="card-body" v-if="!typesDisplayForm">
-                        <div class="form-group col-md-10">
-                            <label class="control-label col-md-4">Type Diagnosis</label>
-                            <select class="form-control col-md-8" v-model="localTypesSelected" v-on:change="loadDiagnosis">
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-12">Tipo de Diagnóstico</label>
+                            <select class="form-control col-md-12" v-model="localTypesSelected" v-on:change="loadDiagnosis">
+                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione el tipo de diagnóstico</option>
                                 <option v-for="typesOption in typesOptions" v-bind:value="typesOption.id">
                                     {{ typesOption.name }}
                                  </option>
                             </select>
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="stateTypeDiagnosis" >New</button>
+                        <div class="col-md-2 col-md-offset-9">
+                            <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="stateTypeDiagnosis" >Nuevo</button>
                         </div>
                     </div>
                     <div class="" v-show="typesDisplayForm">
                         <div class="col-md-12">
                             <section>
-                                <div class="form-group ">
-                                    <label for="name" class="col-md-2 control-label">Name</label>
-                                    <div class="col-md-10">
+                                <div class="form-group floating-label">
+                                    <label for="name" class="col-md-12 control-label">Nombre</label>
+                                    <div class="col-md-12">
                                         <input class="form-control" required="" name="name" type="text" id="name" v-model="typeDiagnosisName"><div class="form-control-line"></div>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="description" class="col-md-2 control-label">Description</label>
-                                    <div class="col-md-10">
-                                        <textarea class="form-control" required="" name="description" cols="15" rows="10" id="description" v-model="typeDiagnosisDescription"></textarea><div class="form-control-line"></div>
+                                    <label for="description" class="col-md-12 control-label">Descripción</label>
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" required="" name="description" cols="20" rows="10" id="description" v-model="typeDiagnosisDescription"></textarea><div class="form-control-line"></div>
                                     </div>
                                 </div>
                             </section>
-                            <div class="card-actionbar-row">
-                                <a class="btn btn-raised btn-default btn-inline ink-reaction" v-on:click="stateTypeDiagnosis">Cancel</a>
-                                <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="saveTypeDiagnosis">Save</button>
-                            </div>
+                        </div>
+                        <div class="card-actionbar-row col-md-10 col-md-offset-1">
+                            <a class="btn btn-raised btn-default btn-inline ink-reaction pull-left" v-on:click="stateTypeDiagnosis">Cancelar</a>
+                            <button class="btn btn-raised btn-primary btn-inline ink-reaction pull-right" v-on:click="saveTypeDiagnosis">Guardar</button>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div class="col-md-5 col-md-offset-1">
                 <div class="card">
-                    <div class="card-head card-head-xs style-primary">
-                        <label class="control-label col-md-4">Diagnosis</label>
+                    <div class="card-head card-head-xs style-primary text-center">
+                        <label class="control-label col-md-4">Diagnóstico</label>
                     </div>
                     <div class="card-body" v-if="!diagnosisDisplayForm">
-                        <div class="form-group col-md-10">
-                            <label class="control-label col-md-4">Diagnosis</label>
-                            <select class="form-control col-md-8" v-model="localDiagnosisSelected" v-on:change="changeDiagnosis">
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-12">Diagnóstico</label>
+                            <select class="form-control col-md-12" v-model="localDiagnosisSelected" v-on:change="changeDiagnosis">
+                                <option selected="selected" disabled="disabled" hidden="hidden" value="null">Seleccione el diagnóstico</option>
                                 <option v-for="diagnosisOption in diagnosisOptions" v-bind:value="diagnosisOption.id">
                                     {{ diagnosisOption.name }}
                                  </option>
                             </select>
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="stateDiagnosis" v-show="buttonDiagnosisDisplay">New</button>
+                        <div class="col-md-2 col-md-offset-9">
+                            <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="stateDiagnosis" v-show="buttonDiagnosisDisplay">Nuevo</button>
                         </div>
                     </div>
 
@@ -67,21 +70,23 @@
                         <div class="col-md-12">
                             <section>
                                 <div class="form-group ">
-                                    <label for="name" class="col-md-2 control-label">Name</label>
-                                    <div class="col-md-10">
+                                    <label for="name" class="col-md-12 control-label">Nombre</label>
+                                    <div class="col-md-12">
                                         <input class="form-control" required="" name="name" type="text"  v-model="diagnosisName"><div class="form-control-line"></div>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="description" class="col-md-2 control-label">Description</label>
-                                    <div class="col-md-10">
-                                        <textarea class="form-control" required="" name="description" cols="15" rows="10"  v-model="diagnosisDescription"></textarea><div class="form-control-line"></div>
+                                    <label for="description" class="col-md-12 control-label">Descripción</label>
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" required="" name="description" cols="20" rows="10"  v-model="diagnosisDescription"></textarea><div class="form-control-line"></div>
                                     </div>
                                 </div>
                             </section>
-                            <div class="card-actionbar-row">
-                                <a class="btn btn-raised btn-default btn-inline ink-reaction" v-on:click="stateDiagnosis">Cancel</a>
-                                <button class="btn btn-raised btn-primary btn-inline ink-reaction" v-on:click="saveDiagnosis">Save</button>
+                        </div>
+                        <div class="">
+                            <div class="card-actionbar-row col-md-10 col-md-offset-1">
+                                <a class="btn btn-raised btn-default btn-inline ink-reaction pull-left" v-on:click="stateDiagnosis">Cancelar</a>
+                                <button class="btn btn-raised btn-primary btn-inline ink-reaction pull-right" v-on:click="saveDiagnosis">Guardar</button>
                             </div>
                         </div>
                     </div>
@@ -99,10 +104,10 @@
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
-                >Cancel</button>
+                >Cancelar</button>
                 <button class="btn btn-raised btn-primary btn-inline ink-reaction"
                         @click="clickButtonNext"
-                >Next</button>
+                >Siguiente</button>
             </div>
         </div>
 
@@ -129,7 +134,9 @@
         },
         methods: {
             stateTypeDiagnosis() {
+                this.localTypesSelected = null;
                 this.typesDisplayForm = !this.typesDisplayForm;
+                this.buttonDiagnosisDisplay = false;
             },
             saveTypeDiagnosis(){
                 this.errors = [];
@@ -159,6 +166,7 @@
                     })
             },
             stateDiagnosis(){
+                this.localDiagnosisSelected = null;
                 this.diagnosisDisplayForm = !this.diagnosisDisplayForm;
             },
             saveDiagnosis(){

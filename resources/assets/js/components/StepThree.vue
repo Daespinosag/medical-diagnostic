@@ -55,7 +55,7 @@
 
             <div class="form-group col-md-8">
                 <label class="form-group">Respuesta</label>
-                <input type="text" class="form-control" v-model="response">
+                <input type="text" class="form-control" v-model="response" placeholder="Inserte Una Respuesta">
             </div>
         </div>
 
@@ -70,10 +70,10 @@
             <div class="card-actionbar-row">
                 <button class="btn btn-raised btn-default btn-inline ink-reaction pull-left"
                         @click="clickButtonCancel"
-                >Cancel</button>
+                >Cancelar</button>
                 <button class="btn btn-raised btn-primary btn-inline ink-reaction"
                         @click="clickButtonNext"
-                >Next</button>
+                >Finalizar</button>
             </div>
         </div>
 
