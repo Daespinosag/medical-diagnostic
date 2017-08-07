@@ -6,7 +6,7 @@
     <div class="col-md-4">
         <div class="card">
                 <div class="card-head card-bordered style-primary">
-                    <header><i class="fa fa-fw fa-tag"></i>Patient Variable</header>
+                    <header><i class="fa fa-fw fa-tag"></i>{{ trans('global.variable.title.show') }}</header>
                 </div>
             <div class="card-body">
                 <div class="">
@@ -17,16 +17,16 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <b>Json Name</b>
+                        <b>{{ trans('validation.attributes.json_name') }}</b>
                         <p class="pull-right">{{ $variable->json_name }}</p>
                     </li>
 
                     <li class="list-group-item">
-                        <b>Calculated</b>
+                        <b>{{ trans('validation.attributes.calculated') }}</b>
                         <p class="pull-right">{{ $variable->calculated }}</p>
                     </li>
                     <li class="list-group-item">
-                        <b>Calculation Operation</b>
+                        <b>{{ trans('validation.attributes.calculation_operation') }}</b>
                         <p class="pull-right">{{ $variable->calculation_operation }}</p>
                     </li>
                     <li class="list-group-item">
@@ -36,8 +36,8 @@
 
                 </ul>
                 <div class="card-actionbar-row">
-                    <a href="{{ route('admin.variable.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">Return</a>
-                    <a href="{{ route('admin.variable.edit',$variable->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">Edit</a>
+                    <a href="{{ route('admin.variable.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">{{ trans('global.buttons.return') }}</a>
+                    <a href="{{ route('admin.variable.edit',$variable->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.edit') }}</a>
                 </div>
             </div>
         </div>

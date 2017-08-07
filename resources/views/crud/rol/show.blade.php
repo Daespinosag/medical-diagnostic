@@ -5,7 +5,7 @@
     <div class="col-lg-8 col-lg-offset-2">
             <div class="card">
                 <div class="card-head card-head-sm style-primary">
-                    <header>Show Rol</header>
+                    <header>{{ trans('global.role.title.show') }}</header>
                     <div class="tools">
                         <a class="btn btn-icon-toggle btn-close"><i class="md md-close"></i></a>
                     </div>
@@ -16,7 +16,7 @@
                     <blockquote><small>{{ $rol->description }}</small></blockquote>
                 </div><!--end .card-body -->
                 <div class="card-actionbar-row">
-                        <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-primary btn-inline ink-reaction">Accept</a>
+                        <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.accept') }}</a>
                 </div>
             </div>
     </div>

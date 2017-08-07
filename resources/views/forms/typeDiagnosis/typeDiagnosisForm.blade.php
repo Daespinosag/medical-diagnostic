@@ -2,7 +2,7 @@
 <section>
     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
 
-        {!! Form::label('name','Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
+        {!! Form::label('name',trans('validation.attributes.name'),['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
 
         <div class="col-md-6">
             {!! Form::text('name', null ,['class' => 'form-control','required']) !!}
@@ -17,7 +17,7 @@
 
     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
 
-        {!! Form::label('description','Description',['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
+        {!! Form::label('description',trans('validation.attributes.description'),['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
 
         <div class="col-md-6">
             {!! Form::textarea('description', null ,['class' => 'form-control','required']) !!}

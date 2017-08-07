@@ -3,7 +3,7 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">Edit User</header>
+        <header class="text-primary-dark">{{ trans('global.users.title.edit') }}</header>
     </div>
 @endsection
 
@@ -16,8 +16,8 @@
         @include('forms.user.userForm',['method'=> 'update','actualityRoles'=> $user->roles->pluck('id')->toArray()])
 
             <div class="card-actionbar-row">
-                <a href="{{ route('admin.user.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
-                <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">Save</button>
+                <a href="{{ route('admin.user.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">{{ trans('global.buttons.cancel') }}</a>
+                <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.save') }}</button>
             </div>
 
         {!! Form::close() !!}

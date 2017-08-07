@@ -1,7 +1,7 @@
 
 <section>
     <div class="form-group{{ $errors->has('level_id') ? ' has-error' : '' }}">
-        {!! Form::label('level_id','Level',['class' => 'col-md-4 control-label', 'for' =>'level']) !!}
+        {!! Form::label('level_id',trans('validation.attributes.level'),['class' => 'col-md-4 control-label', 'for' =>'level']) !!}
 
         <div class="col-md-6">
             {{ Form::select('level_id',$levels,' ',['placeholder' => 'selected level','class' => 'form-control']) }}
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="form-group{{ $errors->has('patient_id') ? ' has-error' : '' }}">
-        {!! Form::label('patient_id','Patient',['class' => 'col-md-4 control-label', 'for' =>'patient']) !!}
+        {!! Form::label('patient_id',trans('validation.attributes.patient'),['class' => 'col-md-4 control-label', 'for' =>'patient']) !!}
 
         <div class="col-md-6">
             {{ Form::select('patient_id',$patients,' ',['placeholder' => 'selected variable','class' => 'form-control']) }}
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group {{ $errors->has('diagnosis_date') ? ' has-error' : '' }}">
 
-        {!! Form::label('diagnosis_date','Diagnosis Date',['class' => 'col-md-4 control-label', 'for' =>'Diagnosis date']) !!}
+        {!! Form::label('diagnosis_date',trans('validation.attributes.diagnosis_date'),['class' => 'col-md-4 control-label', 'for' =>'Diagnosis date']) !!}
 
         <div class="col-md-6">
             {!! Form::date('diagnosis_date', null ,['class' => 'form-control','required']) !!}

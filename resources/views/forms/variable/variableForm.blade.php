@@ -2,7 +2,7 @@
 <section>
     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
 
-        {!! Form::label('name','Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
+        {!! Form::label('name',trans('validation.attributes.name'),['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
 
         <div class="col-md-6">
             {!! Form::text('name', null ,['class' => 'form-control','required']) !!}
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group {{ $errors->has('json_name') ? ' has-error' : '' }}">
 
-        {!! Form::label('json_name','Json Name',['class' => 'col-md-4 control-label', 'for' =>'json_name']) !!}
+        {!! Form::label('json_name',trans('validation.attributes.json_name'),['class' => 'col-md-4 control-label', 'for' =>'json_name']) !!}
 
         <div class="col-md-6">
             {!! Form::text('json_name', null ,['class' => 'form-control','required']) !!}
@@ -30,11 +30,11 @@
     </div>
 
     <div class="form-group{{ $errors->has('calculated') ? ' has-error' : '' }}">
-        {!! Form::label('calculated','Calculated',['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
+        {!! Form::label('calculated',trans('validation.attributes.calculated'),['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
 
         <div class="col-md-6">
             <label class="radio-inline radio-styled">
-                {{ Form::radio('calculated', true, true) }}<span>Yes</span>
+                {{ Form::radio('calculated', true, true) }}<span>Si</span>
             </label>
             <label class="radio-inline radio-styled">
                 {{ Form::radio('calculated', false, true,['chequent' => '']) }}<span>No</span>
@@ -49,7 +49,7 @@
 
     <div class="form-group {{ $errors->has('calculation_operation') ? ' has-error' : '' }}">
 
-        {!! Form::label('calculation_operation','Calculation Operation',['class' => 'col-md-4 control-label', 'for' =>'calculation_operation']) !!}
+        {!! Form::label('calculation_operation',trans('validation.attributes.calculation_operation'),['class' => 'col-md-4 control-label', 'for' =>'calculation_operation']) !!}
 
         <div class="col-md-6">
             {!! Form::text('calculation_operation', null ,['class' => 'form-control','required']) !!}
@@ -64,7 +64,7 @@
 
     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
 
-        {!! Form::label('description','Description',['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
+        {!! Form::label('description',trans('validation.attributes.description'),['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
 
         <div class="col-md-6">
             {!! Form::textarea('description', null ,['class' => 'form-control','required']) !!}

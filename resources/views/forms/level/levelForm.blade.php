@@ -2,10 +2,10 @@
 <section>
     <div class="form-group {{ $errors->has('diagnosis_id') ? ' has-error' : '' }}">
 
-        {!! Form::label('diagnosis_id','Diagnosis',['class' => 'col-md-4 control-label', 'for' =>'Diagnosis']) !!}
+        {!! Form::label('diagnosis_id',trans('validation.attributes.diagnosis'),['class' => 'col-md-4 control-label', 'for' =>'Diagnosis']) !!}
 
         <div class="col-md-6">
-            {!! Form::select('diagnosis_id',$diagnosis , null ,['class' => 'form-control','required','placeholder' => 'select diagnosis']) !!}
+            {!! Form::select('diagnosis_id',$diagnosis , null ,['class' => 'form-control','required','placeholder' => 'Seleccione Un Diagnóstico']) !!}
 
             @if ($errors->has('diagnosis_id'))
                 <span class="help-block">
@@ -16,14 +16,17 @@
     </div>
 
     <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-        {!! Form::label('gender','Gender',['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
+        {!! Form::label('gender',trans('validation.attributes.gender'),['class' => 'col-md-4 control-label', 'for' =>'gender']) !!}
 
         <div class="col-md-6">
             <label class="radio-inline radio-styled">
-                {{ Form::radio('gender', 'M', true) }}<span>Male</span>
+                {{ Form::radio('gender', 'M', true) }}<span>Hombre</span>
             </label>
             <label class="radio-inline radio-styled">
-                {{ Form::radio('gender', 'F', true,['chequent' => '']) }}<span>Female</span>
+                {{ Form::radio('gender', 'F', true,['chequent' => '']) }}<span>Mujer</span>
+            </label>
+            <label class="radio-inline radio-styled">
+                {{ Form::radio('gender', 'ALL', true,['chequent' => '']) }}<span>Unisex</span>
             </label>
             @if ($errors->has('gender'))
                 <span class="help-block">
@@ -35,7 +38,7 @@
 
     <div class="form-group {{ $errors->has('formula') ? ' has-error' : '' }}">
 
-        {!! Form::label('formula','Formula',['class' => 'col-md-4 control-label', 'for' =>'Formula']) !!}
+        {!! Form::label('formula',trans('validation.attributes.formula'),['class' => 'col-md-4 control-label', 'for' =>'Formula']) !!}
 
         <div class="col-md-6">
             {!! Form::text('formula', null ,['class' => 'form-control','required']) !!}
@@ -50,7 +53,7 @@
 
     <div class="form-group {{ $errors->has('response') ? ' has-error' : '' }}">
 
-        {!! Form::label('response','Response',['class' => 'col-md-4 control-label', 'for' =>'response']) !!}
+        {!! Form::label('response',trans('validation.attributes.response'),['class' => 'col-md-4 control-label', 'for' =>'response']) !!}
 
         <div class="col-md-6">
             {!! Form::text('response', null ,['class' => 'form-control','required']) !!}

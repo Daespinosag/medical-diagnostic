@@ -2,10 +2,10 @@
 <section>
     <div class="form-group {{ $errors->has('type_diagnosis_id') ? ' has-error' : '' }}">
 
-        {!! Form::label('type_diagnosis_id','Type Diagnosis',['class' => 'col-md-4 control-label', 'for' =>'Type Diagnosis']) !!}
+        {!! Form::label('type_diagnosis_id',trans('validation.attributes.type_diagnosis'),['class' => 'col-md-4 control-label', 'for' =>'Type Diagnosis']) !!}
 
         <div class="col-md-6">
-            {!! Form::select('type_diagnosis_id',$typesDiagnostics , null ,['class' => 'form-control','required','placeholder' => 'select type diagnosis']) !!}
+            {!! Form::select('type_diagnosis_id',$typesDiagnostics , null ,['class' => 'form-control','required','placeholder' => 'Seleccione un tipo de diagnóstico']) !!}
 
             @if ($errors->has('type_diagnosis_id'))
                 <span class="help-block">
@@ -17,7 +17,7 @@
 
     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
 
-        {!! Form::label('name','Name',['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
+        {!! Form::label('name',trans('validation.attributes.name'),['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
 
         <div class="col-md-6">
             {!! Form::text('name', null ,['class' => 'form-control','required']) !!}
@@ -32,7 +32,7 @@
 
     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
 
-        {!! Form::label('description','Description',['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
+        {!! Form::label('description',trans('validation.attributes.description'),['class' => 'col-md-4 control-label', 'for' =>'description']) !!}
 
         <div class="col-md-6">
             {!! Form::textarea('description', null ,['class' => 'form-control','required']) !!}

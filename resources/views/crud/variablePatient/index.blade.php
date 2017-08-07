@@ -3,11 +3,11 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">List Variable Patient</header>
+        <header class="text-primary-dark">{{ trans('global.variable-patient.title.index') }}</header>
 
         <div class="tools">
             <div class="btn-group">
-                <a href="{{ route('admin.variablePatient.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="New Role">New</a>
+                <a href="{{ route('admin.variablePatient.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nueva Variable de Paciente">{{ trans('global.buttons.new') }}</a>
             </div>
         </div>
     </div>
@@ -20,12 +20,12 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>patient</td>
-                    <td>variable</td>
-                    <td>User</td>
-                    <td>Value</td>
-                    <td>Completed Date</td>
-                    <td>Actions</td>
+                    <td>{{ trans('validation.attributes.patient') }}</td>
+                    <td>{{ trans('validation.attributes.variable') }}</td>
+                    <td>{{ trans('validation.attributes.user') }}</td>
+                    <td>{{ trans('validation.attributes.value') }}</td>
+                    <td>{{ trans('validation.attributes.completed_date') }}</td>
+                    <td>{{ trans('global.buttons.actions') }}</td>
                 </tr>
             </thead>
             <tbody class="">
@@ -39,9 +39,9 @@
                         <td>{{$variablePatient->completed_date}}</td>
                         <td>
                             {{ Form::open(['route'=> ['admin.variablePatient.destroy', $variablePatient->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
-                                <a href="{{ route('admin.variablePatient.show',$variablePatient->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Show {{$variablePatient->id}}"><i class="fa fa-eye"></i></a>
-                                <a href="{{ route('admin.variablePatient.edit',$variablePatient->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Edit {{$variablePatient->id}}"><i class="fa fa-pencil"></i></a>
-                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Delete {{$variablePatient->id}}"><i class="fa fa-trash-o"></i></button>
+                                <a href="{{ route('admin.variablePatient.show',$variablePatient->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Ver {{$variablePatient->id}}"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.variablePatient.edit',$variablePatient->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Editar {{$variablePatient->id}}"><i class="fa fa-pencil"></i></a>
+                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Eliminar {{$variablePatient->id}}"><i class="fa fa-trash-o"></i></button>
                             {!! Form::close() !!}
                         </td>
                     </tr>

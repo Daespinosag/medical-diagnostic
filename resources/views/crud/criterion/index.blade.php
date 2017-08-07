@@ -3,11 +3,11 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">List Criterion</header>
+        <header class="text-primary-dark">{{ trans('global.criterion.title.index') }}</header>
 
         <div class="tools">
             <div class="btn-group">
-                <a href="{{ route('admin.criterion.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="New Criterion">New</a>
+                <a href="{{ route('admin.criterion.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nuevo Criterio">{{ trans('global.buttons.new') }}</a>
             </div>
         </div>
     </div>
@@ -20,14 +20,14 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Variable</td>
-                    <td>Name</td>
-                    <td>Formula</td>
-                    <td>Value One</td>
-                    <td>Value Two</td>
-                    <td>Comparison Operator</td>
-                    <td>Unit</td>
-                    <td>Actions</td>
+                    <td>{{ trans('validation.attributes.variable') }}</td>
+                    <td>{{ trans('validation.attributes.name') }}</td>
+                    <td>{{ trans('validation.attributes.formula') }}</td>
+                    <td>{{ trans('validation.attributes.value_one') }}</td>
+                    <td>{{ trans('validation.attributes.value_two') }}</td>
+                    <td>{{ trans('validation.attributes.comparision_operator') }}</td>
+                    <td>{{ trans('validation.attributes.unit') }}</td>
+                    <td>{{ trans('global.buttons.actions') }}</td>
                 </tr>
             </thead>
             <tbody class="">
@@ -43,9 +43,9 @@
                         <td>{{$criterion->unit}}</td>
                         <td>
                             {{ Form::open(['route'=> ['admin.criterion.destroy', $criterion->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
-                                <a href="{{ route('admin.criterion.show',$criterion->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Show {{$criterion->id}}"><i class="fa fa-eye"></i></a>
-                                <a href="{{ route('admin.criterion.edit',$criterion->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Edit {{$criterion->id}}"><i class="fa fa-pencil"></i></a>
-                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Delete {{$criterion->id}}"><i class="fa fa-trash-o"></i></button>
+                                <a href="{{ route('admin.criterion.show',$criterion->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Ver {{$criterion->id}}"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.criterion.edit',$criterion->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Editar {{$criterion->id}}"><i class="fa fa-pencil"></i></a>
+                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Eliminar {{$criterion->id}}"><i class="fa fa-trash-o"></i></button>
                             {!! Form::close() !!}
                         </td>
                     </tr>

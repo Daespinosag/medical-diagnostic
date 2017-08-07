@@ -17,16 +17,16 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <b>Username</b>
+                        <b>{{ trans('validation.attributes.user-name') }}</b>
                         <p class="pull-right">{{ $user->username }}</p>
                     </li>
 
                     <li class="list-group-item">
-                        <b class="">Gender</b>
+                        <b class="">{{ trans('validation.attributes.gender') }}</b>
                         <p class="pull-right">@if($user->gender == 'M') Male @else($user->gender == 'F') Female @endif </p>
                     </li>
                     <li class="list-group-item">
-                        <b>Identification Card</b>
+                        <b>{{ trans('validation.attributes.identification-card') }}</b>
                         <p class="pull-right">{{ $user->identification_card }}</p>
                     </li>
                     <li class="list-group-item">
@@ -35,8 +35,8 @@
 
                 </ul>
                 <div class="card-actionbar-row">
-                    <a href="{{ route('admin.user.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">Return</a>
-                    <a href="{{ route('admin.user.edit',$user->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">Edit</a>
+                    <a href="{{ route('admin.user.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">{{ trans('global.buttons.return') }}</a>
+                    <a href="{{ route('admin.user.edit',$user->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.edit') }}</a>
                 </div>
             </div>
         </div>

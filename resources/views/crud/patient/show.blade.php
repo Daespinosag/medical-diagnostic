@@ -6,7 +6,7 @@
     <div class="col-md-4">
         <div class="card">
                 <div class="card-head card-bordered style-primary">
-                    <header><i class="fa fa-fw fa-tag"></i>Patient Profile</header>
+                    <header><i class="fa fa-fw fa-tag"></i>{{ trans('global.patients.title.show') }}</header>
                 </div>
             <div class="card-body">
                 <div class="">
@@ -17,27 +17,27 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <b>Email</b>
+                        <b>{{trans('validation.attributes.email')}}</b>
                         <p class="pull-right">{{ $patient->email }}</p>
                     </li>
 
                     <li class="list-group-item">
-                        <b>Identification Card</b>
+                        <b>{{trans('validation.attributes.identification-card')}}</b>
                         <p class="pull-right">{{ $patient->identification_card }}</p>
                     </li>
                     <li class="list-group-item">
-                        <b class="">Gender</b>
-                        <p class="pull-right">@if($patient->gender == 'M') Male @else($patient->gender == 'F') Female @endif </p>
+                        <b class="">{{trans('validation.attributes.gender')}}</b>
+                        <p class="pull-right">@if($patient->gender == 'M') Hombre @else($patient->gender == 'F') Mujer @endif </p>
                     </li>
                     <li class="list-group-item">
-                        <b>Update</b>
+                        <b>Actualización</b>
                         <p class="pull-right">{{ $patient->updated_at }}</p>
                     </li>
 
                 </ul>
                 <div class="card-actionbar-row">
-                    <a href="{{ route('admin.patient.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">Return</a>
-                    <a href="{{ route('admin.patient.edit',$patient->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">Edit</a>
+                    <a href="{{ route('admin.patient.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction pull-left">{{ trans('global.buttons.return') }}</a>
+                    <a href="{{ route('admin.patient.edit',$patient->id) }}" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.edit') }}</a>
                 </div>
             </div>
         </div>
