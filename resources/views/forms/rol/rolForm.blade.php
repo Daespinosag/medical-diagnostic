@@ -1,5 +1,20 @@
 
 <section>
+    <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
+
+        {!! Form::label('type',trans('validation.attributes.type'),['class' => 'col-md-4 control-label', 'for' =>'Type Rol']) !!}
+
+        <div class="col-md-6">
+            {!! Form::select('type',['root'=>'Root','admin'=>'Administrador','invited'=>'Invitado',] , null ,['class' => 'form-control','required','placeholder' => 'Seleccione un tipo de rol']) !!}
+
+            @if ($errors->has('type'))
+                <span class="help-block">
+                <strong>{{ $errors->first('type') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
 
         {!! Form::label('name',trans('validation.attributes.key-name'),['class' => 'col-md-4 control-label', 'for' =>'name']) !!}
@@ -46,10 +61,10 @@
     </div>
 
     <div class="form-group{{ $errors->has('permission_role') ? ' has-error' : '' }}">
-        {!! Form::label('permission_role',trans('validation.attributes.permission'),['class' => 'col-md-4 control-label', 'for' =>'permission_role']) !!}
+        {!! Form::label('permission_role',trans('validation.attributes.permission'),['class' => 'col-md-4 control-label', 'for' =>'permission_role' ] ) !!}
 
-        <div class="form-control">
-            {{ Form::select('permission_role',$permission,$actualityPermission,['multiple' => 'multiple','name'=>'permission_role[]','placeholder' => 'selected permissions','class' => '']) }}
+        <div class="col-md-6">
+            {{ Form::select('permission_role',$permission,$actualityPermission,['multiple' => 'multiple','name'=>'permission_role[]','placeholder' => 'selected permissions','class' => 'form-control']) }}
             @if ($errors->has('permission_role'))
                 <span class="help-block">
                       <strong>{{ $errors->first('permission_role') }}</strong>

@@ -37,14 +37,16 @@
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->
             <!-- END GROUP INFORMATION -->
-
+        @if(! Auth::guest())
             <!-- BEGIN EMAIL -->
+            @if( Auth::user()->role->type != 'invited')
             <li class="gui-folder">
                 <a>
                     <div class="gui-icon"><i class="md md-vpn-key"></i></div>
                     <span class="title">Administrador</span>
                 </a>
                 <!--start submenu -->
+
                 <ul>
                     <li><a href="{{ route('admin.rol.index') }}" ><span class="title">Rol</span></a></li>
                     <li><a href="{{ route('admin.permission.index') }}" ><span class="title">Permisos</span></a></li>
@@ -60,6 +62,8 @@
 
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->
+            @endif
+        @endif
             <!-- END EMAIL -->
 
             <!-- BEGIN DASHBOARD -->

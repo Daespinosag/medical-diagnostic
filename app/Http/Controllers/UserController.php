@@ -39,8 +39,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $user = User::create($request->all());
-        $user->roles()->sync($request->all()['roles']);
+        User::create($request->all());
         return redirect()->route('admin.user.index');
     }
 
@@ -81,7 +80,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->fill($request->all());
         $user->save();
-        $user->roles()->sync($request->all()['roles']);
         return redirect()->route('admin.user.index');
     }
 
@@ -93,8 +91,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        $user->roles()->detach();
         User::destroy($id);
         return redirect()->route('admin.user.index');
     }

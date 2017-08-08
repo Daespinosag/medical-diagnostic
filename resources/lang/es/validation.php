@@ -178,7 +178,8 @@ return [
         'value'                 =>  'Valor',
         'completed_date'        =>  'fecha de completado',
         'professional'          =>  'prefesional',
-        'diagnosis_date'        =>  'Fecha de Diagnóstico'
+        'diagnosis_date'        =>  'Fecha de Diagnóstico',
+        'type'                  =>  'Tipo',
 
     ],
 

@@ -26,6 +26,7 @@ class UserRequest extends FormRequest
     {
         if ($this->route()->getActionMethod() ===  'update'){
             return [
+                'rol_id'                => 'required',
                 'username'              => 'required|min:3|unique:users,username,'.$this->route('user'),
                 'name'                  => 'required',
                 'email'                 => 'required|min:3|unique:users,email,'.$this->route('user'),
@@ -35,6 +36,7 @@ class UserRequest extends FormRequest
             ];
         }
         return [
+            'rol_id'                => 'required',
             'username'              => 'required|min:3|unique:users',
             'name'                  => 'required',
             'email'                 => 'required|min:3|unique:users',

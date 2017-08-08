@@ -92,6 +92,20 @@
             @endif
         </div>
     </div>
+
+    <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
+        {!! Form::label('roles',trans('validation.attributes.roles'),['class' => 'col-md-4 control-label', 'for' =>'roles']) !!}
+
+        <div class="col-md-6">
+            {{ Form::select('roles',$roles,$actualityRoles,['name'=>'roles','placeholder' => 'seleccione el rol','class' => 'form-control']) }}
+            @if ($errors->has('roles'))
+                <span class="help-block">
+                      <strong>{{ $errors->first('roles') }}</strong>
+                 </span>
+            @endif
+        </div>
+    </div>
+
     @if($method === 'create')
 
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -117,18 +131,6 @@
 
     @endif
 
-    <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
-        {!! Form::label('roles',trans('validation.attributes.roles'),['class' => 'col-md-4 control-label', 'for' =>'roles']) !!}
-
-        <div class="form-control">
-            {{ Form::select('roles',$roles,$actualityRoles,['multiple' => 'multiple','name'=>'roles[]','placeholder' => 'selected roles','class' => '']) }}
-            @if ($errors->has('roles'))
-                <span class="help-block">
-                      <strong>{{ $errors->first('roles') }}</strong>
-                 </span>
-            @endif
-        </div>
-    </div>
 
 </section>
 

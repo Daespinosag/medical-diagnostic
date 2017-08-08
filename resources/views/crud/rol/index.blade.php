@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <td>Id</td>
+                    <td>{{ trans('validation.attributes.type') }}</td>
                     <td>{{ trans('validation.attributes.name') }}</td>
                     <td>{{ trans('validation.attributes.description') }}</td>
                     <td>{{ trans('global.buttons.actions') }}</td>
@@ -29,6 +30,7 @@
                 @foreach($role as $rol)
                     <tr class="">
                         <td>{{$rol->id}}</td>
+                        <td>{{$rol->type }}</td>
                         <td>{{$rol->name }}</td>
                         <td>{{$rol->description}}</td>
                         <td>

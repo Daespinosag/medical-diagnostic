@@ -7,7 +7,7 @@
 
         <div class="tools">
             <div class="btn-group">
-                <a href="{{ route('admin.level.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nuevo nivel">{{ trans('global.buttons.new') }}</a>
+                <a href="{{ url('admin\processLevel') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nuevo nivel">{{ trans('global.buttons.new') }}</a>
             </div>
         </div>
     </div>
