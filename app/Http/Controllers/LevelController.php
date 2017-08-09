@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Criterion;
 use App\Entities\Diagnosis;
 use Illuminate\Http\Request;
 use App\Entities\Level;
@@ -65,9 +66,11 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        $level = Level::with('diagnosis')->findOrFail($id);
+        $level = Level::with('diagnosis','variables')->findOrFail($id);
         $diagnosis = Diagnosis::orderby('name','ASC')->pluck('name','id')->toArray();
-        return view('crud.level.edit',compact('level'),compact('diagnosis'));
+        $criterionList = (object)Criterion::where('level_id', $id)->get()->toArray();
+        $level = (object)$level->toArray();
+        return view('crud.level.edit',compact('level'),compact('criterionList'));
     }
 
     /**

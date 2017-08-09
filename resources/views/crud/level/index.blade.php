@@ -38,8 +38,10 @@
                         <td>{{$level->response}}</td>
                         @if($level->gender == 'F')
                             <td><img src="{{ asset('assets/img/female-gender-symbol.png') }}" alt=""></td>
-                        @else
+                        @elseif($level->gender == 'M')
                             <td><img src="{{ asset('assets/img/male-gender-symbol.png') }}" alt=""></td>
+                        @else
+                            <td><img src="{{ asset('assets/img/unisex-symbol.png') }}" alt=""></td>
                         @endif
                         <td>
                             {{ Form::open(['route'=> ['admin.level.destroy', $level->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
