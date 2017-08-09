@@ -93,6 +93,9 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
+        $level = Level::findOrFail($id);
+        $level->variables()->detach();
+        $level->patients()->detach();
         Level::destroy($id);
         return redirect()->route('admin.level.index');
     }

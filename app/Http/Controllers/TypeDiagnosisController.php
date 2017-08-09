@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Diagnosis;
+use App\Entities\Level;
 use Illuminate\Http\Request;
 use App\Entities\TypeDiagnosis;
 use App\Http\Requests\TypeDiagnosisRequest;
@@ -89,7 +91,17 @@ class TypeDiagnosisController extends Controller
      */
     public function destroy($id)
     {
+        $typeDiagnosis = TypeDiagnosis::findOrFail($id);
+
+        foreach ($typeDiagnosis->diagnostics as $diagnosis) {
+            foreach ($diagnosis->levels as $level){
+                $level->variables()->detach();
+                Level::destroy($level->id);
+            }
+            Diagnosis::destroy($diagnosis->id);
+        }
         TypeDiagnosis::destroy($id);
+
         return redirect()->route('admin.typeDiagnosis.index');
     }
 }

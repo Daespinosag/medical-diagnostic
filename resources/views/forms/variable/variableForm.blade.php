@@ -34,10 +34,10 @@
 
         <div class="col-md-6">
             <label class="radio-inline radio-styled">
-                {{ Form::radio('calculated', true, true) }}<span>Si</span>
+                {{ Form::radio('calculated', 1, true) }}<span>Si</span>
             </label>
             <label class="radio-inline radio-styled">
-                {{ Form::radio('calculated', false, true,['chequent' => '']) }}<span>No</span>
+                {{ Form::radio('calculated', 0, true,['chequent' => '']) }}<span>No</span>
             </label>
             @if ($errors->has('gender'))
                 <span class="help-block">

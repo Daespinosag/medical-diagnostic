@@ -6,7 +6,7 @@
 
         <div class="tools">
             <div class="btn-group">
-                <a href="{{ route('admin.typeDiagnosis.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="New Role">{{ trans('global.buttons.new') }}</a>
+                <a href="{{ route('admin.typeDiagnosis.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nuevo tipo de diagnóstico">{{ trans('global.buttons.new') }}</a>
             </div>
         </div>
     </div>

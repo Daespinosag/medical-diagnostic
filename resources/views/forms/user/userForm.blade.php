@@ -80,7 +80,7 @@
 
         <div class="col-md-6">
             <label class="radio-inline radio-styled">
-                {{ Form::radio('gender', 'M', true) }}<span>Hombre</span>
+                {{ Form::radio('gender', 'M', true,['chequent' => '']) }}<span>Hombre</span>
             </label>
             <label class="radio-inline radio-styled">
                 {{ Form::radio('gender', 'F', true,['chequent' => '']) }}<span>Mujer</span>
@@ -93,12 +93,12 @@
         </div>
     </div>
 
-    <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
-        {!! Form::label('roles',trans('validation.attributes.roles'),['class' => 'col-md-4 control-label', 'for' =>'roles']) !!}
+    <div class="form-group{{ $errors->has('rol_id') ? ' has-error' : '' }}">
+        {!! Form::label('rol_id',trans('validation.attributes.roles'),['class' => 'col-md-4 control-label', 'for' =>'rol_id']) !!}
 
         <div class="col-md-6">
-            {{ Form::select('roles',$roles,$actualityRoles,['name'=>'roles','placeholder' => 'seleccione el rol','class' => 'form-control']) }}
-            @if ($errors->has('roles'))
+            {{ Form::select('rol_id',$roles,$actualityRoles,['name'=>'rol_id','placeholder' => 'seleccione el rol','class' => 'form-control']) }}
+            @if ($errors->has('rol_id'))
                 <span class="help-block">
                       <strong>{{ $errors->first('roles') }}</strong>
                  </span>

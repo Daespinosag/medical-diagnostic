@@ -89,6 +89,10 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
+        $patient = Patient::findOrFail($id);
+        $patient->levels()->detach();
+        $patient->users()->detach();
+        $patient->variables()->detach();
         Patient::destroy($id);
         return redirect()->route('admin.patient.index');
     }

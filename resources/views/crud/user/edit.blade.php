@@ -13,7 +13,7 @@
     <div class="col-lg-8 col-lg-offset-2">
         {!! Form::model($user,['route'=> ['admin.user.update',$user],'method'=> 'PUT', 'class'=> 'form-horizontal form-validate floating-label', 'novalidate'=>'novalidate']) !!}
 
-        @include('forms.user.userForm',['method'=> 'update','actualityRoles'=> $user->roles->pluck('id')->toArray()])
+        @include('forms.user.userForm',['method'=> 'update','actualityRoles'=> $user->role->id])
 
             <div class="card-actionbar-row">
                 <a href="{{ route('admin.user.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">{{ trans('global.buttons.cancel') }}</a>

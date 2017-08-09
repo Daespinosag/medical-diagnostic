@@ -89,6 +89,10 @@ class VariableController extends Controller
      */
     public function destroy($id)
     {
+        $variable = Variable::findOrFail($id);
+        $variable->levels()->detach();
+        $variable->patients()->detach();
+        $variable->users()->detach();
         Variable::destroy($id);
         return redirect()->route('admin.variable.index');
     }

@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <td>Id</td>
+                    <td>{{ trans('validation.attributes.rol') }}</td>
                     <td>{{ trans('validation.attributes.name') }}</td>
                     <td>{{ trans('validation.attributes.username') }}</td>
                     <td>{{ trans('validation.attributes.profession') }}</td>
@@ -31,6 +32,7 @@
                 @foreach($users as $user)
                     <tr class="">
                         <td>{{$user->id}}</td>
+                        <td>{{$user->role->name}}</td>
                         <td>{{$user->name }}</td>
                         <td>{{$user->username}}</td>
                         <td>{{$user->profession}}</td>
