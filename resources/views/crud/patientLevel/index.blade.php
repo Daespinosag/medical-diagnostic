@@ -3,11 +3,11 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">List Patient Level</header>
+        <header class="text-primary-dark">{{ trans('global.patient-level.title.index') }}</header>
 
         <div class="tools">
             <div class="btn-group">
-                <a href="{{ route('admin.patientLevel.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="New Criterion">New</a>
+                <a href="{{ route('admin.patientLevel.create') }}" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="tooltip" data-original-title="Nuevo Nivel para Paciente">{{ trans('global.buttons.new') }}</a>
             </div>
         </div>
     </div>
@@ -20,10 +20,10 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Diagnosis</td>
-                    <td>Patient</td>
-                    <td>Diagnosis Date</td>
-                    <td>Actions</td>
+                    <td>{{ trans('validation.attributes.diagnosis') }}</td>
+                    <td>{{ trans('validation.attributes.patient') }}</td>
+                    <td>{{ trans('validation.attributes.diagnosis_date') }}</td>
+                    <td>{{ trans('global.buttons.actions') }}</td>
                 </tr>
             </thead>
             <tbody class="">
@@ -35,9 +35,9 @@
                         <td>{{$patientLevel->diagnosis_date}}</td>
                         <td>
                             {{ Form::open(['route'=> ['admin.patientLevel.destroy', $patientLevel->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
-                                <a href="{{ route('admin.patientLevel.show',$patientLevel->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Show {{$patientLevel->id}}"><i class="fa fa-eye"></i></a>
-                                <a href="{{ route('admin.patientLevel.edit',$patientLevel->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Edit {{$patientLevel->id}}"><i class="fa fa-pencil"></i></a>
-                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Delete {{$patientLevel->id}}"><i class="fa fa-trash-o"></i></button>
+                                <a href="{{ route('admin.patientLevel.show',$patientLevel->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Ver {{$patientLevel->id}}"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.patientLevel.edit',$patientLevel->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Editar {{$patientLevel->id}}"><i class="fa fa-pencil"></i></a>
+                                <button type="submit" class="btn btn-icon-toggle" data-toggle="tooltip" data-original-title="Eliminar {{$patientLevel->id}}"><i class="fa fa-trash-o"></i></button>
                             {!! Form::close() !!}
                         </td>
                     </tr>

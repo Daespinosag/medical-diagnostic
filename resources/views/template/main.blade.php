@@ -21,7 +21,7 @@
 
 			<!-- BEGIN CONTENT-->
 			<div id="content">
-				<section>
+				<section  id="app">
 					<div class="section-header">
 						<ol class="breadcrumb">
 							<li><a href="../../html/.html">home</a></li>

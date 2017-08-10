@@ -17,7 +17,7 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'id','name','display_name' ,'description',
+        'id','type','name','display_name' ,'description',
     ];
 
     /**
@@ -30,11 +30,11 @@ class Role extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function users()
     {
-        return $this->belongsToMany(User::class,'role_user','role_id','user_id');
+        return $this->hasMany(User::class,'rol_id','id');
     }
 
     /**

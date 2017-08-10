@@ -3,7 +3,7 @@
 
 @section('headerCard')
     <div class="card-head">
-        <header class="text-primary-dark">Create Role</header>
+        <header class="text-primary-dark">{{ trans('global.role.title.create') }}</header>
     </div>
 @endsection
 
@@ -16,8 +16,8 @@
             @include('forms.rol.rolForm',['actualityPermission'=> null])
 
             <div class="card-actionbar-row">
-                <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">Cancel</a>
-                <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">Save</button>
+                <a href="{{ route('admin.rol.index') }}" class="btn btn-raised btn-default btn-inline ink-reaction">{{ trans('global.buttons.cancel') }}</a>
+                <button type="submit" class="btn btn-raised btn-primary btn-inline ink-reaction">{{ trans('global.buttons.save') }}</button>
             </div>
 
         {!! Form::close() !!}

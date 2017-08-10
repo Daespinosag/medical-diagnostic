@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username','email','profession','gender','identification_card', 'password',
+        'name', 'rol_id','username','email','profession','gender','identification_card', 'password',
     ];
 
     /**
@@ -32,11 +32,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function roles()
+    public function role()
     {
-        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+        return $this->belongsTo(Role::class,'rol_id');
     }
 
     /**

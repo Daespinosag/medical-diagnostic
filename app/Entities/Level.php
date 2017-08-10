@@ -16,7 +16,7 @@ class Level extends Model
      * @var array
      */
     protected $fillable = [
-        'diagnosis_id','gender', 'formula', 'response',
+        'id','diagnosis_id','name','gender', 'formula', 'response',
     ];
 
     /**
@@ -25,7 +25,7 @@ class Level extends Model
      * @var array
      */
     protected $hidden = [
-
+        'updated_at','created_at'
     ];
 
     /**
@@ -41,7 +41,7 @@ class Level extends Model
     public function variables()
     {
         return $this->belongsToMany(Variable::class,'criterion','level_id','variable_id')
-                    ->withPivot(['value_1','value_2','comparison_operator','unit'])
+                    ->withPivot(['name','value_1','value_2','comparison_operator','unit'])
                     ->withTimestamps();
     }
 

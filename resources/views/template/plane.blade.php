@@ -11,10 +11,10 @@
 
     <!-- BEGIN CONTENT-->
     <div id="content">
-
-        <!-- BEGIN BLANK SECTION -->
-        @yield('content')
-
+        <section id="app">
+            <!-- BEGIN BLANK SECTION -->
+            @yield('content')
+        </section>
     </div><!--end #content-->
 
     <!-- END CONTENT -->

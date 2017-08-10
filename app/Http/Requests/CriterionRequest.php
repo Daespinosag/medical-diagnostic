@@ -26,6 +26,7 @@ class CriterionRequest extends FormRequest
         return [
             'variable_id'           => 'required',
             'level_id'              => 'required',
+            'name'                  =>  '',
             'value_1'               => 'required',
             'value_2'               =>'',
             'comparison_operator'   => 'required',

@@ -29,7 +29,7 @@ class CriterionController extends Controller
      */
     public function create()
     {
-        $levels = Level::orderby('id','ASC')->pluck('formula','id')->toArray();
+        $levels = Level::orderby('id','ASC')->pluck('name','id')->toArray();
         $variables = Variable::orderby('name','ASC')->pluck('name','id')->toArray();
         return view('crud.criterion.create',compact('levels'),compact('variables'));
     }
@@ -42,7 +42,9 @@ class CriterionController extends Controller
      */
     public function store(CriterionRequest $request)
     {
-        Criterion::create($request->all());
+        $criterionCreated = Criterion::create($request->all());
+        $criterionCreated->name = str_replace(' ','-',$criterionCreated->variable->name).'-'.$criterionCreated->id;
+        $criterionCreated->save();
         return redirect()->route('admin.criterion.index');
     }
 

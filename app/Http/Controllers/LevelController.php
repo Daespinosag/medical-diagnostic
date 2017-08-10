@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Criterion;
 use App\Entities\Diagnosis;
 use Illuminate\Http\Request;
 use App\Entities\Level;
@@ -39,7 +40,9 @@ class LevelController extends Controller
      */
     public function store(LevelRequest $request)
     {
-        Level::create($request->all());
+        $levelCreated = Level::create($request->all());
+        $levelCreated->name = str_replace(' ','-',$levelCreated->diagnosis->name).'-'.$levelCreated->id;
+        $levelCreated->save();
         return redirect()->route('admin.level.index');
     }
 
@@ -63,9 +66,11 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        $level = Level::with('diagnosis')->findOrFail($id);
+        $level = Level::with('diagnosis','variables')->findOrFail($id);
         $diagnosis = Diagnosis::orderby('name','ASC')->pluck('name','id')->toArray();
-        return view('crud.level.edit',compact('level'),compact('diagnosis'));
+        $criterionList = (object)Criterion::where('level_id', $id)->get()->toArray();
+        $level = (object)$level->toArray();
+        return view('crud.level.edit',compact('level'),compact('criterionList'));
     }
 
     /**
@@ -91,6 +96,9 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
+        $level = Level::findOrFail($id);
+        $level->variables()->detach();
+        $level->patients()->detach();
         Level::destroy($id);
         return redirect()->route('admin.level.index');
     }

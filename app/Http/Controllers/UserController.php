@@ -39,8 +39,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $user = User::create($request->all());
-        $user->roles()->sync($request->all()['roles']);
+        User::create($request->all());
         return redirect()->route('admin.user.index');
     }
 
@@ -64,7 +63,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::with('roles')->findOrFail($id);
+        $user = User::with('role')->findOrFail($id);
         $roles = Role::orderby('name','ASC')->pluck('name','id')->toArray();
         return view('crud.user.edit',compact('user'),compact('roles'));
     }
@@ -81,7 +80,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->fill($request->all());
         $user->save();
-        $user->roles()->sync($request->all()['roles']);
         return redirect()->route('admin.user.index');
     }
 
@@ -94,7 +92,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        $user->roles()->detach();
+        $user->patients()->detach();
+        $user->variables()->detach();
         User::destroy($id);
         return redirect()->route('admin.user.index');
     }

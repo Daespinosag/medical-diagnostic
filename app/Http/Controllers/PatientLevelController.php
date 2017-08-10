@@ -28,7 +28,7 @@ class PatientLevelController extends Controller
      */
     public function create()
     {
-        $levels = Level::orderby('id','ASC')->pluck('formula','id')->toArray();
+        $levels = Level::orderby('id','ASC')->pluck('name','id')->toArray();
         $patients = Patient::orderby('name','ASC')->pluck('name','id')->toArray();
         return view('crud.patientLevel.create',compact('levels'),compact('patients'));
     }
@@ -66,7 +66,7 @@ class PatientLevelController extends Controller
     public function edit($id)
     {
         $patientLevel = PatientLevel::with(['patient','level'])->findOrFail($id);
-        $levels = Level::orderby('id','ASC')->pluck('formula','id')->toArray();
+        $levels = Level::orderby('id','ASC')->pluck('name','id')->toArray();
         $patients = Patient::orderby('name','ASC')->pluck('name','id')->toArray();
         return view('crud.patientLevel.edit')->with('patientLevel',$patientLevel)->with('levels',$levels)->with('patients',$patients);
     }
