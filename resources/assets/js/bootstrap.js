@@ -20,8 +20,8 @@ try {
  */
 
 window.axios = require('axios').create({
-    baseURL: 'http://medical-diagnostic.app/',
-    baseAPI: 'http://medical-diagnostic.app/api',
+    //baseURL: 'http://127.0.0.1:8000/',
+    //baseAPI: 'http://medical-diagnostic.app/api',
     timeout: false,
     params: {}
 });

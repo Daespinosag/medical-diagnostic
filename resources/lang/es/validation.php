@@ -180,6 +180,7 @@ return [
         'professional'          =>  'prefesional',
         'diagnosis_date'        =>  'Fecha de Diagnóstico',
         'type'                  =>  'Tipo',
+        'rol'                   =>  'Rol'
 
     ],
 

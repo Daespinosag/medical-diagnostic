@@ -115,250 +115,138 @@
                     <h2 class="text-primary">Integrandes del grupo</h2>
                 </div><!--end .col -->
                 <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-head">
-                                <header class="text-sm">José Fernando Gómez Montes - <em class="text-xs">Coordinador del grupo</em></header>
-                            </div><!--end .card-head -->
-                            <div class="card-body text-center">
-                                <img class="member" src="{{ asset('assets/img/IMG_2494_1.JPG') }}"></a>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
-                    </div><!--end .col -->
-                <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-head">
-                                <header>Carmen Lucía Curcio Borrero</header>
-                            </div><!--end .card-head -->
-                            <div class="card-body text-center">
-                                <img class="member" src="{{ asset('assets/img/IMG_2508_1.JPG') }}"></a>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
-                    </div><!--end .col -->
-                <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-head">
-                                <header>Angela Maria Benjumea Salgado</header>
-                            </div><!--end .card-head -->
-                            <div class="card-body text-center">
-                                <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
-                    </div><!--end .col -->
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-body no-padding">
-                            <ul class="list">
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Martha Cecilia Bernal Escobar
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Angela María Botero Botero - <em>Integrante</em>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Eliana Alexandra Cartagena Molina
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Edgar Eduardo Castro Osorio
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Walter Arturo Cañas Trejos
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            José Arnoby Chacón Cardona
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Claudia Lorena Cifuentes Marin
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Ricardo Díaz Cabezas
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Alexandra Giraldo Osorio
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Francisco Alejandro González López
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Germán Mauricio Guevara Farfán
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Luisa Fernanda Gutierrez Alzate
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Jennifer Jaramillo Losada - <em>Integrante</em>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Maria Victoria Jurado Vargas
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Felipe Marulanda Mejía
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Catalina Morales Montero
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Diana Carolina Morales Benavides
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Sandra Lorena Muñoz Herrera
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Jose Mauricio Ocampo Chaparro
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            David Andrés Ocampo Ramírez
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            José Luis Osorio Guzmán
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Eder Peña Quimbaya
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Alejandro Pineda Isaza
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Giovana Marcella Rosas Estrada
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Viviana Rosso Henao
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Francisco Javier Tamayo Giraldo
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Sandra Yaneth Valencia González
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Rodolfo Valencia Sepúlveda
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">
-                                            Álvaro Andrés Álvarez Rincón
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="card-head">
+                            <header class="text-sm">José Fernando Gómez Montes</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2494_1.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Médico - Especialista en Medicina Interna y Geriatría</p>
+                            <p>
+                                Líder <br>
+                                Grupo de investigación Gerontología y Geriatría
+                            </p>
+                            <p>
+                                <strong>Docente</strong><br>
+                                Posgrado: <br>
+                                Especialización en Medicina Interna y Geriatría. <br>
+                                Maestría en Gerontología: Envejecimiento y Vejez. <br><br>
+                                Programa de Pregrado: <br>
+                                Medicina.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Tels: 057 6 8783061 8783064 8783066 ext. 31153<br>
+                                Correo: <a href="mailto:gomez.montes@ucaldas.edu.co" target="_top">gomez.montes@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Carmen Lucía Curcio Borrero</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/clc.jpg') }}"></a>
+                        </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Terapeuta Ocupacional - Ph.D. Gerontology</p>
+                            <p>Coordinadora de la Maestría en Gerontología: Envejecimiento y vejez</p>
+                            <p>
+                                <strong>Docente</strong><br>
+                                Posgrado: <br>
+                                Especialización en Medicina Interna y Geriatría<br>
+                                Maestría en Gerontología: Envejecimiento y Vejez<br><br>
+                                Programa de Pregrado: <br>
+                                Medicina.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Tels: 057 6 8783061 8783064 8783066 ext. 31153<br>
+                                Correo: <a href="mailto:carmen.curcio@ucaldas.edu.co" target="_top">carmen.curcio@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Angela María Benjumea Salgado</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
                         </div><!--end .card-body -->
                     </div><!--end .card -->
                 </div><!--end .col -->
-
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Guadalupe María Henao</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Eder Peña Quimbaya</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Ricardo Díaz Cabezas</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Alejandro Pineda Isaza</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Maria Victoria Jurado Vargas</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <img class="member" src="{{ asset('assets/img/DSC01256.JPG') }}"></a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
             </div>
 
         </div><!--end .section-body -->

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.28 on 2017-07-04.
+ * Generated for Laravel 5.4.32 on 2017-08-10.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -6545,14 +6545,14 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the client user agent.
          *
-         * @return string
-         * @static
-         */
+         * @return string 
+         * @static 
+         */ 
         public static function userAgent()
         {
             return \Illuminate\Http\Request::userAgent();
         }
-
+        
         /**
          * Merge new input into the current request's input array.
          *
@@ -10055,14 +10055,14 @@ namespace Illuminate\Support\Facades {
          * Get the full path for the file at the given "short" path.
          *
          * @param string $path
-         * @return string
-         * @static
-         */
+         * @return string 
+         * @static 
+         */ 
         public static function path($path)
         {
             return \Illuminate\Filesystem\FilesystemAdapter::path($path);
         }
-
+        
         /**
          * Get the contents of a file.
          *
@@ -10264,14 +10264,14 @@ namespace Illuminate\Support\Facades {
          * @param string $path
          * @param \DateTimeInterface $expiration
          * @param array $options
-         * @return string
-         * @static
-         */
+         * @return string 
+         * @static 
+         */ 
         public static function temporaryUrl($path, $expiration, $options = array())
         {
             return \Illuminate\Filesystem\FilesystemAdapter::temporaryUrl($path, $expiration, $options);
         }
-
+        
         /**
          * Get an array of all files in a directory.
          *
@@ -13140,111 +13140,159 @@ namespace Collective\Html {
  
 }
 
-namespace Artisaninweb\SoapWrapper {
+namespace Artisaninweb\SoapWrapper { 
 
     class Facade {
-
+        
         /**
          * Convert the facade into a Mockery spy.
          *
-         * @return void
-         * @static
-         */
+         * @return void 
+         * @static 
+         */ 
         public static function spy()
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             \Artisaninweb\SoapWrapper\Facade::spy();
         }
-
+        
         /**
          * Initiate a mock expectation on the facade.
          *
-         * @return \Mockery\Expectation
-         * @static
-         */
+         * @return \Mockery\Expectation 
+         * @static 
+         */ 
         public static function shouldReceive()
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             return \Artisaninweb\SoapWrapper\Facade::shouldReceive();
         }
-
+        
         /**
          * Hotswap the underlying instance behind the facade.
          *
          * @param mixed $instance
-         * @return void
-         * @static
-         */
+         * @return void 
+         * @static 
+         */ 
         public static function swap($instance)
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             \Artisaninweb\SoapWrapper\Facade::swap($instance);
         }
-
+        
         /**
          * Get the root object behind the facade.
          *
-         * @return mixed
-         * @static
-         */
+         * @return mixed 
+         * @static 
+         */ 
         public static function getFacadeRoot()
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             return \Artisaninweb\SoapWrapper\Facade::getFacadeRoot();
         }
-
+        
         /**
          * Clear a resolved facade instance.
          *
          * @param string $name
-         * @return void
-         * @static
-         */
+         * @return void 
+         * @static 
+         */ 
         public static function clearResolvedInstance($name)
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             \Artisaninweb\SoapWrapper\Facade::clearResolvedInstance($name);
         }
-
+        
         /**
          * Clear all of the resolved instances.
          *
-         * @return void
-         * @static
-         */
+         * @return void 
+         * @static 
+         */ 
         public static function clearResolvedInstances()
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             \Artisaninweb\SoapWrapper\Facade::clearResolvedInstances();
         }
-
+        
         /**
          * Get the application instance behind the facade.
          *
-         * @return \Illuminate\Contracts\Foundation\Application
-         * @static
-         */
+         * @return \Illuminate\Contracts\Foundation\Application 
+         * @static 
+         */ 
         public static function getFacadeApplication()
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             return \Artisaninweb\SoapWrapper\Facade::getFacadeApplication();
         }
-
+        
         /**
          * Set the application instance.
          *
          * @param \Illuminate\Contracts\Foundation\Application $app
-         * @return void
-         * @static
-         */
+         * @return void 
+         * @static 
+         */ 
         public static function setFacadeApplication($app)
         {
-            //Method inherited from \Illuminate\Support\Facades\Facade
+            //Method inherited from \Illuminate\Support\Facades\Facade            
             \Artisaninweb\SoapWrapper\Facade::setFacadeApplication($app);
         }
-
+         
     }
+ 
+}
 
+namespace App\Facades { 
+
+    class OfiClinicFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getPatientsList()
+        {
+            return \App\Soap\OfiClinicDataRecovery::getPatientsList();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getPatientCasesList($patientIdNumber)
+        {
+            return \App\Soap\OfiClinicDataRecovery::getPatientCasesList($patientIdNumber);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getPatientCase($patientCaseNumber)
+        {
+            return \App\Soap\OfiClinicDataRecovery::getPatientCase($patientCaseNumber);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getPatientData($patientIdNumber)
+        {
+            return \App\Soap\OfiClinicDataRecovery::getPatientData($patientIdNumber);
+        }
+         
+    }
+ 
 }
 
 
@@ -13840,7 +13888,7 @@ namespace  {
              * Execute the query and get the first result.
              *
              * @param array $columns
-             * @return \Illuminate\Database\Eloquent\Model|static|null
+             * @return \Illuminate\Database\Eloquent\Model|static|null 
              * @static 
              */ 
             public static function first($columns = array())
@@ -15319,6 +15367,8 @@ namespace  {
 
     class SoapWrapper extends \Artisaninweb\SoapWrapper\Facade {}
 
+    class OfiClinic extends \App\Facades\OfiClinicFacade {}
+ 
 }
 
 

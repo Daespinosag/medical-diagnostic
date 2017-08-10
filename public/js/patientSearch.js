@@ -35,24 +35,24 @@ $(document).ready(function () {
             /*searchDocument.attr('disabled');
             searchButton.attr('disabled');
             cancelButton.attr('disabled');*/
+            $.post('/patientData/' + document, { _token: $('[name=\'_token\']').val() },function(response) {
 
-            axios.post('/patientData/' + document).then(function (response) {
                 if(response){
 
-                    if(response.data){
+                    if(response){
                         modalFormGroup.removeClass('has-error');
                         spanError.html('');
                         spanError.hide();
 
-                        console.dir(response.data);
+                        console.dir(response);
 
-                        $('form input#name').val(response.data.name);
-                        $('form input#last_name_1').val(response.data.last_name_1);
-                        $('form input#last_name_2').val(response.data.last_name_2);
-                        $('form input#email').val(response.data.email);
-                        $('form input#identification_card').val(response.data.identification_card.trim());
+                        $('form input#name').val(response.name);
+                        $('form input#last_name_1').val(response.last_name_1);
+                        $('form input#last_name_2').val(response.last_name_2);
+                        $('form input#email').val(response.email);
+                        $('form input#identification_card').val(response.identification_card.trim());
 
-                        if(response.data.gender === 'M'){
+                        if(response.gender === 'M'){
                             $("input#gender").first().prop("checked", true);
                         }else{
                             $("input#gender").first().prop("checked", true);

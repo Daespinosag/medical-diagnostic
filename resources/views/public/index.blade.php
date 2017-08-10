@@ -21,7 +21,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="text-primary">Clínica de caídas</h2>
+                    <h2 class="text-primary">Clínica de inestabilidad vértigo, caídas y fracturas</h2>
                 </div><!--end .col -->
                 <div class="col-lg-12">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -39,42 +39,42 @@
                             <div class="item active">
                                 <img src="{{ asset('assets/img/IMG_2458_1.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <img src="{{ asset('assets/img/IMG_2452.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <img src="{{ asset('assets/img/IMG_2499_1.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <img src="{{ asset('assets/img/IMG_2503_1.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <img src="{{ asset('assets/img/IMG_2515.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <img src="{{ asset('assets/img/IMG_2579.JPG') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
-                                    <p>Clínica de caídas</p>
+                                    {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
                         </div>

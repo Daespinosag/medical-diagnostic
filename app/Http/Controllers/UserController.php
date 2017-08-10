@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use function bcrypt;
 use Illuminate\Http\Request;
 use App\Entities\User;
 use App\Entities\Role;
@@ -39,7 +40,9 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        User::create($request->all());
+        $user = $request->all();
+        $user['password'] = bcrypt($user['password']);
+        User::create($user);
         return redirect()->route('admin.user.index');
     }
 
