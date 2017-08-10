@@ -182,6 +182,8 @@ return [
 
         Artisaninweb\SoapWrapper\ServiceProvider::class,
 
+        App\Providers\SoapServiceProvider::class,
+
     ],
 
     /*
@@ -237,6 +239,7 @@ return [
 
         'SoapWrapper' => Artisaninweb\SoapWrapper\Facade::class,
 
+        'OfiClinic' => App\Facades\OfiClinicFacade::class
     ],
 
 ];

@@ -10,30 +10,36 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use Artisaninweb\SoapWrapper\SoapWrapper;
 
 Route::get('soap', [
     'as' => 'soap',
     'uses' => function(){
 
-        $soapWrapper = new SoapWrapper();
+        //$response = OfiClinic::getPatientData('1199327');
+        $response = OfiClinic::getPatientCase(242);
+
+        dd(json_decode($response));
+
+        /*$soapWrapper = new SoapWrapper();
 
         $soapWrapper->add('oficlinic', function ($service){
             $service->wsdl('http://clinicacaidas.e-oficlinic.com/webservice/servicio.php?wsdl')
                 ->trace(true);
         });
 
-        //$response = $soapWrapper->call('oficlinic.listPacientes');
+        $response = $soapWrapper->call('oficlinic.listPacientes');
 
-        /*$response2 = $soapWrapper->call('oficlinic.getBasexPaciente', [
+        $response2 = $soapWrapper->call('oficlinic.getBasexPaciente', [
             'pDocumento' => '1209297'
-        ]);*/
+        ]);
 
         $response3 = $soapWrapper->call('oficlinic.getBasexCAS', [
             'pCAS' => 242
         ]);
 
-        dd(json_decode($response3));
+        dd(json_decode($response3));*/
 
         /*
         //crear un cliente del servicio indicado por la url hacia el WSDL.
@@ -44,6 +50,15 @@ Route::get('soap', [
 
         dd($respuesta);
         */
+    }
+]);
+
+Route::post('/patientData/{document}', [
+    'as' => 'patientData',
+    'uses' => function($document){
+        $response = OfiClinic::getPatientData($document);
+
+        return $response;
     }
 ]);
 
