@@ -94,4 +94,8 @@ Route::group(['middleware'=>['auth','role:admin'],'prefix' => 'admin','name' => 
     Route::post('processLevel/updateLevel','ProcessLevelController@updateLevel');
     Route::post('processLevel/deleteLevel','ProcessLevelController@deleteLevel');
 
+    Route::get('localClass',function (){
+        new App\LocalClass\Formula(7);
+    });
+
 });

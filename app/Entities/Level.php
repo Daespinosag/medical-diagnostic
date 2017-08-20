@@ -41,7 +41,7 @@ class Level extends Model
     public function variables()
     {
         return $this->belongsToMany(Variable::class,'criterion','level_id','variable_id')
-                    ->withPivot(['name','value_1','value_2','comparison_operator','unit'])
+                    ->withPivot(['id','name','value_1','value_2','comparison_operator','unit'])
                     ->withTimestamps();
     }
 
