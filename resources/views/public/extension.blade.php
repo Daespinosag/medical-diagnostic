@@ -1,20 +1,20 @@
 @extends('template.main')
 
-@section('title', 'Extensión')
+@section('title', 'Proyección (Extensión)')
 
 @section('content')
 
     <section>
         <div class="section-header">
             <ol class="breadcrumb">
-                <li><a href="{{ route('public.extension') }}">Extensión</a></li>
+                <li><a href="{{ route('public.extension') }}">Proyección (Extensión)</a></li>
                 <li class="active">Blank page</li>
             </ol>
         </div><!--end .section-header -->
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="text-primary">Extensión</h1>
+                    <h1 class="text-primary">Proyección (Extensión)</h1>
                 </div><!--end .col -->
             </div>
 
@@ -122,6 +122,32 @@
                                 <li class="tile">
                                     <a class="tile-content ink-reaction">
                                         <div class="tile-text">Proyecto 3</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+            </div>
+
+            <hr class="ruler-xxl"/>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-primary">Pasantía</h2>
+                </div><!--end .col -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body no-padding">
+                            <ul class="list">
+                                <li class="tile">
+                                    <a class="tile-content ink-reaction" href="http://internacional.ucaldas.edu.co/como.php" target="_blank">
+                                        <div class="tile-text">Requisitos pasantías en la Universidad de Caldas</div>
+                                    </a>
+                                </li>
+                                <li class="tile">
+                                    <a class="tile-content ink-reaction" href="http://internacional.ucaldas.edu.co/intercambio.php" target="_blank">
+                                        <div class="tile-text">Requisitos pasantías internacional de estudiantes de la Universidad de Caldas</div>
                                     </a>
                                 </li>
                             </ul>

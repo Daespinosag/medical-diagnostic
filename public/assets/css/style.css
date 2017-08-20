@@ -1,0 +1,21 @@
+.carousel-inner .item img {
+    max-height: 300px !important;
+    margin: auto;
+}
+
+.text-grey {
+    color: #808080;
+}
+
+.carousel-indicators .active{
+    background-color: #808080;
+}
+
+img.member{
+    max-height: 200px;
+}
+
+img.logo{
+    height: 100px;
+    max-width: 330px;
+}

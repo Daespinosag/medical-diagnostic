@@ -101,6 +101,18 @@ class InitialData extends Seeder
                     'password'              => bcrypt('secret'),
                     'created_at'            => Carbon::now(),
                     'updated_at'            => Carbon::now(),
+                ],
+                [
+                    'rol_id'                => 1,
+                    'name'                  => 'Mauricio Giraldo',
+                    'username'              => 'magiraldooc',
+                    'email'                 => 'magiraldooc@gmail.com',
+                    'identification_card'   => '1053805224',
+                    'gender'                => 'M',
+                    'profession'            => 'Administrador de sistemas de informacion',
+                    'password'              => bcrypt('123456'),
+                    'created_at'            => Carbon::now(),
+                    'updated_at'            => Carbon::now(),
                 ]
             ]
         );

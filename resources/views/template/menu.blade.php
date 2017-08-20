@@ -6,11 +6,11 @@
                 <i class="fa fa-bars"></i>
             </a>
         </div>
-        <div class="expanded">
+        {{--<div class="expanded">
             <a href="{{ route('public.index') }}">
                 <span class="text-lg text-bold text-primary">Geriatría y Gerontología</span>
             </a>
-        </div>
+        </div>--}}
     </div>
     <div class="menubar-scroll-panel">
 
@@ -29,7 +29,7 @@
                     <li><a href="{{ route('public.about') }}" ><span class="title">¿Quiénes somos?</span></a></li>
                     <li><a href="{{ route('public.teaching') }}" ><span class="title">Docencia</span></a></li>
                     <li><a href="{{ route('public.research') }}" ><span class="title">Investigación</span></a></li>
-                    <li><a href="{{ route('public.extension') }}" ><span class="title">Extensión</span></a></li>
+                    <li><a href="{{ route('public.extension') }}" ><span class="title">Proyección (Extensión)</span></a></li>
                     <li><a href="{{ route('public.projects') }}" ><span class="title">Proyectos internacionales</span></a></li>
                     <li><a href="{{ route('public.publications') }}" ><span class="title">Publicaciones científicas</span></a></li>
                     <li><a href="{{ route('public.community') }}" ><span class="title">Comunidades</span></a></li>

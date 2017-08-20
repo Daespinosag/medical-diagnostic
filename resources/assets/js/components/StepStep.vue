@@ -114,7 +114,7 @@
                 //TODO
             },
             createLevel(){
-                axios.post(`http://medical-diagnostic.app/admin/processLevel/createLevel`,
+                axios.post(`/admin/processLevel/createLevel`,
                     {diagnosis_id: this.dataStepOne.diagnosisSelected}
                     )
                     .then(response => {

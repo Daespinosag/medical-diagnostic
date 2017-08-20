@@ -22,12 +22,12 @@
 			<!-- BEGIN CONTENT-->
 			<div id="content">
 				<section  id="app">
-					<div class="section-header">
+					{{--<div class="section-header">
 						<ol class="breadcrumb">
 							<li><a href="../../html/.html">home</a></li>
 							<li class="active">Blank page</li>
 						</ol>
-					</div><!--end .section-header -->
+					</div>--}}<!--end .section-header -->
 					<div class="section-body">
 						@yield('content')
 					</div><!--end .section-body -->
