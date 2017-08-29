@@ -94,8 +94,8 @@
                 operatorList:[
                     { name: '(', value: '(' , type:'group'},
                     { name: ')', value: ')' , type:'group'},
-                    { name: 'AND' , value: 'AND', type:'logic'},
-                    { name: 'OR' ,  value: 'OR', type:'logic'}
+                    { name: 'AND' , value: '&&', type:'logic'},
+                    { name: 'OR' ,  value: '||', type:'logic'}
                 ],
                 errors: [],
 
@@ -109,7 +109,7 @@
                 this.autoIncrementForm++;
             },
             addOperator(operator){
-                this.form += operator.name + ' ';
+                this.form += operator.value + ' ';
                 this.formBack += operator.value + ' ';
                 this.formArray[this.autoIncrementForm] = {value :operator.value ,type: 'operator', extra: operator.type};
                 this.autoIncrementForm++;

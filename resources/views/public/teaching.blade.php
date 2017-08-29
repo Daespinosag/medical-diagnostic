@@ -137,7 +137,7 @@
                             </div><!--end .panel -->
                             <div class="card panel">
                                 <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-2">
-                                    <header><strong>Maestría en gerontología: Envejecimiento y Vejez</strong></header>
+                                    <header><strong>Maestría en gerontología:</strong> Envejecimiento y vejez</header>
                                     <div class="tools">
                                         <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                     </div>
@@ -145,6 +145,19 @@
                                 <div id="accordion2-2" class="collapse">
                                     <div class="card-body">
                                         <a href="http://www.ucaldas.edu.co/portal/maestria-en-gerontologia-envejecimiento-y-vejez/" target="_blank">Más información</a>
+                                    </div>
+                                </div>
+                            </div><!--end .panel -->
+                            <div class="card panel">
+                                <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-3">
+                                    <header><strong>Maestría en actividad física para la salud:</strong> Profundización en adulto mayor</header>
+                                    <div class="tools">
+                                        <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <div id="accordion2-3" class="collapse">
+                                    <div class="card-body">
+                                        <a href="http://www.ucaldas.edu.co/portal/maestria-en-actividad-fisica-para-la-salud/" target="_blank">Más información</a>
                                     </div>
                                 </div>
                             </div><!--end .panel -->

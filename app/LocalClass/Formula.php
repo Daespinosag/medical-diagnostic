@@ -105,7 +105,7 @@ class Formula
             $min = min([$criterion->value_1,$criterion->value_2]);
             $max = max([$criterion->value_1,$criterion->value_2]);
 
-            $temp .='( _'.$criterion->variable->json_name.'_ >= '.$min.' AND _'.$criterion->variable->json_name.'_ <= '.$max.' )';
+            $temp .='( _'.$criterion->variable->json_name.'_ >= '.$min.' && _'.$criterion->variable->json_name.'_ <= '.$max.' )';
         }else{
             $temp .= '( _'.$criterion->variable->json_name.'_ '.$criterion->comparison_operator.' '.$criterion->value_1.' )';
         }
@@ -116,5 +116,10 @@ class Formula
     private function getLevel($id)
     {
         $this->level = Level::findOrFail($id);
+    }
+
+    public function getFormula()
+    {
+        return $this->formula;
     }
 }

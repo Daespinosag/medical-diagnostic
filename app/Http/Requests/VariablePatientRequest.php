@@ -28,6 +28,7 @@ class VariablePatientRequest extends FormRequest
             'variable_id'       => 'required',
             'user_id'           => '',
             'value'             => '',
+            'case'              => '',
             'completed_date'    => ''
         ];
     }

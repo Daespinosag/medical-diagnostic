@@ -33,6 +33,17 @@
                         <b>Actualización</b>
                         <p class="pull-right">{{ $patient->updated_at }}</p>
                     </li>
+                    <li class="list-group-item">
+                        <div class="tools text-center">
+                            <div class="btn-group">
+                                <a id="modalSearchCasesButton" href="#" type="button" class="btn btn-raised btn-primary btn-inline ink-reaction" data-toggle="modal"
+                                   data-target="#formModal" data-original-title="Generar diagnósticos">
+                                    Generar diagnósticos
+                                </a>
+                                {{--<button class="btn btn-default-bright btn-raised" data-toggle="modal" data-target="#formModal">Buscar paciente</button>--}}
+                            </div>
+                        </div>
+                    </li>
 
                 </ul>
                 <div class="card-actionbar-row">
@@ -42,5 +53,81 @@
             </div>
         </div>
     </div>
+
+    @if(count($arr) > 0)
+
+        @foreach($arr as $case => $diagnosesCase)
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-head card-bordered style-primary">
+                        <header><i class="fa fa-fw fa-tag"></i>Diagnóstico caso {{ $case }}</header>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td>Diagnóstico</td>
+                                <td>Nivel</td>
+                                <td>Fecha</td>
+                            </tr>
+                            </thead>
+                            <tbody class="">
+                            @foreach($diagnosesCase as $diagnosisCase)
+                                <tr class="">
+                                    <td>{{ $diagnosisCase['diagnosis_name'] }}</td>
+                                    <td>{{ $diagnosisCase['response'] }}</td>
+                                    <td>{{ $diagnosisCase['date'] }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endif
+
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="loader"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="formModalLabel">Resultado</h4>
+                </div>
+                <form class="form-horizontal form-validate" role="form">
+                    <div class="modal-body">
+                        <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" id="document" name="document" value="{{ $patient->identification_card }}">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label for="caseNumber" class="control-label">Número de caso</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <select class="form-control" required="" id="caseNumber" name="caseNumber">
+                                    <option selected="selected" value="">Seleccione un caso</option>
+                                </select>
+                                <span id="selectError" class="help-block">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <ul id="message">
+                            </ul>
+                        </div>
+                        <div class="form-group" style="color: #f44336;">
+                            <ul id="error">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="generateDiagnosisCancel" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="generateDiagnosis" type="button" class="btn btn-primary">Generar</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 @endsection

@@ -15,7 +15,7 @@ class VariablePatient extends Model
      * @var array
      */
     protected $fillable = [
-        'id','patient_id','variable_id' ,'user_id','value','completed_date'
+        'id','patient_id','variable_id', 'case','user_id','value','completed_date'
     ];
 
     /**

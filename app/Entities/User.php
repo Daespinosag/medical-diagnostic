@@ -45,7 +45,7 @@ class User extends Authenticatable
     public function patients()
     {
         return $this->belongsToMany(Patient::class,'variable_patient','user_id','patient_id')
-                    ->withPivot(['diagnosis_date'])
+                    ->withPivot(['diagnosis_date', 'case'])
                     ->withTimestamps();
     }
 

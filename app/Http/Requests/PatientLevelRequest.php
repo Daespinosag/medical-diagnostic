@@ -26,7 +26,8 @@ class PatientLevelRequest extends FormRequest
         return [
             'level_id'          =>'required',
             'patient_id'        =>'required',
-            'diagnosis_date'    =>'required'
+            'diagnosis_date'    =>'required',
+            'medical_case'      => '',
         ];
     }
 }

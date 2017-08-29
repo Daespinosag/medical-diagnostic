@@ -50,7 +50,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/26113021" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     The mobility gap between older men and women: The embodiment of gender
@@ -65,7 +65,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-015-0083-3" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Social differences associated with the use of psychotropic drugs among men and women aged 65 to 74 years living in the community: the International Mobility in Aging Study (IMIAS).
@@ -80,7 +80,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielosp.org/pdf/rpsp/v37n4-5/v37n4-5a16.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     La brecha de género en violencia doméstica en adultos mayores en América Latina: el Estudio IMIAS
@@ -95,7 +95,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25704920" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Socioeconomic status, social relations and domestic violence (DV) against elderly people in Canada, Albania, Colombia and Brazil
@@ -110,7 +110,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25809813" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Comprehensive nutritional status in sarco-osteoporotic older fallers
@@ -125,7 +125,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25512216" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Phenotype of Osteosarcopenia in Older Individuals With a History of Falling
@@ -160,7 +160,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://revistas.uis.edu.co/index.php/revistamedicasuis/article/view/4325" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Depresión de aparición tardía y su relación con la demencia vascular del anciano
@@ -175,7 +175,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://journals.sagepub.com/doi/abs/10.1177/0898264314523448" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Evaluation of the Late Life Disability Instrument (LIDI) In Low Income Older Populations.
@@ -190,7 +190,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://bmcgeriatr.biomedcentral.com/articles/10.1186/1471-2318-14-2" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Frailty among rural elderly adults
@@ -225,7 +225,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://link.springer.com/article/10.1007/s40520-013-0121-y" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Life space assessment scale to assess mobility: validation in Latin American older women an men
@@ -240,7 +240,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://onlinelibrary.wiley.com/doi/10.1111/ggi.12180/full" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Validity and applicability of a video-based animated tool to assess mobility in elderly Latin American populations
@@ -255,7 +255,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1362/2162" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Prevalence of poor self-rated health and associated risk factors among older adults in Cali, Colombia
@@ -270,7 +270,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?pid=S0120-87482013000300003&script=sci_abstract&tlng=es" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Prevalencia de deterioro cognitivo y demencia en mayores de 65 años en una población urbana Colombiana. Manizales
@@ -285,7 +285,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1181" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Validity and reliability of the Short Physical Performance Battery (SPPB): a pilot study on mobility in the Colombian Andes.
@@ -300,7 +300,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.tandfonline.com/doi/abs/10.1080/02701960.2012.699010" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Interdisciplinary collaboration in Gerontology and Geriatrics in Latin America
@@ -315,7 +315,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.dovepress.com/differing-approaches-to-falls-and-fracture-prevention-between-australi-peer-reviewed-article-CIA" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Differing approaches to falls and fracture prevention between Australia and Colombia
@@ -350,7 +350,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.unisanitas.edu.co/Revista/45/08%20ANCIANOS%20DFN.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Fragilidad en ancianos colombianos.
@@ -365,7 +365,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/22996789" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Applicability of the MoCA-S test in populations with little education in Colombia
@@ -380,7 +380,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v17n2/v17n2a13.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Temor a caer en ancianos: controversias en torno a un concepto y a su medición.
@@ -415,7 +415,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.acgg.org.co/pdf/revista-25-4.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Validez convergente y de constructo de la escala de autoeficacia realacionada con caídas (FES)
@@ -430,7 +430,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-87482011000400002" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Conocimiento de síntomas y factores de riesgo de enfermedad cerebro vascular en una población urbana Colombiana
@@ -445,7 +445,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://catalogo.juanncorpas.edu.co/cgi-bin/koha/opac-detail.pl?biblionumber=10663" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Obesidad Sarcopenica y síndrome de apnea del sueño en ancianos.
@@ -460,7 +460,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-24482011000300002" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Prevalencia y persistencia del insomnio crónico. Estdio Sueca II
@@ -475,7 +475,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/21623472" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     DIZZINESS AS A GERIATRIC CONDITION AMONG RURAL COMMUNITY-DWELLING OLDER ADULTS
@@ -490,7 +490,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v16n2/v16n2a03.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     SENTIDO Y PROCESO DEL TEMOR A CAER EN ANCIANOS
@@ -505,7 +505,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/amc/v36n2/v36n2a06.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Criptococosis diseminada en anciano con VIH
@@ -520,7 +520,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/amc/v36n1/v36n1a03.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Dolor crónico nociceptivo y neuropático en población adulta de Manizales, Colombia
@@ -555,7 +555,7 @@
                                             <div class="card-body no-padding">
                                                 <ul class="list">
                                                     <li class="tile">
-                                                        <a class="tile-content ink-reaction">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v15n1/v15n1a10.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
                                                                     Investigación y envejecimiento: del dato a la teoría
@@ -565,81 +565,6 @@
                                                                 </p>
                                                                 <p>
                                                                     Autores: CARMEN LUCIA CURCIO BORRERO
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="tile">
-                                                        <a class="tile-content ink-reaction">
-                                                            <div class="tile-text">
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="tile">
-                                                        <a class="tile-content ink-reaction">
-                                                            <div class="tile-text">
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="tile">
-                                                        <a class="tile-content ink-reaction">
-                                                            <div class="tile-text">
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="tile">
-                                                        <a class="tile-content ink-reaction">
-                                                            <div class="tile-text">
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="tile">
-                                                        <a class="tile-content ink-reaction">
-                                                            <div class="tile-text">
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
-                                                                </p>
-                                                                <p>
-
                                                                 </p>
                                                             </div>
                                                         </a>

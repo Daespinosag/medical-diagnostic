@@ -18,6 +18,7 @@ class CreatePatientLevelTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('level_id');
             $table->unsignedInteger('patient_id');
+            $table->integer('medical_case');
 
             $table->date('diagnosis_date')->nullable();
 

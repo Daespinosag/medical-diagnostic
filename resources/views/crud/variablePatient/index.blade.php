@@ -24,6 +24,7 @@
                     <td>{{ trans('validation.attributes.variable') }}</td>
                     <td>{{ trans('validation.attributes.user') }}</td>
                     <td>{{ trans('validation.attributes.value') }}</td>
+                    <td>{{ trans('validation.attributes.case') }}</td>
                     <td>{{ trans('validation.attributes.completed_date') }}</td>
                     <td>{{ trans('global.buttons.actions') }}</td>
                 </tr>
@@ -36,6 +37,7 @@
                         <td>{{$variablePatient->variable->name}}</td>
                         <td>{{$variablePatient->user->name}}</td>
                         <td>{{$variablePatient->value}}</td>
+                        <td>{{$variablePatient->case}}</td>
                         <td>{{$variablePatient->completed_date}}</td>
                         <td>
                             {{ Form::open(['route'=> ['admin.variablePatient.destroy', $variablePatient->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}

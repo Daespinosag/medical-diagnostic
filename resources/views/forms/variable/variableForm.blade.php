@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="form-group {{ $errors->has('calculation_operation') ? ' has-error' : '' }}">
+    {{--<div class="form-group {{ $errors->has('calculation_operation') ? ' has-error' : '' }}">
 
         {!! Form::label('calculation_operation',trans('validation.attributes.calculation_operation'),['class' => 'col-md-4 control-label', 'for' =>'calculation_operation']) !!}
 
@@ -60,7 +60,7 @@
             </span>
             @endif
         </div>
-    </div>
+    </div>--}}
 
     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
 

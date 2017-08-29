@@ -19,7 +19,7 @@ class CreatePatientTable extends Migration
             $table->string('name');
             $table->string('last_name_1');
             $table->string('last_name_2')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->integer('identification_card')->unique();
             $table->enum('gender',['M','F'])->default('M');
 

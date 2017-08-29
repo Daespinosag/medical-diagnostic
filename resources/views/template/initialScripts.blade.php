@@ -1,5 +1,5 @@
 <head>
-    <title>@yield('title', 'Geriatría y Gerontología')</title>
+    <title>@yield('title', 'Gerontología y Geriatría')</title>
     <!-- BEGIN META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

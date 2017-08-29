@@ -16,7 +16,7 @@ class PatientLevel extends Model
      * @var array
      */
     protected $fillable = [
-        'id','level_id','patient_id' ,'diagnosis_date'
+        'id','level_id','patient_id' ,'diagnosis_date','medical_case'
     ];
 
     /**

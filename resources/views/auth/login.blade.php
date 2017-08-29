@@ -14,7 +14,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<br/>
-							<span class="text-lg text-bold text-primary">Geriatría y Gerontología</span>
+							<span class="text-lg text-bold text-primary">Gerontología y Geriatría</span>
 							<br/><br/>
 							<form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="post">
                                 {{ csrf_field() }}

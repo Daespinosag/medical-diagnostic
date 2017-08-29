@@ -120,21 +120,24 @@
                             <header class="text-sm">José Fernando Gómez Montes</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2494_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/fernando.jpg') }}"></a>
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Médico - Especialista en Medicina Interna y Geriatría</p>
                             <p>
-                                Líder <br>
-                                Grupo de investigación Gerontología y Geriatría
+                                Líder del Grupo de investigación Gerontología y Geriatría
                             </p>
                             <p>
                                 <strong>Docente</strong><br>
                                 Posgrado: <br>
-                                Especialización en Medicina Interna y Geriatría. <br>
-                                Maestría en Gerontología: Envejecimiento y Vejez. <br><br>
+                                Especialización en Medicina Interna y Geriatría <br>
+                                Maestría en Gerontología: Envejecimiento y Vejez <br><br>
                                 Programa de Pregrado: <br>
-                                Medicina.
+                                Medicina
+                            </p>
+                            <p>
+                                <strong>Investigador</strong> Senior – COLCIENCIAS<br>
+
                             </p>
                             <p>
                                 <strong>Contacto</strong><br>
@@ -144,7 +147,7 @@
                                 Universidad de Caldas<br>
                                 Edificio Miguel Arango Soto<br>
                                 Carrera 25 N 48-57<br>
-                                Tels: 057 6 8783061 8783064 8783066 ext. 31153<br>
+                                Teléfonos: +57 (6) 8783061, 8783064, 8783066 Ext. 31153<br>
                                 Correo: <a href="mailto:gomez.montes@ucaldas.edu.co" target="_top">gomez.montes@ucaldas.edu.co</a><br>
                                 Manizales, Colombia<br>
 
@@ -158,7 +161,7 @@
                             <header>Carmen Lucía Curcio Borrero</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/clc.jpg') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/carmen.jpg') }}"></a>
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Terapeuta Ocupacional - Ph.D. Gerontology</p>
@@ -169,7 +172,11 @@
                                 Especialización en Medicina Interna y Geriatría<br>
                                 Maestría en Gerontología: Envejecimiento y Vejez<br><br>
                                 Programa de Pregrado: <br>
-                                Medicina.
+                                Medicina
+                            </p>
+                            <p>
+                                <strong>Investigadora</strong> Senior – COLCIENCIAS<br>
+                                Desarrolla actualmente proyectos de investigación en capacidad funcional, caídas,  temor a caer, envejecimiento exitoso y espacio de vida.
                             </p>
                             <p>
                                 <strong>Contacto</strong><br>
@@ -179,7 +186,7 @@
                                 Universidad de Caldas<br>
                                 Edificio Miguel Arango Soto<br>
                                 Carrera 25 N 48-57<br>
-                                Tels: 057 6 8783061 8783064 8783066 ext. 31153<br>
+                                Teléfonos: +57 (6) 8783061, 8783064, 8783066 Ext. 31153<br>
                                 Correo: <a href="mailto:carmen.curcio@ucaldas.edu.co" target="_top">carmen.curcio@ucaldas.edu.co</a><br>
                                 Manizales, Colombia<br>
 
@@ -193,8 +200,34 @@
                             <header>Angela María Benjumea Salgado</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
                         </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Médica - Especialista en Medicina Interna y Geriatría</p>
+                            <p>
+                                <strong>Docente</strong><br>
+                                Posgrado: <br>
+                                Especialización en Medicina Interna y Geriatría<br><br>
+                                Programa de Pregrado: <br>
+                                Medicina
+                            </p>
+                            <p>
+                                <strong>Investigadora</strong><br>
+                                Desarrolla en la actualidad investigaciones en sarcopenia y fragilidad en enfermedad crónica.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Teléfonos: +57 (6) 8783061, 8783064, 8783066 Ext. 31153<br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <div class="col-md-6">
@@ -203,8 +236,35 @@
                             <header>Guadalupe María Henao</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
                         </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Enfermera - Magíster en Gerontología: Envejecimiento y Vejez</p>
+                            <p>
+                                <strong>Docente</strong><br>
+                                Posgrado: <br>
+                                Maestría en Gerontología: Envejecimiento y Vejez<br><br>
+                                Programa de Pregrado: <br>
+                                Enfermería
+                            </p>
+                            <p>
+                                <strong>Investigadora</strong><br>
+                                Desarrollos actuales en el cuidado de enfermería al adulto mayor en torno a los síndromes geriátricos como las caídas, comprender el significado del cuidado de los adultos mayores que cuidan a otros adultos mayores, aplicar la taxonomía enfermera en el cuidado de los adultos mayores, contribuir con la educación de los cuidadores familiares y brindar apoyo y asesoría a entes que promueven la protección de los adultos mayores desde la institucionalidad y la institucionalización. Aplicar las teorías enfermeras en el ámbito clínico del cuidado al adulto mayor.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Teléfonos: +57 (6) 8783060 Ext. 31261, 31262<br>
+                                Correo: <a href="mailto:gudalupe.henao@ucaldas.edu.co" target="_top">gudalupe.henao@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <div class="col-md-6">
@@ -213,8 +273,34 @@
                             <header>Eder Peña Quimbaya</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/eder.jpg') }}"></a>
                         </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Educador Físico – Doctor en Ciencias de la Motricidad Humana</p>
+                            <p>Coordinadora de la Maestría en Actividad Física para la Salud</p>
+                            <p>
+                                <strong>Docente</strong><br>
+                                Programa de Pregrado: <br>
+                                Educación física, recreación y deporte
+                            </p>
+                            <p>
+                                <strong>Investigador</strong> Junior- COLCIENCIAS<br>
+                                El desarrollo actual es actividad física en el adulto mayor, soluciones de tecnología para la asistencia al profesional de la salud y entornos construidos en el barrio a través de sistemas de información geográfica.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Teléfonos: +57 (6) 8783061  8783064  8783066 Ext. 31153<br>
+                                Correo: <a href="mailto:eder.pena@ucaldas.edu.co" target="_top">eder.pena@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <div class="col-md-6">
@@ -223,8 +309,30 @@
                             <header>Ricardo Díaz Cabezas</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
                         </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Médico – Especialista en Medicina Interna y Geriatría</p>
+                            <p>Coordinadora de la Maestría en Actividad Física para la Salud</p>
+                            <p>
+                                <strong>Docente</strong><br>
+                            </p>
+                            <p>
+                                <strong>Investigador</strong><br>
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Teléfonos: +57 (6) 8783061  8783064  8783066 Ext. 31153<br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <div class="col-md-6">
@@ -233,7 +341,7 @@
                             <header>Alejandro Pineda Isaza</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/IMG_2526_1.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
                         </div><!--end .card-body -->
                     </div><!--end .card -->
                 </div><!--end .col -->
@@ -243,8 +351,24 @@
                             <header>Maria Victoria Jurado Vargas</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/DSC01256.JPG') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/victoria.jpg') }}"></a>
                         </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Auxiliar Administrativa</p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57 Piso 2<br>
+                                Teléfonos: +57 (6) 8783060 Ext. 31261<br>
+                                Correo: <a href="mailto:mariavictoria.jurado@ucaldas.edu.co" target="_top">mariavictoria.jurado@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
                     </div><!--end .card -->
                 </div><!--end .col -->
             </div>

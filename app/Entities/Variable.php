@@ -44,7 +44,7 @@ class Variable extends Model
     public function patients()
     {
         return $this->belongsToMany(Patient::class,'variable_patient','variable_id','patient_id')
-                    ->withPivot(['value','completed_date'])
+                    ->withPivot(['value', 'case','completed_date'])
                     ->withTimestamps();
     }
 

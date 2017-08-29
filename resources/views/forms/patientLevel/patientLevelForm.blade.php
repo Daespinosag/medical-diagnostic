@@ -39,6 +39,21 @@
         </div>
     </div>
 
+    <div class="form-group {{ $errors->has('medical_case') ? ' has-error' : '' }}">
+
+        {!! Form::label('medical_case',trans('validation.attributes.medical_case'),['class' => 'col-md-4 control-label', 'for' =>'medical_case']) !!}
+
+        <div class="col-md-6">
+            {!! Form::number('medical_case', null ,['class' => 'form-control','required']) !!}
+
+            @if ($errors->has('medical_case'))
+                <span class="help-block">
+                <strong>{{ $errors->first('medical_case') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+
 
 
 </section>

@@ -20,6 +20,7 @@ class CreateVariablePatientTable extends Migration
             $table->unsignedInteger('patient_id');
             $table->unsignedInteger('user_id');
             $table->string('value')->nullable();
+            $table->integer('case')->nullable();
             $table->date('completed_date')->nullable();
 
             $table->foreign('variable_id')->references('id')->on('variable')->onDelete('cascade');

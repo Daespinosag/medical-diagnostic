@@ -48,7 +48,7 @@ class Level extends Model
     public function patients()
     {
         return $this->belongsToMany(Patient::class,'patient_level','level_id','patient_id')
-            ->withPivot(['diagnosis_date'])
+            ->withPivot(['diagnosis_date', 'medical_case'])
             ->withTimestamps();
     }
 }

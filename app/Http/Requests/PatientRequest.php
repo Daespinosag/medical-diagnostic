@@ -30,7 +30,7 @@ class PatientRequest extends FormRequest
                 'name'                  => 'required',
                 'last_name_1'           => 'required',
                 'last_name_2'           => '',
-                'email'                 => 'required|unique:patient,email,'.$this->route('patient'),
+                'email'                 => '',
                 'identification_card'   => 'required|unique:patient,identification_card,'.$this->route('patient'),
                 'gender'                => 'required'
             ];
@@ -40,7 +40,7 @@ class PatientRequest extends FormRequest
             'name'                  => 'required',
             'last_name_1'           => 'required',
             'last_name_2'           => '',
-            'email'                 => 'required|unique:patient,email',
+            'email'                 => '',
             'identification_card'   => 'required|unique:patient',
             'gender'                => 'required'
         ];

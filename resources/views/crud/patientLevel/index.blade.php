@@ -21,6 +21,7 @@
                 <tr>
                     <td>Id</td>
                     <td>{{ trans('validation.attributes.diagnosis') }}</td>
+                    <td>{{ trans('validation.attributes.medical_case') }}</td>
                     <td>{{ trans('validation.attributes.patient') }}</td>
                     <td>{{ trans('validation.attributes.diagnosis_date') }}</td>
                     <td>{{ trans('global.buttons.actions') }}</td>
@@ -31,8 +32,10 @@
                     <tr class="">
                         <td>{{$patientLevel->id}}</td>
                         <td>{{$patientLevel->level->diagnosis->name }}</td>
+                        <td>{{$patientLevel->medical_case}}</td>
                         <td>{{ $patientLevel->patient->name.' '. $patientLevel->patient->last_name_1.' '.$patientLevel->patient->last_name_2 }} </td>
                         <td>{{$patientLevel->diagnosis_date}}</td>
+
                         <td>
                             {{ Form::open(['route'=> ['admin.patientLevel.destroy', $patientLevel->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
                                 <a href="{{ route('admin.patientLevel.show',$patientLevel->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Ver {{$patientLevel->id}}"><i class="fa fa-eye"></i></a>

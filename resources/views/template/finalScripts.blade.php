@@ -14,6 +14,7 @@
 <script src="{{ asset('assets/js/core/demo/Demo.js') }}"></script>
 <script src="{{ asset('assets/js/libs/select2/select2.js') }}"></script>
 <script src="{{ asset('js/patientSearch.js') }}"></script>
+<script src="{{ asset('js/runDiagnosis.js') }}"></script>
 
 
 <script src="{{ mix('js/app.js') }}"></script>

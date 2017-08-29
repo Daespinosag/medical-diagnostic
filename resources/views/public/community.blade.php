@@ -50,11 +50,14 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-head">
-                            <header><a href="http://www.manizales.unal.edu.co" target="_blank">Universidad Nacional de Colombia - Sede Manizales</a></header>
+                            <header><a href="http://www.manizales.unal.edu.co" target="_blank">Universidad Nacional de Colombia - Sede Manizales - Grupo GAIA</a></header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
                             <a href="http://www.manizales.unal.edu.co" target="_blank">
                                 <img class="logo" src="{{ asset('assets/img/logo-un-sede-manizales.png') }}"></a>
+                            </a>
+                            <a href="http://froac.manizales.unal.edu.co/GAIA/" target="_blank">
+                                <img class="logo" src="{{ asset('assets/img/logo-gaia.jpg') }}"></a>
                             </a>
                         </div><!--end .card-body -->
                     </div><!--end .card -->
@@ -148,6 +151,18 @@
                         <div class="card-body text-center">
                             <a href="http://www.acgg.org.co/HTML/home_prov.htm" target="_blank">
                                 <img class="logo" src="{{ asset('assets/img/logo-acgg.png') }}"></a>
+                            </a>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header><a href="http://www.univalle.edu.co" target="_blank">Universidad del Valle</a></header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            <a href="http://www.univalle.edu.co" target="_blank">
+                                <img class="logo" src="{{ asset('assets/img/logo-universidad-valle.jpg') }}"></a>
                             </a>
                         </div><!--end .card-body -->
                     </div><!--end .card -->

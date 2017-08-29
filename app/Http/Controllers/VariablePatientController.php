@@ -45,7 +45,7 @@ class VariablePatientController extends Controller
     public function store(VariablePatientRequest $request)
     {
         $variablePatient = $request->all();
-        $variablePatient['user_id'] = 1; // cambiar con el autenticado
+        $variablePatient['user_id'] = Auth::user()->id; // cambiar con el autenticado
         VariablePatient::create($variablePatient);
         return redirect()->route('admin.variablePatient.index');
     }

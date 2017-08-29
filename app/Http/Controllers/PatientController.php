@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Level;
+use App\Entities\PatientLevel;
+use function array_push;
 use Illuminate\Http\Request;
 use App\Entities\Patient;
 use App\Http\Requests\PatientRequest;
@@ -50,7 +53,22 @@ class PatientController extends Controller
     public function show($id)
     {
         $patient = Patient::findOrFail($id);
-        return view('crud.patient.show',compact('patient'));
+
+        $cases = PatientLevel::select('medical_case as val')->where('patient_id',$id)->distinct('medical_case')->get()->toArray();
+        $arr = [];
+        foreach ($cases as $caseKey => $caseValue){
+            $arr[$caseValue['val']] = [];
+            foreach ($patient->levels as $level){
+                if ($caseValue['val'] == $level->pivot->medical_case){
+                    array_push( $arr[$caseValue['val']], [
+                        'date' => $level->pivot->diagnosis_date,
+                        'diagnosis_name' => $level->diagnosis->name,
+                        'response'  => $level->response
+                    ]);
+                }
+            }
+        }
+        return view('crud.patient.show',compact('patient', 'arr'));
     }
 
     /**

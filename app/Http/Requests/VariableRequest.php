@@ -26,7 +26,7 @@ class VariableRequest extends FormRequest
         if ($this->route()->getActionMethod() ===  'update'){
             return [
                 'name'                  =>  'required|min:3|unique:variable,name,'.$this->route('variable'),
-                'json_name'             =>  '',
+                'json_name'             =>  'required|min:3|unique:variable,json_name,'.$this->route('variable'),
                 'calculated'            =>  '',
                 'calculation_operation' =>  '',
                 'description'           =>  ''
@@ -34,7 +34,7 @@ class VariableRequest extends FormRequest
         }
         return [
             'name'                  =>  'required|min:3|unique:variable',
-            'json_name'             =>  '',
+            'json_name'             =>  'required|min:3|unique:variable',
             'calculated'            =>  '',
             'calculation_operation' =>  '',
             'description'           =>  ''

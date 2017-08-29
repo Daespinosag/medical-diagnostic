@@ -11,15 +11,22 @@
 |
 */
 
+use App\Entities\Diagnosis;
+use App\Entities\Patient;
+use App\Entities\PatientLevel;
+use App\Entities\Level;
+use App\LocalClass\Formula;
 use Artisaninweb\SoapWrapper\SoapWrapper;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 Route::get('soap', [
     'as' => 'soap',
     'uses' => function(){
 
         //$response = OfiClinic::getPatientData('1199327');
-        $response = OfiClinic::getPatientCase(242);
-
+        //$response = OfiClinic::getPatientCase(242);
+        $response = OfiClinic::getPatientCasesList('1209297');
         dd(json_decode($response));
 
         /*$soapWrapper = new SoapWrapper();
@@ -59,6 +66,83 @@ Route::post('/patientData/{document}', [
         $response = OfiClinic::getPatientData($document);
 
         return $response;
+    }
+]);
+
+Route::post('/patientClinicalData/{document}', [
+    'as' => 'patientClinicalData',
+    'uses' => function($document){
+        $response = OfiClinic::getPatientMedicalHistory($document);
+
+        return $response;
+    }
+]);
+
+Route::post('/generateDiagnosis/{document}', [
+    'as' => 'generateDiagnosis',
+    'uses' => function(Request $request, $document){
+
+        $caseDataList = $request->get('case');
+
+        $diagnoses = Diagnosis::with('levels')->get();
+        $errorList = [];
+        $diagnosisResult = [];
+
+        foreach ($diagnoses as $diagnosis){
+
+            foreach ($diagnosis->levels as $level){
+
+                if ($level->gender == 'ALL' || $level->gender == $caseDataList['Genero']) {
+                    $formula = new Formula($level->id);
+
+                    $formulaDataList = array();
+                    $correct = true;
+
+                    foreach ($formula->getParametersFrom() as $variable) {
+                        if (array_key_exists($variable, $caseDataList)) {
+                            $formulaDataList[$variable] = $caseDataList[$variable];
+                        } else {
+                            array_push($errorList, 'Diagnostico: ' . $diagnosis->name . ' no se puede generar, falta variable: ' . $variable . '.');
+                            $correct = false;
+                        }
+                    }
+                    $value = false;
+                    if ($correct) {
+                        $value = $formula->insertUserValues($formulaDataList)->evalFormula()->getEvalForm();
+                    }
+
+                    $diagnosisResult[$level->id] = ['flag' => $value, 'formula' => $formula->getFormula(),
+                        'response' => $level->response, 'gender' => $level->gender, 'level' => $level->id];
+                }
+            }
+
+        }
+
+        $patient = Patient::where('identification_card', $document)->get()->first();
+
+        $patientLevels = PatientLevel::where('patient_id', $patient->id)
+            ->where('medical_case', $caseDataList['NumeroCaso'])->get(['id']);
+        PatientLevel::destroy($patientLevels->toArray());
+
+        foreach ($diagnosisResult as $diagnosis){
+
+            if($diagnosis['flag']){
+                $patientLevel = new PatientLevel();
+
+                $patientLevel->level_id = $diagnosis['level'];
+                $patientLevel->patient_id = $patient->id;
+                $patientLevel->diagnosis_date = new Carbon();
+                $patientLevel->medical_case = $caseDataList['NumeroCaso'];
+
+                $patientLevel->save();
+            }
+        }
+
+        return ['result' => $diagnosisResult, 'error' => $errorList];
+
+        //Validar datos reglas
+
+        return view('crud.patient.show', compact('patient', $patient));
     }
 ]);
 

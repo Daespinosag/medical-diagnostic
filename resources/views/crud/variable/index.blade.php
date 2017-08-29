@@ -23,7 +23,7 @@
                     <td>{{ trans('validation.attributes.name') }}</td>
                     <td>{{ trans('validation.attributes.json_name') }}</td>
                     <td>{{ trans('validation.attributes.calculated') }}</td>
-                    <td>{{ trans('validation.attributes.calculation_operation') }}</td>
+                    {{--<td>{{ trans('validation.attributes.calculation_operation') }}</td>--}}
                     <td>{{ trans('global.buttons.actions') }}</td>
                 </tr>
             </thead>
@@ -38,7 +38,7 @@
                         @else
                             <td><span class="tag label label-danger">False</span></td>
                         @endif
-                        <td>{{$variable->calculation_operation}}</td>
+                        {{--<td>{{$variable->calculation_operation}}</td>--}}
                         <td>
                             {{ Form::open(['route'=> ['admin.variable.destroy', $variable->id],'method'=> 'DELETE','onsubmit' => 'return confirm("are you sure ?")']) }}
                                 <a href="{{ route('admin.variable.show',$variable->id) }}"  class="btn btn-icon-toggle"  data-toggle="tooltip" data-original-title="Ver {{$variable->name}}"><i class="fa fa-eye"></i></a>
