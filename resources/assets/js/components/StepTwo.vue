@@ -146,6 +146,7 @@
 <script>
     export default {
         props: {
+            redirectLevel: String,
             dataStepOne : Object,
             level: {
                 type: Object,
@@ -180,7 +181,7 @@
                 axios.post(`/admin/processLevel/deleteLevel`,
                     {level_id: this.level.id}
                 ).then(response => {
-                    window.location.replace(`/admin/level`);
+                    window.location.replace(this.redirectLevel);
                 })
 
             },

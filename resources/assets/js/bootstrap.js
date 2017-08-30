@@ -20,7 +20,7 @@ try {
  */
 
 window.axios = require('axios').create({
-    //baseURL: 'http://127.0.0.1:8000/',
+    baseURL: 'http://cdiac.manizales.unal.edu.co/medical-diagnostic/',
     //baseAPI: 'http://medical-diagnostic.app/api',
     timeout: false,
     params: {}
