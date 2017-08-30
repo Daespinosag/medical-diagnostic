@@ -90,4 +90,9 @@ $(document).ready(function () {
         $('button#generateDiagnosis').attr('disabled', false);
         location.reload();
     });
+
+    $('a#user_label').click(function () {
+
+        $('li.dropdown').toggleClass('open');
+    });
 });

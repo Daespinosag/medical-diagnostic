@@ -22,7 +22,7 @@
             @if(! Auth::guest())
                     <ul class="header-nav header-nav-profile">
                         <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+                            <a id="user_label" href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
                                 <img src="{{ asset('assets/img/avatar1.jpg') }}" alt="" />
                                 <span class="profile-info">
                                     {{ Auth::user()->name }}
