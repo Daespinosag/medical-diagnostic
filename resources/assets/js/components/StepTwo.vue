@@ -1,7 +1,10 @@
 <template>
     <div>
         <div class="col-lg-12">
-            <span class="tag label label-danger">Nivel: {{ level.name }}</span>
+            <div v-for="( value, key, index) in level">
+                <span class="tag label label-danger" v-if="key == 'name'">Nivel: {{ value }}</span>
+            </div>
+
         </div>
         <div class="col-lg-12">
             <div class="card">
@@ -142,7 +145,17 @@
 
 <script>
     export default {
-        props:['dataStepOne','level'],
+        props: {
+            dataStepOne : Object,
+            level: {
+                type: Object,
+                default() {
+                    return {
+                        name : 'Nombre Por defecto'
+                    }
+                }
+            },
+        },
         data() {
             return{
                 variables: [],
@@ -157,6 +170,8 @@
                 criterionCreateSelected : null,
                 criterionInCreation: { value_1: null,value_2: null,comparison_operator : null,unit: null,},
                 errors: [],
+                localLevel : this.level
+
             }
         },
         methods: {

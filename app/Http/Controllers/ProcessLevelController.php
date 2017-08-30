@@ -69,7 +69,7 @@ class ProcessLevelController extends Controller
 
     public function getCriterion(Request $request)
     {
-        return Criterion::findOrFail($request->all()['id'])->get()->toArray();
+        return Criterion::where('id',$request->all()['id'])->get()->toArray();
     }
 
     public function saveCriterion(CriterionRequest $request)
