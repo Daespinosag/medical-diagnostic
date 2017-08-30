@@ -116,6 +116,9 @@
 
 <script>
     export default {
+        props: {
+            redirectLevel: String,
+        },
         data() {
             return{
                 typesDisplayForm: false,
@@ -188,7 +191,7 @@
                 //TODO
             },
             clickButtonCancel(){
-                window.location.replace(`/admin/level`);
+                window.location.replace(this.redirectLevel);
             },
             clickButtonNext(){
                 this.errors = [];

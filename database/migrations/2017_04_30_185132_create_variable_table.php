@@ -20,7 +20,7 @@ class CreateVariableTable extends Migration
             $table->string('json_name')->nullable();
             $table->boolean('calculated')->default(false);
             $table->string('calculation_operation')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
 
             $table->timestamps();
         });

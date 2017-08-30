@@ -17,7 +17,7 @@ class CreateRolMigrate extends Migration
             $table->enum('type',['root','admin','invited'])->default('invited');
             $table->string('name')->unique();
             $table->string('display_name')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

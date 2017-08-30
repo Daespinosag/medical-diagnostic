@@ -16,7 +16,7 @@ class EntrustSetupTables extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('display_name')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
 
@@ -41,8 +41,8 @@ class EntrustSetupTables extends Migration
      */
     public function down()
     {
-        //Schema::drop('permission_role');
-        //Schema::drop('permissions');
+        Schema::drop('permission_role');
+        Schema::drop('permissions');
         //Schema::drop('role_user');
 
     }

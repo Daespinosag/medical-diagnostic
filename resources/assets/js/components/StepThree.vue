@@ -82,7 +82,7 @@
 
 <script>
     export default {
-        props:['criterionList','level'],
+        props:['criterionList','level','redirectLevel'],
         data(){
             return{
                 gender: 'ALL',
@@ -126,7 +126,7 @@
                 axios.post(`/admin/processLevel/deleteLevel`,
                     {level_id: this.level.id}
                 ).then(response => {
-                    window.location.replace(`/admin/level`);
+                    window.location.replace(this.redirectLevel);
                 })
             },
             validateForm(){
@@ -162,7 +162,7 @@
                 if (this.response ){
                     if  (this.validateForm()){
                         this.updateLevel();
-                        window.location.replace(`/admin/level`);
+                        window.location.replace(this.redirectLevel);
                     }
                 }else {this.errors.push({0 : 'El campo respuesta es obligatorio'})}
             },
