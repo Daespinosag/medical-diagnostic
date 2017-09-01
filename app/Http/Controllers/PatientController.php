@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Entities\Level;
 use App\Entities\PatientLevel;
+use App\LocalClass\Formula;
 use function array_push;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Entities\Patient;
 use App\Http\Requests\PatientRequest;
+use OfiClinic;
 
 class PatientController extends Controller
 {
@@ -187,10 +190,6 @@ class PatientController extends Controller
         }
 
         return ['result' => $diagnosisResult, 'error' => $errorList];
-
-        //Validar datos reglas
-
-        return view('crud.patient.show', compact('patient', $patient));
     }
 
     public function soapTest(){
