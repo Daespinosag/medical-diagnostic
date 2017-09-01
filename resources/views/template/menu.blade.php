@@ -66,6 +66,13 @@
         @endif
             <!-- END EMAIL -->
 
+            <li class="active expanding">
+                <a href="{{ route('consultPatient') }}" class="active">
+                    <div class="gui-icon"><i class="md md-assessment"></i></div>
+                    <span class="title">Consultar Diagnóstico</span>
+                </a>
+            </li>
+
         </ul><!--end .main-menu -->
         <!-- END MAIN MENU -->
 

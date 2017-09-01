@@ -18,5 +18,6 @@
 <script src="{{ asset('js/runDiagnosis.js') }}"></script>
 
 
-<!-- <script src="{{ mix('js/app.js') }}"></script> -->
+
+
 

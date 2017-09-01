@@ -82,7 +82,7 @@
 
 <script>
     export default {
-        props:['criterionlist','level','redirectLevel'],
+        props:['criterionlist','level'],
         data(){
             return{
                 gender: this.level.gender,
@@ -122,7 +122,9 @@
                 this.errors= [];
             },
             clickButtonCancel(){
-                window.location.replace(this.redirectLevel);
+                axios.get(`/admin/processLevel/redirectIndex`).then(function (response) {window.location = response.data.redirect;});
+
+                //window.location.replace(this.redirectLevel);
             },
             validateForm(){
                 this.errors = [];
@@ -157,7 +159,9 @@
                 if (this.response ){
                     if  (this.validateForm()){
                         this.updateLevel();
-                        window.location.replace(this.redirectLevel);
+                        axios.get(`/admin/processLevel/redirectIndex`).then(function (response) {window.location = response.data.redirect;});
+
+                        //window.location.replace(this.redirectLevel);
                     }
                 }else {this.errors.push({0 : 'El campo respuesta es obligatorio'})}
             },

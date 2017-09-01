@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 53);
+/******/ 	return __webpack_require__(__webpack_require__.s = 56);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -528,7 +528,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(39)))
 
 /***/ }),
 /* 3 */
@@ -831,9 +831,9 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(34);
+__webpack_require__(35);
 
-window.Vue = __webpack_require__(51);
+window.Vue = __webpack_require__(54);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -841,10 +841,10 @@ window.Vue = __webpack_require__(51);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(39));
-Vue.component('step-step', __webpack_require__(41));
-Vue.component('update-level', __webpack_require__(44));
-
+Vue.component('example', __webpack_require__(40));
+Vue.component('step-step', __webpack_require__(43));
+Vue.component('update-level', __webpack_require__(46));
+Vue.component('patient-diagnostic', __webpack_require__(41));
 var app = new Vue({
   el: '#app'
 
@@ -1804,6 +1804,132 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            identification_card: null,
+            showDiagnosis: false,
+            showPatient: false,
+            displayErrors: false,
+            errors: [],
+            diagnostics: [],
+            patient: []
+
+        };
+    },
+
+    methods: {
+        searchDiagnostics: function searchDiagnostics() {
+            var _this = this;
+
+            this.showDiagnosis = false;
+            this.showPatient = false;
+            this.displayErrors = false;
+            this.diagnostics = [];
+            this.errors = [];
+            this.patient = [];
+
+            axios.post("/consultPatient/getDiagnostics", { identification_card: this.identification_card }).then(function (response) {
+                if (response.data.errors.length > 0) {
+                    _this.displayErrors = true;
+                    _this.errors = response.data.errors;
+                } else {
+                    _this.showDiagnosis = true;
+                    _this.showPatient = true;
+                    _this.diagnostics = response.data.diagnostics;
+                    _this.patient = response.data.patient;
+                }
+                _this.identification_card = null;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1844,9 +1970,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        redirectLevel: String
-    },
     data: function data() {
         return {
             typesDisplayForm: false,
@@ -1915,7 +2038,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //TODO
         },
         clickButtonCancel: function clickButtonCancel() {
-            window.location.replace(this.redirectLevel);
+            axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                window.location = response.data.redirect;
+            });
+            //window.location.replace(this.redirectLevel);
         },
         clickButtonNext: function clickButtonNext() {
             this.errors = [];
@@ -1947,7 +2073,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1995,12 +2121,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 //import {store} from "../store/store";
-Vue.component('step-one', __webpack_require__(40));
-Vue.component('step-two', __webpack_require__(43));
-Vue.component('step-three', __webpack_require__(42));
+Vue.component('step-one', __webpack_require__(42));
+Vue.component('step-two', __webpack_require__(45));
+Vue.component('step-three', __webpack_require__(44));
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     //store,
@@ -2013,8 +2138,7 @@ Vue.component('step-three', __webpack_require__(42));
             step: 1,
             level: null,
             dataStepOne: [],
-            criterionList: [],
-            redirectLevel: '/medical-diagnostic/admin/level'
+            criterionList: []
         };
     },
 
@@ -2078,251 +2202,6 @@ Vue.component('step-three', __webpack_require__(42));
             });
         }
     }
-});
-
-/***/ }),
-/* 31 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['criterionList', 'level', 'redirectLevel'],
-    data: function data() {
-        return {
-            gender: 'ALL',
-            form: "",
-            formBack: "",
-            response: null,
-            formArray: [],
-            autoIncrementForm: 0,
-            operatorList: [{ name: '(', value: '(', type: 'group' }, { name: ')', value: ')', type: 'group' }, { name: 'AND', value: '&&', type: 'logic' }, { name: 'OR', value: '||', type: 'logic' }],
-            errors: []
-
-        };
-    },
-
-    methods: {
-        addCriterion: function addCriterion(criterion) {
-            this.form += criterion.name + ' ';
-            this.formBack += "_" + criterion.id + "_ ";
-            this.formArray[this.autoIncrementForm] = { value: criterion.name, type: 'criterion', extra: null };
-            this.autoIncrementForm++;
-        },
-        addOperator: function addOperator(operator) {
-            this.form += operator.value + ' ';
-            this.formBack += operator.value + ' ';
-            this.formArray[this.autoIncrementForm] = { value: operator.value, type: 'operator', extra: operator.type };
-            this.autoIncrementForm++;
-        },
-        deleteForm: function deleteForm() {
-            this.form = '';
-            this.formBack = '';
-            this.formArray = [];
-            this.autoIncrementForm = 0;
-            this.errors = [];
-        },
-        clickButtonCancel: function clickButtonCancel() {
-            var _this = this;
-
-            this.errors = [];
-            axios.post('/admin/processLevel/deleteLevel', { level_id: this.level.id }).then(function (response) {
-                window.location.replace(_this.redirectLevel);
-            });
-        },
-        validateForm: function validateForm() {
-            this.errors = [];
-            var flag = false;
-            if (this.validateParenthesis()) {
-                if (this.validateVariableExistence()) {
-                    if (this.validateSequence()) {
-                        flag = true;
-                    } else {
-                        this.errors.push({ 0: 'Error en la formula revise las indicaciones para su creación' });
-                    }
-                } else {
-                    this.errors.push({ 0: 'Error en la formula revise las indicaciones para su creación' });
-                }
-            } else {
-                this.errors.push({ 0: 'Error en la formula: La distribución de parentesis es incorrecta' });
-            }
-
-            return flag;
-        },
-        updateLevel: function updateLevel() {
-            axios.post('/admin/processLevel/updateLevel', {
-                id: this.level.id,
-                diagnosis_id: this.level.diagnosis_id,
-                name: this.level.name,
-                gender: this.gender,
-                formula: this.formBack,
-                response: this.response
-            }).then(function (response) {});
-        },
-        clickButtonNext: function clickButtonNext() {
-            this.errors = [];
-            if (this.response) {
-                if (this.validateForm()) {
-                    this.updateLevel();
-                    window.location.replace(this.redirectLevel);
-                }
-            } else {
-                this.errors.push({ 0: 'El campo respuesta es obligatorio' });
-            }
-        },
-        validateSequence: function validateSequence() {
-            var i = 1;
-            var limit = this.formArray.length - 1;
-            var flag = true;
-            while (i <= limit && flag) {
-                var a = this.formArray[i - 1];
-                var b = this.formArray[i];
-                if (i === 1 && a.extra === 'logic') {
-                    flag = false;
-                }
-                if (i === limit && this.formArray[limit].extra === 'logic') {
-                    flag = false;
-                }
-                if (a.type === b.type) {
-                    if (a.type === 'criterion') {
-                        flag = false;
-                    } else if (a.extra === 'logic') {
-                        flag = false;
-                    }
-                } else {
-                    if (a.type === 'criterion' && b.value === '(') {
-                        flag = false;
-                    }
-                    if (a.value === ')' && b.type === 'criterion') {
-                        flag = false;
-                    }
-                    if (a.type === 'operator' && a.extra === 'logic' && b.value === ')') {
-                        flag = false;
-                    }
-                }
-                i++;
-            }
-            return flag;
-        },
-        validateVariableExistence: function validateVariableExistence() {
-            var i = 0;
-            this.formArray.forEach(function (element) {
-                if (element.type === 'criterion') {
-                    i++;
-                }
-            });
-            return !(i === 0);
-        },
-        validateParenthesis: function validateParenthesis() {
-            var i = 0;
-            var cont = 0;
-            var flag = true;
-
-            while (cont < this.formArray.length && flag) {
-                if (i === 0) {
-                    if (this.formArray[cont].value === "(") {
-                        i++;
-                    } else if (this.formArray[cont].value === ")") {
-                        i++;
-                        flag = false;
-                    }
-                } else {
-                    if (this.formArray[cont].value === "(") {
-                        i++;
-                    } else if (this.formArray[cont].value === ")") {
-                        i--;
-                    }
-                }
-                cont++;
-            }
-            return i === 0;
-        }
-    },
-
-    mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2413,218 +2292,166 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        redirectLevel: String,
-        dataStepOne: Object,
-        level: {
-            type: Object,
-            default: function _default() {
-                return {
-                    name: 'Nombre Por defecto'
-                };
-            }
-        }
-    },
+    props: ['criterionList', 'level'],
     data: function data() {
         return {
-            variables: [],
-            localCriterion: [],
-
-            listCriterionSelect: [],
-            variableSelected: null,
-            criterion: { name: '-', value_1: '-', value_2: '-', comparison_operator: '-', unit: '-' },
-            criterionSelected: null,
-
-            variableCreateSelected: null,
-            criterionCreateSelected: null,
-            criterionInCreation: { value_1: null, value_2: null, comparison_operator: null, unit: null },
-            errors: [],
-            localLevel: this.level
+            gender: 'ALL',
+            form: "",
+            formBack: "",
+            response: null,
+            formArray: [],
+            autoIncrementForm: 0,
+            operatorList: [{ name: '(', value: '(', type: 'group' }, { name: ')', value: ')', type: 'group' }, { name: 'AND', value: '&&', type: 'logic' }, { name: 'OR', value: '||', type: 'logic' }],
+            errors: []
 
         };
     },
 
     methods: {
+        addCriterion: function addCriterion(criterion) {
+            this.form += criterion.name + ' ';
+            this.formBack += "_" + criterion.id + "_ ";
+            this.formArray[this.autoIncrementForm] = { value: criterion.name, type: 'criterion', extra: null };
+            this.autoIncrementForm++;
+        },
+        addOperator: function addOperator(operator) {
+            this.form += operator.value + ' ';
+            this.formBack += operator.value + ' ';
+            this.formArray[this.autoIncrementForm] = { value: operator.value, type: 'operator', extra: operator.type };
+            this.autoIncrementForm++;
+        },
+        deleteForm: function deleteForm() {
+            this.form = '';
+            this.formBack = '';
+            this.formArray = [];
+            this.autoIncrementForm = 0;
+            this.errors = [];
+        },
         clickButtonCancel: function clickButtonCancel() {
-            var _this = this;
-
             this.errors = [];
             axios.post('/admin/processLevel/deleteLevel', { level_id: this.level.id }).then(function (response) {
-                window.location.replace(_this.redirectLevel);
+                axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                    window.location = response.data.redirect;
+                });
+                //window.location.replace(this.redirectLevel);
             });
+        },
+        validateForm: function validateForm() {
+            this.errors = [];
+            var flag = false;
+            if (this.validateParenthesis()) {
+                if (this.validateVariableExistence()) {
+                    if (this.validateSequence()) {
+                        flag = true;
+                    } else {
+                        this.errors.push({ 0: 'Error en la formula revise las indicaciones para su creación' });
+                    }
+                } else {
+                    this.errors.push({ 0: 'Error en la formula revise las indicaciones para su creación' });
+                }
+            } else {
+                this.errors.push({ 0: 'Error en la formula: La distribución de parentesis es incorrecta' });
+            }
+
+            return flag;
+        },
+        updateLevel: function updateLevel() {
+            axios.post('/admin/processLevel/updateLevel', {
+                id: this.level.id,
+                diagnosis_id: this.level.diagnosis_id,
+                name: this.level.name,
+                gender: this.gender,
+                formula: this.formBack,
+                response: this.response
+            }).then(function (response) {});
         },
         clickButtonNext: function clickButtonNext() {
             this.errors = [];
-            if (this.localCriterion.length > 0) {
-                this.$emit('clickButtonNext', this.localCriterion);
-            } else {
-                this.errors.push({ 0: 'Debes seleccionar o crear al menos un criterio' });
-            }
-        },
-        getListCriterion: function getListCriterion() {
-            var _this2 = this;
+            if (this.response) {
+                if (this.validateForm()) {
+                    this.updateLevel();
+                    axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                        window.location = response.data.redirect;
+                    });
 
-            this.errors = [];
-            if (this.variableSelected) {
-                axios.post('/admin/processLevel/getListCriterion', { variable_id: this.variableSelected }).then(function (response) {
-                    _this2.listCriterionSelect = response.data;
-                }).catch(function (error) {
-                    _this2.errors = error.response.data;
-                });
-            }
-        },
-        getCriterion: function getCriterion() {
-            var _this3 = this;
-
-            this.errors = [];
-            if (this.criterionSelected) {
-                axios.post('/admin/processLevel/getCriterion', { id: this.criterionSelected }).then(function (response) {
-                    _this3.criterion = response.data[0];
-                }).catch(function (error) {
-                    _this3.errors = error.response.data;
-                });
-            }
-        },
-        changeCreateVariableSelected: function changeCreateVariableSelected() {
-            //this.listCriterionCreate = this.getListCriterion(this.variableCreateSelected);
-        },
-        changeCreateCriterionSelected: function changeCreateCriterionSelected() {},
-        changeCriterionSelected: function changeCriterionSelected() {},
-        copyCriterion: function copyCriterion() {
-            var _this4 = this;
-
-            this.errors = [];
-            if (this.variableSelected && this.criterionSelected) {
-                axios.post('/admin/processLevel/saveCriterion', {
-                    level_id: this.level.id,
-                    variable_id: this.variableSelected,
-                    value_1: this.criterion.value_1,
-                    value_2: this.criterion.value_2,
-                    comparison_operator: this.criterion.comparison_operator,
-                    unit: this.criterion.unit
-                }).then(function (response) {
-                    _this4.localCriterion.push(response.data);
-                    _this4.listCriterionSelect = [];
-                    _this4.variableSelected = null;
-                    _this4.criterion = { value_1: null, value_2: null, comparison_operator: null, unit: null };
-                    _this4.criterionSelected = null;
-                }).catch(function (error) {
-                    _this4.errors = error.response.data;
-                });
-            } else {
-                this.errors.push({ 0: 'Debes seleccionar una variable y un criterio' });
-            }
-        },
-        createCriterion: function createCriterion() {
-            var _this5 = this;
-
-            this.errors = [];
-            if (this.variableCreateSelected) {
-                axios.post('/admin/processLevel/saveCriterion', {
-                    level_id: this.level.id,
-                    variable_id: this.variableCreateSelected,
-                    value_1: this.criterionInCreation.value_1,
-                    value_2: this.criterionInCreation.value_2,
-                    comparison_operator: this.criterionInCreation.comparison_operator,
-                    unit: this.criterionInCreation.unit
-                }).then(function (response) {
-                    _this5.localCriterion.push(response.data);
-                    _this5.variableCreateSelected = null;
-                    _this5.criterionInCreation = { value_1: null, value_2: null, comparison_operator: null, unit: null };
-                }).catch(function (error) {
-                    _this5.errors = error.response.data;
-                });
-            } else {
-                this.errors.push({ 0: 'Debes seleccionar una variable' });
-            }
-        },
-        deleteCriterion: function deleteCriterion(id, index) {
-            var _this6 = this;
-
-            this.errors = [];
-            axios.post('/admin/processLevel/deleteCriterion', { id: id }).then(function (response) {
-                if (response.data) {
-                    _this6.localCriterion.splice(index, 1);
+                    //window.location.replace(this.redirectLevel);
                 }
-            }).catch(function (error) {
-                _this6.errors = error.response.data;
+            } else {
+                this.errors.push({ 0: 'El campo respuesta es obligatorio' });
+            }
+        },
+        validateSequence: function validateSequence() {
+            var i = 1;
+            var limit = this.formArray.length - 1;
+            var flag = true;
+            while (i <= limit && flag) {
+                var a = this.formArray[i - 1];
+                var b = this.formArray[i];
+                if (i === 1 && a.extra === 'logic') {
+                    flag = false;
+                }
+                if (i === limit && this.formArray[limit].extra === 'logic') {
+                    flag = false;
+                }
+                if (a.type === b.type) {
+                    if (a.type === 'criterion') {
+                        flag = false;
+                    } else if (a.extra === 'logic') {
+                        flag = false;
+                    }
+                } else {
+                    if (a.type === 'criterion' && b.value === '(') {
+                        flag = false;
+                    }
+                    if (a.value === ')' && b.type === 'criterion') {
+                        flag = false;
+                    }
+                    if (a.type === 'operator' && a.extra === 'logic' && b.value === ')') {
+                        flag = false;
+                    }
+                }
+                i++;
+            }
+            return flag;
+        },
+        validateVariableExistence: function validateVariableExistence() {
+            var i = 0;
+            this.formArray.forEach(function (element) {
+                if (element.type === 'criterion') {
+                    i++;
+                }
             });
+            return !(i === 0);
+        },
+        validateParenthesis: function validateParenthesis() {
+            var i = 0;
+            var cont = 0;
+            var flag = true;
+
+            while (cont < this.formArray.length && flag) {
+                if (i === 0) {
+                    if (this.formArray[cont].value === "(") {
+                        i++;
+                    } else if (this.formArray[cont].value === ")") {
+                        i++;
+                        flag = false;
+                    }
+                } else {
+                    if (this.formArray[cont].value === "(") {
+                        i++;
+                    } else if (this.formArray[cont].value === ")") {
+                        i--;
+                    }
+                }
+                cont++;
+            }
+            return i === 0;
         }
     },
-    mounted: function mounted() {
-        var _this7 = this;
 
-        axios.post('/admin/processLevel/getVariables').then(function (response) {
-            _this7.variables = response.data;
-        }).catch(function (error) {
-            _this7.errors = error.response.data;
-        });
-    }
+    mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2715,9 +2542,311 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['criterionlist', 'level', 'redirectLevel'],
+    props: {
+        dataStepOne: Object,
+        level: {
+            type: Object,
+            default: function _default() {
+                return {
+                    name: 'Nombre Por defecto'
+                };
+            }
+        }
+    },
+    data: function data() {
+        return {
+            variables: [],
+            localCriterion: [],
+
+            listCriterionSelect: [],
+            variableSelected: null,
+            criterion: { name: '-', value_1: '-', value_2: '-', comparison_operator: '-', unit: '-' },
+            criterionSelected: null,
+
+            variableCreateSelected: null,
+            criterionCreateSelected: null,
+            criterionInCreation: { value_1: null, value_2: null, comparison_operator: null, unit: null },
+            errors: [],
+            localLevel: this.level
+
+        };
+    },
+
+    methods: {
+        clickButtonCancel: function clickButtonCancel() {
+            this.errors = [];
+            axios.post('/admin/processLevel/deleteLevel', { level_id: this.level.id }).then(function (response) {
+                axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                    window.location = response.data.redirect;
+                });
+                //window.location.replace(this.redirectLevel);
+            });
+        },
+        clickButtonNext: function clickButtonNext() {
+            this.errors = [];
+            if (this.localCriterion.length > 0) {
+                this.$emit('clickButtonNext', this.localCriterion);
+            } else {
+                this.errors.push({ 0: 'Debes seleccionar o crear al menos un criterio' });
+            }
+        },
+        getListCriterion: function getListCriterion() {
+            var _this = this;
+
+            this.errors = [];
+            if (this.variableSelected) {
+                axios.post('/admin/processLevel/getListCriterion', { variable_id: this.variableSelected }).then(function (response) {
+                    _this.listCriterionSelect = response.data;
+                }).catch(function (error) {
+                    _this.errors = error.response.data;
+                });
+            }
+        },
+        getCriterion: function getCriterion() {
+            var _this2 = this;
+
+            this.errors = [];
+            if (this.criterionSelected) {
+                axios.post('/admin/processLevel/getCriterion', { id: this.criterionSelected }).then(function (response) {
+                    _this2.criterion = response.data[0];
+                }).catch(function (error) {
+                    _this2.errors = error.response.data;
+                });
+            }
+        },
+        changeCreateVariableSelected: function changeCreateVariableSelected() {
+            //this.listCriterionCreate = this.getListCriterion(this.variableCreateSelected);
+        },
+        changeCreateCriterionSelected: function changeCreateCriterionSelected() {},
+        changeCriterionSelected: function changeCriterionSelected() {},
+        copyCriterion: function copyCriterion() {
+            var _this3 = this;
+
+            this.errors = [];
+            if (this.variableSelected && this.criterionSelected) {
+                axios.post('/admin/processLevel/saveCriterion', {
+                    level_id: this.level.id,
+                    variable_id: this.variableSelected,
+                    value_1: this.criterion.value_1,
+                    value_2: this.criterion.value_2,
+                    comparison_operator: this.criterion.comparison_operator,
+                    unit: this.criterion.unit
+                }).then(function (response) {
+                    _this3.localCriterion.push(response.data);
+                    _this3.listCriterionSelect = [];
+                    _this3.variableSelected = null;
+                    _this3.criterion = { value_1: null, value_2: null, comparison_operator: null, unit: null };
+                    _this3.criterionSelected = null;
+                }).catch(function (error) {
+                    _this3.errors = error.response.data;
+                });
+            } else {
+                this.errors.push({ 0: 'Debes seleccionar una variable y un criterio' });
+            }
+        },
+        createCriterion: function createCriterion() {
+            var _this4 = this;
+
+            this.errors = [];
+            if (this.variableCreateSelected) {
+                axios.post('/admin/processLevel/saveCriterion', {
+                    level_id: this.level.id,
+                    variable_id: this.variableCreateSelected,
+                    value_1: this.criterionInCreation.value_1,
+                    value_2: this.criterionInCreation.value_2,
+                    comparison_operator: this.criterionInCreation.comparison_operator,
+                    unit: this.criterionInCreation.unit
+                }).then(function (response) {
+                    _this4.localCriterion.push(response.data);
+                    _this4.variableCreateSelected = null;
+                    _this4.criterionInCreation = { value_1: null, value_2: null, comparison_operator: null, unit: null };
+                }).catch(function (error) {
+                    _this4.errors = error.response.data;
+                });
+            } else {
+                this.errors.push({ 0: 'Debes seleccionar una variable' });
+            }
+        },
+        deleteCriterion: function deleteCriterion(id, index) {
+            var _this5 = this;
+
+            this.errors = [];
+            axios.post('/admin/processLevel/deleteCriterion', { id: id }).then(function (response) {
+                if (response.data) {
+                    _this5.localCriterion.splice(index, 1);
+                }
+            }).catch(function (error) {
+                _this5.errors = error.response.data;
+            });
+        }
+    },
+    mounted: function mounted() {
+        var _this6 = this;
+
+        axios.post('/admin/processLevel/getVariables').then(function (response) {
+            _this6.variables = response.data;
+        }).catch(function (error) {
+            _this6.errors = error.response.data;
+        });
+    }
+});
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['criterionlist', 'level'],
     data: function data() {
         return {
             gender: this.level.gender,
@@ -2753,7 +2882,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.errors = [];
         },
         clickButtonCancel: function clickButtonCancel() {
-            window.location.replace(this.redirectLevel);
+            axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                window.location = response.data.redirect;
+            });
+
+            //window.location.replace(this.redirectLevel);
         },
         validateForm: function validateForm() {
             this.errors = [];
@@ -2789,7 +2922,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.response) {
                 if (this.validateForm()) {
                     this.updateLevel();
-                    window.location.replace(this.redirectLevel);
+                    axios.get('/admin/processLevel/redirectIndex').then(function (response) {
+                        window.location = response.data.redirect;
+                    });
+
+                    //window.location.replace(this.redirectLevel);
                 }
             } else {
                 this.errors.push({ 0: 'El campo respuesta es obligatorio' });
@@ -2868,11 +3005,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(37);
+window._ = __webpack_require__(38);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -2881,9 +3018,9 @@ window._ = __webpack_require__(37);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(36);
+  window.$ = window.jQuery = __webpack_require__(37);
 
-  __webpack_require__(35);
+  __webpack_require__(36);
 } catch (e) {}
 
 /**
@@ -2918,7 +3055,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 /*!
@@ -5301,7 +5438,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -15561,7 +15698,7 @@ return jQuery;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -32650,10 +32787,10 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(52)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(55)(module)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -32843,14 +32980,14 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(28),
   /* template */
-  __webpack_require__(50),
+  __webpack_require__(53),
   /* scopeId */
   null,
   /* cssModules */
@@ -32877,14 +33014,48 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(29),
   /* template */
-  __webpack_require__(49),
+  __webpack_require__(47),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/var/www/medical-diagnostic/resources/assets/js/components/PatientDiagnostic.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PatientDiagnostic.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-14a53436", Component.options)
+  } else {
+    hotAPI.reload("data-v-14a53436", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(30),
+  /* template */
+  __webpack_require__(52),
   /* scopeId */
   null,
   /* cssModules */
@@ -32911,14 +33082,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(30),
+  __webpack_require__(31),
   /* template */
-  __webpack_require__(47),
+  __webpack_require__(50),
   /* scopeId */
   null,
   /* cssModules */
@@ -32945,14 +33116,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(31),
+  __webpack_require__(32),
   /* template */
-  __webpack_require__(45),
+  __webpack_require__(48),
   /* scopeId */
   null,
   /* cssModules */
@@ -32979,14 +33150,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(32),
+  __webpack_require__(33),
   /* template */
-  __webpack_require__(48),
+  __webpack_require__(51),
   /* scopeId */
   null,
   /* cssModules */
@@ -33013,14 +33184,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(33),
+  __webpack_require__(34),
   /* template */
-  __webpack_require__(46),
+  __webpack_require__(49),
   /* scopeId */
   null,
   /* cssModules */
@@ -33047,7 +33218,117 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {}, [_c('div', {
+    staticClass: "col-md-12 card"
+  }, [_c('div', {
+    staticClass: "form-group floating-label card-body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "col-md-4"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.identification_card),
+      expression: "identification_card"
+    }],
+    staticClass: "form-control ",
+    attrs: {
+      "required": "",
+      "name": "identification_card",
+      "type": "number",
+      "id": "identification_card"
+    },
+    domProps: {
+      "value": (_vm.identification_card)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.identification_card = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "form-control-line"
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-raised btn-primary btn-inline ink-reaction col-md-4 col-md-offset-1",
+    on: {
+      "click": _vm.searchDiagnostics
+    }
+  }, [_vm._v("Buscar")])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.showPatient),
+      expression: "showPatient"
+    }],
+    staticClass: "col-md-6"
+  }, [_c('table', {
+    staticClass: "table table-hover"
+  }, [_c('thead', [_c('tr', [_c('td', [_vm._v("Documento")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.patient.identification_card))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Nombre")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.patient.name + ' ' + _vm.patient.last_name_1 + ' ' + _vm.patient.last_name_2))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("correo")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.patient.email))])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("genero")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.patient.gender))])])])])])])]), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _c('div', {
+    staticClass: "col-md-12"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.displayErrors),
+      expression: "displayErrors"
+    }]
+  }, [_c('div', {
+    staticClass: "col-lg-8 col-lg-offset-3"
+  }, [_c('ul', _vm._l((_vm.errors), function(error) {
+    return _c('li', {
+      staticClass: "text-danger"
+    }, [_vm._v(_vm._s(error))])
+  }))])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.showDiagnosis),
+      expression: "showDiagnosis"
+    }]
+  }, _vm._l((_vm.diagnostics), function(diagnosticItem, diagnosticIndex) {
+    return _c('div', {
+      staticClass: "col-md-10 col-lg-offset-1"
+    }, [_c('div', {
+      staticClass: "card"
+    }, [_c('div', {
+      staticClass: "card-head card-bordered style-primary"
+    }, [_c('header', [_c('i', {
+      staticClass: "fa fa-fw fa-tag"
+    }), _vm._v("Diagnóstico caso " + _vm._s(diagnosticIndex))])]), _vm._v(" "), _c('div', {
+      staticClass: "card-body"
+    }, [_c('table', {
+      staticClass: "table table-hover"
+    }, [_vm._m(1, true), _vm._v(" "), _c('tbody', {}, _vm._l((diagnosticItem), function(diagnostic) {
+      return _c('tr', {}, [_c('td', [_vm._v(_vm._s(diagnostic.diagnosis_name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diagnostic.response))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(diagnostic.date))])])
+    }))])])])])
+  }))])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', {
+    staticClass: "col-md-3 control-label",
+    attrs: {
+      "for": "identification_card"
+    }
+  }, [_c('strong', [_vm._v("Documento de Identidad: ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('td', [_vm._v("Diagnóstico")]), _vm._v(" "), _c('td', [_vm._v("Nivel")]), _vm._v(" "), _c('td', [_vm._v("Fecha")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-14a53436", module.exports)
+  }
+}
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -33222,7 +33503,7 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -33397,7 +33678,7 @@ if (false) {
 }
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -33429,8 +33710,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "dataStepOne": _vm.dataStepOne,
       "level": _vm.level,
-      "criterionList": _vm.criterionList,
-      "redirectLevel": _vm.redirectLevel
+      "criterionList": _vm.criterionList
     },
     on: {
       "clickButtonCancel": _vm.clickButtonCancel,
@@ -33453,7 +33733,7 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -33767,7 +34047,7 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -34098,7 +34378,7 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -34127,7 +34407,7 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44201,7 +44481,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -44229,7 +44509,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(9);

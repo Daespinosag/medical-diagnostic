@@ -25,7 +25,6 @@
                     :dataStepOne="dataStepOne"
                     :level="level"
                     :criterionList="criterionList"
-                    :redirectLevel="redirectLevel"
                     @clickButtonCancel="clickButtonCancel"
                     @clickButtonNext="clickButtonNext"
             >
@@ -59,8 +58,7 @@
                 step: 1,
                 level: null,
                 dataStepOne: [],
-                criterionList:[],
-                redirectLevel : '/medical-diagnostic/admin/level'
+                criterionList:[]
             }
         },
         methods: {

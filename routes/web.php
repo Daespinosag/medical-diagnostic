@@ -85,10 +85,19 @@ Route::get('/teaching',[
     'as'	=> 'public.teaching'
 ]);
 
+Route::get('/consultPatient',[
+    'uses' 	=> 'ConsultPatientController@index',
+    'as'	=> 'consultPatient'
+]);
+
+Route::post('/consultPatient/getDiagnostics',[
+    'uses' 	=> 'ConsultPatientController@getDiagnostics',
+    'as'	=> 'consultPatient.getDiagnostics'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::group(['middleware'=>['auth','role:admin'],'prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){ //
 
@@ -122,6 +131,7 @@ Route::group(['middleware'=>['auth','role:admin'],'prefix' => 'admin','name' => 
     Route::post('processLevel/deleteCriterion','ProcessLevelController@deleteCriterion');
     Route::post('processLevel/updateLevel','ProcessLevelController@updateLevel');
     Route::post('processLevel/deleteLevel','ProcessLevelController@deleteLevel');
+    Route::get('processLevel/redirectIndex','ProcessLevelController@redirectIndex');
 
     Route::get('localClass',function (){
         new App\LocalClass\Formula(7);

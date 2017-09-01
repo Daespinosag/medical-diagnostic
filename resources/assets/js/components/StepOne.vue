@@ -116,9 +116,6 @@
 
 <script>
     export default {
-        props: {
-            redirectLevel: String,
-        },
         data() {
             return{
                 typesDisplayForm: false,
@@ -191,7 +188,8 @@
                 //TODO
             },
             clickButtonCancel(){
-                window.location.replace(this.redirectLevel);
+                axios.get(`/admin/processLevel/redirectIndex`).then(function (response) {window.location = response.data.redirect;});
+                //window.location.replace(this.redirectLevel);
             },
             clickButtonNext(){
                 this.errors = [];

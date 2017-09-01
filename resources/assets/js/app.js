@@ -20,7 +20,7 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('step-step',require('./components/StepStep.vue'));
 Vue.component('update-level',require('./components/UpdateLevel.vue'));
-
+Vue.component('patient-diagnostic',require('./components/PatientDiagnostic.vue'));
 const app = new Vue({
     el: '#app',
 

@@ -19,6 +19,11 @@ class ProcessLevelController extends Controller
         return view('processLevel.index');
     }
 
+    public function redirectIndex()
+    {
+        return ['redirect' => url('admin/level')];
+    }
+
     /* inicio de funcionalidades para step-one*/
 
     public function getTypeDiagnosis()
