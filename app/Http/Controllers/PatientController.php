@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Diagnosis;
 use App\Entities\Level;
 use App\Entities\PatientLevel;
 use App\LocalClass\Formula;
