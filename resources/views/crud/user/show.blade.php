@@ -10,7 +10,7 @@
                 </div>
             <div class="card-body">
                 <div class="">
-                    <img class="profile-user-img img-responsive img-circle center-block" width="100" height="100" @if($user->gender == 'F')src="{{ asset('assets/img/avatar_female.png') }}" @else src="{{ asset('assets/img/avatar_Male.png') }}" @endif alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle center-block" width="100" height="100" @if($user->gender == 'F')src="{{ asset('assets/img/avatar_female.png') }}" @else src="{{ asset('assets/img/avatar_male.png') }}" @endif alt="User profile picture">
                     <h4 class="profile-username text-center">{{ $user->name }}</h4>
                     <p class="text-muted text-center">{{ $user->email }}</p>
                 </div>
