@@ -44,13 +44,6 @@
                             </div>
 
                             <div class="item">
-                                <img src="{{ asset('assets/img/foto_2.jpg') }}" alt="Clínica de caídas">
-                                <div class="carousel-caption">
-                                    {{--<p>Clínica de caídas</p>--}}
-                                </div>
-                            </div>
-
-                            <div class="item">
                                 <img src="{{ asset('assets/img/foto_3.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}

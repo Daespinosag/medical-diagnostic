@@ -19,7 +19,7 @@ $(document).ready(function () {
         errorList.hide();
         $('#caseNumber').children('option:not(:first)').remove();
 
-        $.post('/patientClinicalData/' + document, { _token: token },function(response) {
+        $.post('/medical-diagnostic/patientClinicalData/' + document, { _token: token },function(response) {
 
             casesList = response;
 
@@ -63,7 +63,7 @@ $(document).ready(function () {
             selectError.html('');
             selectError.hide();
 
-            $.post('/generateDiagnosis/' + document, { _token: token, case: casesList[selectedValue] },function(response) {
+            $.post('/medical-diagnostic/generateDiagnosis/' + document, { _token: token, case: casesList[selectedValue] },function(response) {
                 console.dir(response);
 
                 $.each(response['error'], function(key, value) {

@@ -35,7 +35,7 @@ $(document).ready(function () {
             /*searchDocument.attr('disabled');
             searchButton.attr('disabled');
             cancelButton.attr('disabled');*/
-            $.post('/patientData/' + document, { _token: $('[name=\'_token\']').val() },function(response) {
+            $.post('/medical-diagnostic/patientData/' + document, { _token: $('[name=\'_token\']').val() },function(response) {
 
                 if(response){
 

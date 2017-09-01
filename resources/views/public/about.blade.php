@@ -137,7 +137,11 @@
                             </p>
                             <p>
                                 <strong>Investigador</strong> Senior – COLCIENCIAS<br>
-
+                                Coordinador del programa de geriatría y gerontología de la Universidad de Caldas,
+                                cuya imagen tiene resonancia nacional e internacional. Recientemente ganó el
+                                Presidential Award 2017 de la International Association of Gerontology and Geriatrics
+                                en la ciudad de San Francisco (USA) por sus desarrollos de investigación en
+                                gerontología y geriatría.
                             </p>
                             <p>
                                 <strong>Contacto</strong><br>
@@ -213,7 +217,9 @@
                             </p>
                             <p>
                                 <strong>Investigadora</strong><br>
-                                Desarrolla en la actualidad investigaciones en sarcopenia y fragilidad en enfermedad crónica.
+                                Desarrolla en la actualidad investigaciones en sarcopenia y fragilidad en enfermedad
+                                crónica. Además un proyecto en nefrogeriatría en conjunto con el Hospital Italiano de
+                                Buenos Aires.
                             </p>
                             <p>
                                 <strong>Contacto</strong><br>
@@ -284,7 +290,7 @@
                                 Educación física, recreación y deporte
                             </p>
                             <p>
-                                <strong>Investigador</strong> Junior- COLCIENCIAS<br>
+                                <strong>Investigador</strong> Junior - COLCIENCIAS<br>
                                 El desarrollo actual es actividad física en el adulto mayor, soluciones de tecnología para la asistencia al profesional de la salud y entornos construidos en el barrio a través de sistemas de información geográfica.
                             </p>
                             <p>
@@ -313,12 +319,15 @@
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Médico – Especialista en Medicina Interna y Geriatría</p>
-                            <p>Coordinadora de la Maestría en Actividad Física para la Salud</p>
                             <p>
                                 <strong>Docente</strong><br>
+
                             </p>
                             <p>
                                 <strong>Investigador</strong><br>
+                                Actualmente participa en la clínica de memoria y atención a pacientes con demencia de la
+                                Universidad de Caldas. Así mismo se destacan sus trabajos de investigación en epidemiologia
+                                de trastornos en neurología como demencia y dolor neuropatico crónico.
                             </p>
                             <p>
                                 <strong>Contacto</strong><br>
@@ -333,16 +342,6 @@
 
                             </p>
                         </div>
-                    </div><!--end .card -->
-                </div><!--end .col -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-head">
-                            <header>Alejandro Pineda Isaza</header>
-                        </div><!--end .card-head -->
-                        <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
-                        </div><!--end .card-body -->
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <div class="col-md-6">
@@ -364,7 +363,8 @@
                                 Edificio Miguel Arango Soto<br>
                                 Carrera 25 N 48-57 Piso 2<br>
                                 Teléfonos: +57 (6) 8783060 Ext. 31261<br>
-                                Correo: <a href="mailto:mariavictoria.jurado@ucaldas.edu.co" target="_top">mariavictoria.jurado@ucaldas.edu.co</a><br>
+                                Correo: <a href="mailto:mariavictoria.jurado@ucaldas.edu.co" target="_top">mariavictoria.jurado@ucaldas.edu.co</a>,
+                                <a href="mailto:geriatria.gerontologia@ucaldas.edu.co" target="_top">geriatria.gerontologia@ucaldas.edu.co</a><br>
                                 Manizales, Colombia<br>
 
                             </p>

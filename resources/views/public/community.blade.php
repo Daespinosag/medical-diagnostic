@@ -158,10 +158,10 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-head">
-                            <header><a href="http://www.univalle.edu.co" target="_blank">Universidad del Valle</a></header>
+                            <header><a href="http://salud.univalle.edu.co/especializaciones-clinicas/especializacion-en-geriatria" target="_blank">Universidad del Valle - Especialización en Geriatría</a></header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <a href="http://www.univalle.edu.co" target="_blank">
+                            <a href="http://salud.univalle.edu.co/especializaciones-clinicas/especializacion-en-geriatria" target="_blank">
                                 <img class="logo" src="{{ asset('assets/img/logo-universidad-valle.jpg') }}"></a>
                             </a>
                         </div><!--end .card-body -->
