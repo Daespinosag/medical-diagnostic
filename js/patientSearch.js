@@ -38,41 +38,38 @@ $(document).ready(function () {
             $.post('/medical-diagnostic/patientData/' + document, { _token: $('[name=\'_token\']').val() },function(response) {
 
                 if(response){
+                    modalFormGroup.removeClass('has-error');
+                    spanError.html('');
+                    spanError.hide();
 
-                    if(response){
-                        modalFormGroup.removeClass('has-error');
-                        spanError.html('');
-                        spanError.hide();
+                    console.dir(response);
 
-                        console.dir(response);
+                    $('form input#name').val(response.name);
+                    $('form input#last_name_1').val(response.last_name_1);
+                    $('form input#last_name_2').val(response.last_name_2);
+                    $('form input#email').val(response.email);
+                    $('form input#identification_card').val(response.identification_card.trim());
 
-                        $('form input#name').val(response.name);
-                        $('form input#last_name_1').val(response.last_name_1);
-                        $('form input#last_name_2').val(response.last_name_2);
-                        $('form input#email').val(response.email);
-                        $('form input#identification_card').val(response.identification_card.trim());
-
-                        if(response.gender === 'M'){
-                            $("input#gender").first().prop("checked", true);
-                        }else{
-                            $("input#gender").first().prop("checked", true);
-                        }
-
-                        $('#patientSearchCancel').trigger('click');
-                        $('#patientSearchCancel').trigger('click');
-
-                        /*searchDocument.removeAttr('disabled');
-                        searchButton.removeAttr('disabled');
-                        cancelButton.removeAttr('disabled');*/
+                    if(response.gender === 'M'){
+                        $("input#gender").first().prop("checked", true);
                     }else{
-                        modalFormGroup.addClass('has-error');
-                        spanError.html('<strong>Documento no encontrado</strong>');
-                        spanError.show();
-
-                        /*searchDocument.removeAttr('disabled');
-                        searchButton.removeAttr('disabled');
-                        cancelButton.removeAttr('disabled');*/
+                        $("input#gender").first().prop("checked", true);
                     }
+
+                    $('#patientSearchCancel').trigger('click');
+                    $('#patientSearchCancel').trigger('click');
+
+                    /*searchDocument.removeAttr('disabled');
+                    searchButton.removeAttr('disabled');
+                    cancelButton.removeAttr('disabled');*/
+                }else{
+                    modalFormGroup.addClass('has-error');
+                    spanError.html('<strong>Documento no encontrado</strong>');
+                    spanError.show();
+
+                    /*searchDocument.removeAttr('disabled');
+                    searchButton.removeAttr('disabled');
+                    cancelButton.removeAttr('disabled');*/
                 }
             });
         }else{
