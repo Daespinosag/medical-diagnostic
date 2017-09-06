@@ -76,6 +76,84 @@
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_8.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_9.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_10.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_11.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_12.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_13.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_14.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_15.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_16.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_17.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_18.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_19.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_20.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Left and right controls -->
