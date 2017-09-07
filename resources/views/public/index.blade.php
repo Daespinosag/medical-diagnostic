@@ -21,7 +21,8 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="text-primary">Clínica de inestabilidad vértigo, caídas y fracturas</h2>
+                    <h2 class="text-primary">Grupo de Investigación en Gerontología y Geriatría</h2>
+                    {{--<h2 class="text-primary">Clínica de inestabilidad vértigo, caídas y fracturas</h2>--}}
                 </div><!--end .col -->
                 <div class="col-lg-12">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">

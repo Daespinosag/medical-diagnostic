@@ -242,7 +242,7 @@
                             <header>Guadalupe María Henao</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
+                            <img class="member" src="{{ asset('assets/img/guadalupe.jpg') }}"></a>
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Enfermera - Magíster en Gerontología: Envejecimiento y Vejez</p>
@@ -315,7 +315,7 @@
                             <header>Ricardo Díaz Cabezas</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            <img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>
+                            {{--<img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>--}}
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Médico – Especialista en Medicina Interna y Geriatría</p>
