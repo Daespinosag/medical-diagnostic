@@ -2622,18 +2622,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             variables: [],
             localCriterion: [],
-
             listCriterionSelect: [],
             variableSelected: null,
             criterion: { name: '-', value_1: '-', value_2: '-', comparison_operator: '-', unit: '-' },
             criterionSelected: null,
-
             variableCreateSelected: null,
             criterionCreateSelected: null,
             criterionInCreation: { value_1: null, value_2: null, comparison_operator: null, unit: null },
             errors: [],
             localLevel: this.level
-
         };
     },
 
@@ -33794,7 +33791,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       domProps: {
         "value": variable.id
       }
-    }, [_vm._v("\n                                        " + _vm._s(variable.name) + "\n                                ")])
+    }, [_vm._v("\n                                " + _vm._s(variable.name) + "\n                                ")])
   })], 2)]), _vm._v(" "), _c('td', [_c('select', {
     directives: [{
       name: "model",
@@ -33826,7 +33823,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       domProps: {
         "value": criterion.id
       }
-    }, [_vm._v("\n                                    " + _vm._s(criterion.name) + "\n                                ")])
+    }, [_vm._v("\n                                " + _vm._s(criterion.name) + "\n                                ")])
   })], 2)]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.criterion.value_1))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.criterion.value_2))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.criterion.comparison_operator))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.criterion.unit))]), _vm._v(" "), _c('td', [_c('button', {
     staticClass: "btn btn-rounded btn-primary btn-inline ink-reaction pull-left",
     on: {
@@ -33868,7 +33865,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       domProps: {
         "value": variable.id
       }
-    }, [_vm._v("\n                                    " + _vm._s(variable.name) + "\n                                ")])
+    }, [_vm._v("\n                                " + _vm._s(variable.name) + "\n                                ")])
   })], 2)]), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('td', [_c('input', {
     directives: [{
       name: "model",
@@ -33932,7 +33929,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('option', {
     domProps: {
-      "value": '='
+      "value": '=='
     }
   }, [_vm._v("Igual")]), _vm._v(" "), _c('option', {
     domProps: {
