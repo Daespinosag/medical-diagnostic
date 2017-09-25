@@ -296,7 +296,7 @@
                             <p>
                                 <strong>Contacto</strong><br>
 
-                                Departamento Clínico<br>
+                                Departamento Acción Física Humana<br>
                                 Facultad de Ciencias para la Salud<br>
                                 Universidad de Caldas<br>
                                 Edificio Miguel Arango Soto<br>
@@ -318,7 +318,7 @@
                             {{--<img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>--}}
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
-                            <p>Médico – Especialista en Medicina Interna y Geriatría</p>
+                            <p>Médico – Especialista en Neurología Clínica</p>
                             <p>
                                 <strong>Docente</strong><br>
 
@@ -338,6 +338,7 @@
                                 Edificio Miguel Arango Soto<br>
                                 Carrera 25 N 48-57<br>
                                 Teléfonos: +57 (6) 8783061  8783064  8783066 Ext. 31153<br>
+                                Correo: <a href="mailto:ricardo.diaz_c@ucaldas.edu.co" target="_top">ricardo.diaz_c@ucaldas.edu.co</a><br>
                                 Manizales, Colombia<br>
 
                             </p>
@@ -357,7 +358,6 @@
                             <p>
                                 <strong>Contacto</strong><br>
 
-                                Departamento Clínico<br>
                                 Facultad de Ciencias para la Salud<br>
                                 Universidad de Caldas<br>
                                 Edificio Miguel Arango Soto<br>
@@ -365,6 +365,42 @@
                                 Teléfonos: +57 (6) 8783060 Ext. 31261<br>
                                 Correo: <a href="mailto:mariavictoria.jurado@ucaldas.edu.co" target="_top">mariavictoria.jurado@ucaldas.edu.co</a>,
                                 <a href="mailto:geriatria.gerontologia@ucaldas.edu.co" target="_top">geriatria.gerontologia@ucaldas.edu.co</a><br>
+                                Manizales, Colombia<br>
+
+                            </p>
+                        </div>
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head">
+                            <header>Felipe Marulanda Mejía</header>
+                        </div><!--end .card-head -->
+                        <div class="card-body text-center">
+                            {{--<img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>--}}
+                        </div><!--end .card-body -->
+                        <div class="card-body height-3 scroll style-primary">
+                            <p>Médico – Especialista en Medicina Interna y Geriatría</p>
+                            <p>
+                                <strong>Docente</strong><br>
+
+                            </p>
+                            <p>
+                                <strong>Investigador</strong><br>
+                                Actualmente participa en la clínica de memoria y atención a pacientes con demencia de la
+                                Universidad de Caldas. Así mismo se destacan sus trabajos de investigación en epidemiologia
+                                de trastornos en neurología como demencia, dolor neuropatico crónico y delirium.
+                            </p>
+                            <p>
+                                <strong>Contacto</strong><br>
+
+                                Departamento Clínico<br>
+                                Facultad de Ciencias para la Salud<br>
+                                Universidad de Caldas<br>
+                                Edificio Miguel Arango Soto<br>
+                                Carrera 25 N 48-57<br>
+                                Teléfonos: +57 (6) 8783061  8783064  8783066 Ext. 31153<br>
+                                Correo: <a href="mailto:felipe.marulanda@ucaldas.edu.co" target="_top">felipe.marulanda@ucaldas.edu.co</a><br>
                                 Manizales, Colombia<br>
 
                             </p>
