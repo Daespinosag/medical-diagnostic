@@ -28,7 +28,7 @@
         {!! Form::label('comparison_operator',trans('validation.attributes.comparision_operator'),['class' => 'col-md-4 control-label', 'for' =>'comparison operator']) !!}
 
         <div class="col-md-6">
-            {{ Form::select('comparison_operator',['==' => 'igual', '>' => 'mayor o igual', '>=' => 'mayor que','<'=>'menor o igual','<=' => 'menor que','!='=>'diferente','<>' => 'entre'],null,['placeholder' => 'Seleccione el Operador de Comparación','class' => 'form-control']) }}
+            {{ Form::select('comparison_operator',['==' => 'igual', '>=' => 'mayor o igual', '>' => 'mayor que','<='=>'menor o igual','<' => 'menor que','!='=>'diferente','<>' => 'entre'],null,['placeholder' => 'Seleccione el Operador de Comparación','class' => 'form-control']) }}
             @if ($errors->has('comparison_operator'))
                 <span class="help-block">
                       <strong>{{ $errors->first('comparison_operator') }}</strong>
