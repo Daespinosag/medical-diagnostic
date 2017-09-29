@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Entities\Patient;
 use App\Http\Requests\PatientRequest;
 use OfiClinic;
+use PDF;
 
 class PatientController extends Controller
 {
@@ -228,5 +229,34 @@ class PatientController extends Controller
 
         dd($respuesta);
         */
+    }
+
+    public function generatePatientCaseReport($id, $caseNumber){
+
+        $patient = Patient::findOrFail($id);
+
+        $cases = PatientLevel::select('medical_case as val')->where('patient_id',$id)
+            ->where('medical_case', $caseNumber)
+            ->get()->toArray();
+        $arr = [];
+        foreach ($cases as $caseKey => $caseValue){
+            $arr[$caseValue['val']] = [];
+            foreach ($patient->levels as $level){
+                if ($caseValue['val'] == $level->pivot->medical_case){
+                    array_push( $arr[$caseValue['val']], [
+                        'date' => $level->pivot->diagnosis_date,
+                        'diagnosis_name' => $level->diagnosis->name,
+                        'response'  => $level->response
+                    ]);
+                }
+            }
+        }
+
+        //return view('crud.patient.report', compact('patient', 'arr'));
+        PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('crud.patient.report', compact('patient', 'arr'));
+        return $pdf->stream('report.pdf');
+
+        //dd($id, $caseNumber, $arr, $pdf);
     }
 }

@@ -183,6 +183,7 @@ return [
         Artisaninweb\SoapWrapper\ServiceProvider::class,
 
         App\Providers\SoapServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -239,7 +240,9 @@ return [
 
         'SoapWrapper' => Artisaninweb\SoapWrapper\Facade::class,
 
-        'OfiClinic' => App\Facades\OfiClinicFacade::class
+        'OfiClinic' => App\Facades\OfiClinicFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+
     ],
 
 ];

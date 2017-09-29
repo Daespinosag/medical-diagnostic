@@ -7,10 +7,10 @@
 
 		<!-- BEGIN LOGIN SECTION -->
 		<section class="section-account">
-			<div class="img-backdrop" {{--style="background-image: url('{{ asset('assets/img/logo-imias.png') }}'); background-size: auto;"--}}
+			<div class="img-backdrop" style="background-image: url('{{ asset('assets/img/logo_clinica.png') }}'); background-size: auto;"
 			style="font-size: 60px; text-align: center;">
-				<br>
-				Gerontología y Geriatría
+				{{--<br>
+				Gerontología y Geriatría--}}
 			</div>
 			<div class="spacer"></div>
 			<div class="card contain-sm style-transparent">
@@ -18,7 +18,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<br/>
-							<span class="text-lg text-bold text-primary">Gerontología y Geriatría</span>
+							<span class="text-lg text-bold text-primary">Clínica de inestabilidad vértigo, caídas y fracturas en ancianos</span>
 							<br/><br/>
 							<form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="post">
                                 {{ csrf_field() }}

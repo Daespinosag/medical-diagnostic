@@ -37,7 +37,7 @@
                         <div class="tools text-center">
                             <div class="btn-group">
                                 <a id="modalSearchCasesButton" href="#" type="button" class="btn btn-raised btn-primary btn-inline ink-reaction" data-toggle="modal"
-                                   data-target="#formModal" data-original-title="Generar diagnósticos">
+                                   data-backdrop="static" data-keyboard="false" data-target="#formModal" data-original-title="Generar diagnósticos">
                                     Generar diagnósticos
                                 </a>
                                 {{--<button class="btn btn-default-bright btn-raised" data-toggle="modal" data-target="#formModal">Buscar paciente</button>--}}
@@ -79,6 +79,16 @@
                                     <td>{{ $diagnosisCase['date'] }}</td>
                                 </tr>
                             @endforeach
+                            <tr class="">
+                                <td colspan="3" class="text-center">
+                                    <div class="btn-group">
+                                        <a href="{{ route('generatePatientCaseReport', [$patient->id, $case]) }}" target="_blank" type="button" class="btn btn-raised btn-primary btn-inline ink-reaction" data-original-title="Generar diagnósticos">
+                                            Generar reporte
+                                        </a>
+                                        {{--<button class="btn btn-default-bright btn-raised" data-toggle="modal" data-target="#formModal">Buscar paciente</button>--}}
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
 
                         </table>

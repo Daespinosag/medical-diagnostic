@@ -7,10 +7,10 @@
 
 		<!-- BEGIN LOGIN SECTION -->
 		<section class="section-account">
-			<div class="img-backdrop" {{--style="background-image: url('{{ asset('assets/img/logo-imias.png') }}'); background-size: auto;"--}}
-			style="font-size: 60px; text-align: center;">
-				<br>
-				Gerontología y Geriatría
+			<div class="img-backdrop" style="background-image: url('{{ asset('assets/img/logo_clinica.png') }}'); background-size: auto;"
+				 style="font-size: 60px; text-align: center;">
+				{{--<br>
+				Gerontología y Geriatría--}}
 			</div>
 			<div class="spacer"></div>
 			<div class="card contain-sm style-transparent">

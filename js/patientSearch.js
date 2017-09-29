@@ -71,6 +71,10 @@ $(document).ready(function () {
                     searchButton.removeAttr('disabled');
                     cancelButton.removeAttr('disabled');*/
                 }
+            }).fail(function (response) {
+                modalFormGroup.addClass('has-error');
+                spanError.html('<strong>Servicio no disponible</strong>');
+                spanError.show();
             });
         }else{
             modalFormGroup.addClass('has-error');

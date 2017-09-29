@@ -30,7 +30,7 @@ $(document).ready(function () {
                     console.dir(value);
 
                     $.each(value, function(key, value) {
-                        htmlError += '<li><strong>' + value + '</strong></li>'
+                        htmlError += '<li><strong>' + value + '</strong></li>';
                     });
 
                     if (value.length > 0){
@@ -47,6 +47,11 @@ $(document).ready(function () {
                     console.dir(value);
                 }
             });
+        }).fail(function (response) {
+            htmlError += '<li><strong>Servicio no disponible</strong></li>';
+            modalFormGroup.addClass('has-error');
+            errorList.html(htmlError);
+            errorList.show();
         });
     });
 
@@ -67,7 +72,7 @@ $(document).ready(function () {
                 console.dir(response);
 
                 $.each(response['error'], function(key, value) {
-                    htmlError += '<li><strong>' + value + '</strong></li>'
+                    htmlError += '<li><strong>' + value + '</strong></li>';
                 });
                 if (response['error'].length > 0){
                     modalFormGroup.addClass('has-error');
@@ -77,6 +82,11 @@ $(document).ready(function () {
 
                 messageList.html('<strong>Diagnósticos generados correctamente.</strong>');
                 $('button#generateDiagnosis').attr('disabled', 'disabled');
+            }).fail(function (response) {
+                htmlError += '<li><strong>Servicio no disponible</strong></li>';
+                modalFormGroup.addClass('has-error');
+                errorList.html(htmlError);
+                errorList.show();
             });
 
         }else{

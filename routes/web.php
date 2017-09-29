@@ -40,6 +40,11 @@ Route::post('/generateDiagnosis/{document}', [
     'uses' => 'PatientController@generateDiagnosis'
 ]);
 
+Route::get('/generatePatientCaseReport/{patient_id}/{case_number}', [
+    'as' => 'generatePatientCaseReport',
+    'uses' => 'PatientController@generatePatientCaseReport'
+]);
+
 Route::get('/',[
     'uses' 	=> 'PublicController@index',
     'as'	=> 'public.index'

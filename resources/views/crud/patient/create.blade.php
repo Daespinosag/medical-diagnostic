@@ -7,7 +7,7 @@
 
         <div class="tools">
             <div class="btn-group">
-                <a id="modalButton" href="#" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="modal" data-target="#formModal" data-original-title="Buscar paciente">
+                <a id="modalButton" href="#" type="button" class="btn btn-raised ink-reaction btn-primary btn-block" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#formModal" data-original-title="Buscar paciente">
                     Buscar paciente
                 </a>
                 {{--<button class="btn btn-default-bright btn-raised" data-toggle="modal" data-target="#formModal">Buscar paciente</button>--}}
