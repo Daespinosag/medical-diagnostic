@@ -40,11 +40,6 @@ Route::post('/generateDiagnosis/{document}', [
     'uses' => 'PatientController@generateDiagnosis'
 ]);
 
-Route::get('/generatePatientCaseReport/{patient_id}/{case_number}', [
-    'as' => 'generatePatientCaseReport',
-    'uses' => 'PatientController@generatePatientCaseReport'
-]);
-
 Route::get('/',[
     'uses' 	=> 'PublicController@index',
     'as'	=> 'public.index'
@@ -106,37 +101,44 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['auth','role:admin'],'prefix' => 'admin','name' => 'admin', 'as' => 'admin.'], function(){ //
 
-    Route::resource('rol', 'RolController');
-    Route::resource('typeDiagnosis','TypeDiagnosisController');
-    Route::resource('patient','PatientController');
-    Route::resource('diagnosis','DiagnosisController');
-    Route::resource('permission','PermissionController');
-    Route::resource('user','UserController');
-    Route::resource('level','LevelController');
-    Route::resource('variable','VariableController');
-    Route::resource('criterion','CriterionController');
-    Route::resource('variablePatient','VariablePatientController');
-    Route::resource('patientLevel','PatientLevelController');
+    Route::group(['middleware'=>['auth','SpecificRole:true']], function(){
 
+        Route::resource('rol', 'RolController');
+        Route::resource('typeDiagnosis','TypeDiagnosisController');
+        Route::resource('diagnosis','DiagnosisController');
+        Route::resource('permission','PermissionController');
+        Route::resource('user','UserController');
+        Route::resource('level','LevelController');
+        Route::resource('variable','VariableController');
+        Route::resource('criterion','CriterionController');
+        Route::resource('patientLevel','PatientLevelController');
 
-    Route::get('processLevel','ProcessLevelController@index');
+        Route::get('processLevel','ProcessLevelController@index');
 
-    /* inicio rutas para step-one*/
-    Route::post('processLevel/typeDiagnosis','ProcessLevelController@getTypeDiagnosis');
-    Route::post('processLevel/createTypeDiagnosis','ProcessLevelController@createTypeDiagnosis');
-    Route::post('processLevel/loadDiagnosis','ProcessLevelController@loadDiagnosis');
-    Route::post('processLevel/createDiagnosis','ProcessLevelController@createDiagnosis');
+        /* inicio rutas para step-one*/
+        Route::post('processLevel/typeDiagnosis','ProcessLevelController@getTypeDiagnosis');
+        Route::post('processLevel/createTypeDiagnosis','ProcessLevelController@createTypeDiagnosis');
+        Route::post('processLevel/loadDiagnosis','ProcessLevelController@loadDiagnosis');
+        Route::post('processLevel/createDiagnosis','ProcessLevelController@createDiagnosis');
 
-    /* inicio fin para step-one*/
-    Route::post('processLevel/createLevel','ProcessLevelController@createLevel');
-    Route::post('processLevel/getVariables','ProcessLevelController@getVariables');
-    Route::post('processLevel/getListCriterion','ProcessLevelController@getListCriterion');
-    Route::post('processLevel/getCriterion','ProcessLevelController@getCriterion');
-    Route::post('processLevel/saveCriterion','ProcessLevelController@saveCriterion');
-    Route::post('processLevel/deleteCriterion','ProcessLevelController@deleteCriterion');
-    Route::post('processLevel/updateLevel','ProcessLevelController@updateLevel');
-    Route::post('processLevel/deleteLevel','ProcessLevelController@deleteLevel');
-    Route::get('processLevel/redirectIndex','ProcessLevelController@redirectIndex');
+        /* inicio fin para step-one*/
+        Route::post('processLevel/createLevel','ProcessLevelController@createLevel');
+        Route::post('processLevel/getVariables','ProcessLevelController@getVariables');
+        Route::post('processLevel/getListCriterion','ProcessLevelController@getListCriterion');
+        Route::post('processLevel/getCriterion','ProcessLevelController@getCriterion');
+        Route::post('processLevel/saveCriterion','ProcessLevelController@saveCriterion');
+        Route::post('processLevel/deleteCriterion','ProcessLevelController@deleteCriterion');
+        Route::post('processLevel/updateLevel','ProcessLevelController@updateLevel');
+        Route::post('processLevel/deleteLevel','ProcessLevelController@deleteLevel');
+        Route::get('processLevel/redirectIndex','ProcessLevelController@redirectIndex');
+    });
+    Route::group(['middleware'=>['auth','SpecificRole:false']], function(){
+
+        Route::resource('patient','PatientController');
+        Route::resource('variablePatient','VariablePatientController');
+
+    });
+
 
     Route::get('localClass',function (){
         new App\LocalClass\Formula(7);
