@@ -48,17 +48,23 @@
                 <!--start submenu -->
 
                 <ul>
-                    <li><a href="{{ route('admin.rol.index') }}" ><span class="title">Rol</span></a></li>
-                    <li><a href="{{ route('admin.permission.index') }}" ><span class="title">Permisos</span></a></li>
-                    <li><a href="{{ route('admin.user.index') }}" ><span class="title">Usuarios</span></a></li>
-                    <li><a href="{{ route('admin.patient.index') }}" ><span class="title">Pacientes</span></a></li>
-                    <li><a href="{{ route('admin.typeDiagnosis.index') }}" ><span class="title">Tipo de Diagnóstico</span></a></li>
-                    <li><a href="{{ route('admin.diagnosis.index') }}" ><span class="title">Diagnóstico</span></a></li>
-                    <li><a href="{{ route('admin.level.index') }}" ><span class="title">Niveles</span></a></li>
-                    <li><a href="{{ route('admin.variable.index') }}" ><span class="title">Variables</span></a></li>
-                    <li><a href="{{ route('admin.criterion.index') }}" ><span class="title">Asignar Criterio</span></a></li>
-                    <li><a href="{{ route('admin.variablePatient.index') }}" ><span class="title">Asignar Variable</span></a></li>
-                    <li><a href="{{ route('admin.patientLevel.index') }}" ><span class="title">Asignar Nivel</span></a></li>
+                    @if( Auth::user()->role->name != "Admin-rango-1")
+                        <li><a href="{{ route('admin.rol.index') }}" ><span class="title">Rol</span></a></li>
+                        <li><a href="{{ route('admin.permission.index') }}" ><span class="title">Permisos</span></a></li>
+                        <li><a href="{{ route('admin.user.index') }}" ><span class="title">Usuarios</span></a></li>
+                        <li><a href="{{ route('admin.patient.index') }}" ><span class="title">Pacientes</span></a></li>
+                        <li><a href="{{ route('admin.typeDiagnosis.index') }}" ><span class="title">Tipo de Diagnóstico</span></a></li>
+                        <li><a href="{{ route('admin.diagnosis.index') }}" ><span class="title">Diagnóstico</span></a></li>
+                        <li><a href="{{ route('admin.level.index') }}" ><span class="title">Niveles</span></a></li>
+                        <li><a href="{{ route('admin.variable.index') }}" ><span class="title">Variables</span></a></li>
+                        <li><a href="{{ route('admin.criterion.index') }}" ><span class="title">Asignar Criterio</span></a></li>
+                        <li><a href="{{ route('admin.variablePatient.index') }}" ><span class="title">Asignar Variable</span></a></li>
+                        <li><a href="{{ route('admin.patientLevel.index') }}" ><span class="title">Asignar Nivel</span></a></li>
+                    @else
+                        <li><a href="{{ route('admin.patient.index') }}" ><span class="title">Pacientes</span></a></li>
+                        <li><a href="{{ route('admin.variablePatient.index') }}" ><span class="title">Asignar Variable</span></a></li>
+                    @endif
+
 
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->
