@@ -34,37 +34,53 @@
                             <li data-target="#myCarousel" data-slide-to="3"></li>
                             <li data-target="#myCarousel" data-slide-to="4"></li>
                             <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                            <li data-target="#myCarousel" data-slide-to="7"></li>
+                            <li data-target="#myCarousel" data-slide-to="8"></li>
+                            <li data-target="#myCarousel" data-slide-to="9"></li>
+                            <li data-target="#myCarousel" data-slide-to="10"></li>
+                            <li data-target="#myCarousel" data-slide-to="11"></li>
+                            <li data-target="#myCarousel" data-slide-to="12"></li>
+                            <li data-target="#myCarousel" data-slide-to="13"></li>
+                            <li data-target="#myCarousel" data-slide-to="14"></li>
+                            <li data-target="#myCarousel" data-slide-to="15"></li>
+                            <li data-target="#myCarousel" data-slide-to="16"></li>
+                            <li data-target="#myCarousel" data-slide-to="17"></li>
+                            <li data-target="#myCarousel" data-slide-to="18"></li>
+                            <li data-target="#myCarousel" data-slide-to="19"></li>
                         </ol>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
+                                <img src="{{ asset('assets/img/logo-grupo.png') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
                                 <img src="{{ asset('assets/img/foto_1.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
-
                             <div class="item">
                                 <img src="{{ asset('assets/img/foto_3.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
-
                             <div class="item">
                                 <img src="{{ asset('assets/img/foto_4.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
-
                             <div class="item">
                                 <img src="{{ asset('assets/img/foto_5.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
                             </div>
-
                             <div class="item">
                                 <img src="{{ asset('assets/img/foto_6.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
