@@ -315,7 +315,7 @@
                             <header>Ricardo Díaz Cabezas</header>
                         </div><!--end .card-head -->
                         <div class="card-body text-center">
-                            {{--<img class="member" src="{{ asset('assets/img/angela.jpg') }}"></a>--}}
+                            <img class="member" src="{{ asset('assets/img/ricardo.jpg') }}"></a>
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Médico – Especialista en Neurología Clínica</p>

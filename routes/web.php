@@ -55,6 +55,11 @@ Route::get('/about',[
     'as'	=> 'public.about'
 ]);
 
+Route::get('/internship',[
+    'uses' 	=> 'PublicController@internship',
+    'as'	=> 'public.internship'
+]);
+
 Route::get('/community',[
     'uses' 	=> 'PublicController@community',
     'as'	=> 'public.community'

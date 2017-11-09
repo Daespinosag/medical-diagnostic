@@ -33,6 +33,7 @@
                     <li><a href="{{ route('public.projects') }}" ><span class="title">Proyectos internacionales</span></a></li>
                     <li><a href="{{ route('public.publications') }}" ><span class="title">Publicaciones científicas</span></a></li>
                     <li><a href="{{ route('public.community') }}" ><span class="title">Comunidades</span></a></li>
+                    <li><a href="{{ route('public.internship') }}" ><span class="title">Pasantías</span></a></li>
                     <li><a href="{{ route('public.events') }}" ><span class="title">Eventos</span></a></li>
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->

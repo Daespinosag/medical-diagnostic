@@ -25,6 +25,14 @@ class PublicController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+    public function internship()
+    {
+        return view('public.internship');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function community()
     {
         return view('public.community');

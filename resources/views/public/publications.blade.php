@@ -37,6 +37,89 @@
                         </div>
                     </div>--}}<!--end .panel -->
                         <div class="card panel">
+                            <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#accordion1-7">
+                                <header>Año 2016</header>
+                                <div class="tools">
+                                    <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                </div>
+                            </div>
+                            <div id="accordion1-7" class="collapse">
+                                <div class="card-body">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body no-padding">
+                                                <ul class="list">
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="http://bmjopen.bmj.com/lookup/doi/10.1136/bmjopen-2016-012339" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Guedes DT, Vafaei A, Alvarado BE, Curcio CL, Guralnik JM, Zunzunegui MV, et al. Experiences of violence across life course and its effects on mobility among participants in the International Mobility in Aging Study. BMJ Open [Internet]. 2016 Oct 13;6(10):e012339. Available from: http://bmjopen.bmj.com/lookup/doi/10.1136/bmjopen-2016-012339
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="https://www.hindawi.com/journals/cggr/2016/7910205/" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Gomez F, Corchuelo J, Curcio C-L, Calzada M-T, Mendez F. SABE Colombia: Survey on Health, Well-Being, and Aging in Colombia—Study Design and Protocol. Curr Gerontol Geriatr Res [Internet]. 2016 Nov 13;2016:1–7. Available from: https://www.hindawi.com/journals/cggr/2016/7910205/
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="https://search.proquest.com/openview/28146ba775ecccd1df1f4f45534dfb12/1?pq-origsite=gscholar&cbl=35973" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Doulougou B, Gomez F, Alvarado B, Guerra R, Ylli A, Guralnik J, et al. Factors associated with hypertension prevalence, awareness, treatment and control among participants in the International Mobility in Aging Study (IMIAS). J Hum Hypertens [Internet]. 2016;30:112–9. Available from: https://search.proquest.com/openview/28146ba775ecccd1df1f4f45534dfb12/1?pq-origsite=gscholar&cbl=35973
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="http://www.ncbi.nlm.nih.gov/pubmed/27327236" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Auais M, Alvarado BE, Curcio C-L, Garcia A, Ylli A, Deshpande N. Fear of falling as a risk factor of mobility disability in older people at five diverse sites of the IMIAS study. Arch Gerontol Geriatr [Internet]. 2016 Sep;66:147–53. Available from: http://www.ncbi.nlm.nih.gov/pubmed/27327236
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="http://www.sciencedirect.com/science/article/pii/S0167494316300668" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Phenotype of sarcopenic obesity in older individuals with a history of falling. Arch Gerontol Geriatr [Internet]. 2016 Jul 1 [cited 2017 Sep 13];65:255–9. Available from: http://www.sciencedirect.com/science/article/pii/S0167494316300668
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="http://www.ncbi.nlm.nih.gov/pubmed/27354077" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Bélanger E, Ahmed T, Vafaei A, Curcio CL, Phillips SP, Zunzunegui MV. Sources of social support associated with health and quality of life: a cross-sectional study among Canadian and Latin American older adults. BMJ Open [Internet]. 2016 Jun 28 [cited 2017 Sep 13];6(6):e011503. Available from: http://www.ncbi.nlm.nih.gov/pubmed/27354077
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="tile">
+                                                        <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?pid=S0120-24482016000200009&script=sci_abstract&tlng=es" target="_blank">
+                                                            <div class="tile-text">
+                                                                <p>
+                                                                    Asociación Colombiana de Medicina Interna. F, Curcio C-L, Benjumea Á-M. El eje hipotálamo-pituitaria-adrenal (HPA) al envejecer. Cortisol salival en ancianos. Colombia [Internet]. Vol. 41, Acta Medica Colombiana. La Asociación; 2016 [cited 2017 Sep 13]. 130-137 p. Available from: http://www.scielo.org.co/scielo.php?pid=S0120-24482016000200009&script=sci_abstract&tlng=es
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div><!--end .card-body -->
+                                        </div><!--end .card -->
+                                    </div><!--end .col -->
+                                </div>
+                            </div>
+                        </div><!--end .panel -->
+                        <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#accordion1-1">
                                 <header>Año 2015</header>
                                 <div class="tools">
@@ -53,13 +136,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/26113021" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    The mobility gap between older men and women: The embodiment of gender
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Archives Of Gerontology And Geriatrics ISSN: 0167-4943, 2015 vol:61 fasc: 2 págs: 140 - 148, DOI:doi: 10.1016/j.archger.2015.06.005
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, MARIA VICTORIA ZUNZUNEGUI, BEATRIZ EUGENIA ALVARADO LLANO
+                                                                    Zunzunegui MV, Alvarado BE, Guerra R, Gómez JF, Ylli A, Guralnik JM, et al. The mobility gap between older men and women: The embodiment of gender. Arch Gerontol Geriatr [Internet]. 2015 Sep;61(2):140–8. Available from: http://www.ncbi.nlm.nih.gov/pubmed/26113021
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -68,13 +145,7 @@
                                                         <a class="tile-content ink-reaction" href="https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-015-0083-3" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Social differences associated with the use of psychotropic drugs among men and women aged 65 to 74 years living in the community: the International Mobility in Aging Study (IMIAS).
-                                                                </p>
-                                                                <p>
-                                                                    Inglaterra, Bmc Geriatrics ISSN: 1471-2318, 2015 vol:15 fasc: N/A págs: 83 - 93, DOI:10.1186/s12877-015-0083-3
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, MARIA VICTORIA ZUNZUNEGUI
+                                                                    Nana GN, Doulougou B, Gomez F, Ylli A, Guralnik J, Zunzunegui MV. Social differences associated with the use of psychotropic drugs among men and women aged 65 to 74 years living in the community: the international mobility in aging study (IMIAS). BMC Geriatr [Internet]. 2015 Dec 20;15(1):85. Available from: http://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-015-0083-3
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -83,13 +154,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielosp.org/pdf/rpsp/v37n4-5/v37n4-5a16.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    La brecha de género en violencia doméstica en adultos mayores en América Latina: el Estudio IMIAS
-                                                                </p>
-                                                                <p>
-                                                                    Estados Unidos, Revista Panamericana De Salud Pública = Pan American Journal Of Public Health ISSN: 1680-5348, 2015 vol:37 fasc: 4/5 págs: 293 - 300, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> DIMITRI TAURINO GUEDES, CARMEN LUCIA CURCIO BORRERO, BEATRIZ EUGENIA ALVARADO LLANO, MARIA VICTORIA ZUNZUNEGUI, RICARDO OLIVEIRA GUERRA
+                                                                    Guedes T, Cl C, Llano A, Mv Z, La GR, Guedes DT, et al. Investigación original / Original research La brecha de género en violencia doméstica en adultos mayores en América Latina: el Estudio IMIAS. Pan Am J Public Heal Rev Panam Salud Publica América Lat el Estud IMIAS Rev Panam Salud Publica [Internet]. 2015;3737(4545):293–300. Available from: http://www.scielosp.org/pdf/rpsp/v37n4-5/v37n4-5a16.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -98,13 +163,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25704920" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Socioeconomic status, social relations and domestic violence (DV) against elderly people in Canada, Albania, Colombia and Brazil
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Archives Of Gerontology And Geriatrics ISSN: 0167-4943, 2015 vol:60 fasc: 3 págs: 492 - 500, DOI:doi: 10.1016/j.archger.2015.01.010
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> DIMITRI TAURINO GUEDES, CARMEN LUCIA CURCIO BORRERO, BEATRIZ EUGENIA ALVARADO LLANO, MARIA VICTORIA ZUNZUNEGUI, RICARDO OLIVEIRA GUERRA
+                                                                    Guedes DT, Alvarado BE, Phillips SP, Curcio CL, Zunzunegui MV, Guerra RO. Socioeconomic status, social relations and domestic violence (DV) against elderly people in Canada, Albania, Colombia and Brazil. Arch Gerontol Geriatr [Internet]. 2015 May;60(3):492–500. Available from: http://www.ncbi.nlm.nih.gov/pubmed/25704920
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -113,13 +172,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25809813" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Comprehensive nutritional status in sarco-osteoporotic older fallers
-                                                                </p>
-                                                                <p>
-                                                                    Francia, Journal Of Nutrition, Health & Aging ISSN: 1279-7707, 2015 vol:19 fasc: 4 págs: 474 - 480, DOI:10.1007/s12603-014-0543-z.
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> YA RUTH HUO, PUSHPA SURIYAARACHCHI, JOSE FERNANDO GOMEZ M, CARMEN LUCIA CURCIO BORRERO, GUSTAVO ADOLFO DUQUE NARANJO
+                                                                    Huo YR, Suriyaarachchi P, Gomez F, Curcio CL, Boersma D, Gunawardene P, et al. Comprehensive nutritional status in sarco-osteoporotic older fallers. J Nutr Health Aging [Internet]. 2015 Apr 14;19(4):474–80. Available from: http://www.ncbi.nlm.nih.gov/pubmed/25809813
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -128,13 +181,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/25512216" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Phenotype of Osteosarcopenia in Older Individuals With a History of Falling
-                                                                </p>
-                                                                <p>
-                                                                    Estados Unidos, Journal Of The American Medical Directors Association ISSN: 1525-8610, 2015 vol:16 fasc: 4 págs: 290 - 295, DOI:10.1016/j.jamda
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> YA RUTH HUO, PUSHPA SURIYAARACHCHI, CARMEN LUCIA CURCIO BORRERO, JOSE FERNANDO GOMEZ M, MANUEL MONTERO ODASSO, GUSTAVO ADOLFO DUQUE NARANJO
+                                                                    Huo YR, Suriyaarachchi P, Gomez F, Curcio CL, Boersma D, Muir SW, et al. Phenotype of Osteosarcopenia in Older Individuals With a History of Falling. J Am Med Dir Assoc [Internet]. 2015 Apr;16(4):290–5. Available from: http://www.ncbi.nlm.nih.gov/pubmed/25512216
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -163,13 +210,7 @@
                                                         <a class="tile-content ink-reaction" href="http://revistas.uis.edu.co/index.php/revistamedicasuis/article/view/4325" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Depresión de aparición tardía y su relación con la demencia vascular del anciano
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Médicas Uis ISSN: 0121-0319, 2014 vol:27 fasc: 2 págs: 51 - 58, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES
+                                                                    Universidad Industrial de Santander. AP, Toro JCR, Trujillo ET, Montes JFG. Médicas UIS. [Internet]. Vol. 27, REVISTA MÉDICAS UIS. Universidad Industrial de Santander; 2014. Available from: http://revistas.uis.edu.co/index.php/revistamedicasuis/article/view/4325
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -178,13 +219,7 @@
                                                         <a class="tile-content ink-reaction" href="http://journals.sagepub.com/doi/abs/10.1177/0898264314523448" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Evaluation of the Late Life Disability Instrument (LIDI) In Low Income Older Populations.
-                                                                </p>
-                                                                <p>
-                                                                    Estados Unidos, Journal Of Aging And Health ISSN: 0898-2643, 2014 vol:26 fasc: 3 págs: 495 - 515, DOI:10.1177/0898264314523448
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO, BEATRIZ EUGENIA ALVARADO LLANO, MARIA VICTORIA ZUNZUNEGUI
+                                                                    Vafaei A, Gomez F, Zunzunegui M V., Guralnik J, Curcio CL, Guerra R, et al. Evaluation of the Late-Life Disability Instrument (LLDI) in Low-Income Older Populations. J Aging Health [Internet]. 2014 Apr 5;26(3):495–515. Available from: http://journals.sagepub.com/doi/10.1177/0898264314523448
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -193,13 +228,7 @@
                                                         <a class="tile-content ink-reaction" href="https://bmcgeriatr.biomedcentral.com/articles/10.1186/1471-2318-14-2" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Frailty among rural elderly adults
-                                                                </p>
-                                                                <p>
-                                                                    Inglaterra, Bmc Geriatrics ISSN: 1471-2318, 2014 vol:14 fasc: 2 págs: 1 - 9, DOI: 10.1186/1471-2318-14-2
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO, GUDALUPE MARIA HENAO, GUADALUPE MARIA HENAO
+                                                                    Curcio C-L, Henao G-M, Gomez F. Frailty among rural elderly adults. BMC Geriatr [Internet]. 2014 Dec 10;14(1):2. Available from: http://bmcgeriatr.biomedcentral.com/articles/10.1186/1471-2318-14-2
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -228,13 +257,7 @@
                                                         <a class="tile-content ink-reaction" href="https://link.springer.com/article/10.1007/s40520-013-0121-y" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Life space assessment scale to assess mobility: validation in Latin American older women an men
-                                                                </p>
-                                                                <p>
-                                                                    Italia, Aging Clinical And Experimental Research ISSN: 1720-8319, 2013 vol:25 fasc: 5 págs: 553 - 560, DOI:10.1007/s40520-013-0121
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO, BEATRIZ EUGENIA ALVARADO LLANO, MARIA VICTORIA ZUNZUNEGUI
+                                                                    Curcio C-L, Alvarado BE, Gomez F, Guerra R, Guralnik J, Zunzunegui MV. Life-Space Assessment scale to assess mobility: validation in Latin American older women and men. Aging Clin Exp Res [Internet]. 2013 Oct 15;25(5):553–60. Available from: http://link.springer.com/10.1007/s40520-013-0121-y
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -243,13 +266,7 @@
                                                         <a class="tile-content ink-reaction" href="http://onlinelibrary.wiley.com/doi/10.1111/ggi.12180/full" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Validity and applicability of a video-based animated tool to assess mobility in elderly Latin American populations
-                                                                </p>
-                                                                <p>
-                                                                    Japón, Geriatrics & Gerontology International ISSN: 1444-1586, 2013 vol:14 fasc: 4 págs: 864 - 873, DOI:10.1111/GGI.12180
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> CARMEN LUCIA CURCIO BORRERO
+                                                                    Guerra RO, Oliveira BS, Alvarado BE, Curcio CL, Rejeski WJ, Marsh AP, et al. Validity and applicability of a video-based animated tool to assess mobility in elderly Latin American populations. Geriatr Gerontol Int [Internet]. 2014 Oct 1;14(4):864–73. Available from: http://doi.wiley.com/10.1111/ggi.12180
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -258,13 +275,7 @@
                                                         <a class="tile-content ink-reaction" href="http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1362/2162" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Prevalence of poor self-rated health and associated risk factors among older adults in Cali, Colombia
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Colombia Medica ISSN: 1657-9534, 2013 vol:44 fasc: 4 págs: 224 - 231, DOI:24892239
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE MAURICIO OCAMPO, CARMEN LUCIA CURCIO BORRERO, CARLOS REYES ORTIZ, HELMER DE JESUS ZAPATA OSSA
+                                                                    Pelaez M, Palloni A, Albala C, Alfonso JC, Ham-Chande R, Hennis A, et al. Prevalence of poor self-rated health and associated risk factors among older adults in Cali, Colombia. Colomb Med [Internet]. 2013;44. Available from: http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1362/2162
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -273,13 +284,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?pid=S0120-87482013000300003&script=sci_abstract&tlng=es" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Prevalencia de deterioro cognitivo y demencia en mayores de 65 años en una población urbana Colombiana. Manizales
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Acta Neurológica Colombiana ISSN: 0120-8748, 2013 vol:29 fasc: 3 págs: 141 - 151, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> RICARDO DIAZ CABEZAS, FELIPE MARULANDA MEJIA
+                                                                    Díaz Cabezas R, Marulanda Mejía F, Martínez Arias MH. Acta Neurológica Colombiana [Internet]. Vol. 29, Acta Neurológica Colombiana. [s.n.]; 2013. 141-151 p. Available from: http://www.scielo.org.co/scielo.php?pid=S0120-87482013000300003&script=sci_abstract&tlng=es
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -288,13 +293,7 @@
                                                         <a class="tile-content ink-reaction" href="http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1181" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Validity and reliability of the Short Physical Performance Battery (SPPB): a pilot study on mobility in the Colombian Andes.
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Colombia Medica ISSN: 1657-9534, 2013 vol:44 fasc: 3 págs: 165 - 171, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO, BEATRIZ EUGENIA ALVARADO LLANO, MARIA VICTORIA ZUNZUNEGUI
+                                                                    Gómez JF, Curcio C-L, Alvarado B, Zunzunegui MV, Guralnik J. Validity and reliability of the Short Physical Performance Battery (SPPB): a pilot study on mobility in the Colombian Andes. Colomb médica (Cali, Colomb [Internet]. 2013 Sep 30;44(3):165–71. Available from: http://colombiamedica.univalle.edu.co/index.php/comedica/article/view/1181
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -303,13 +302,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.tandfonline.com/doi/abs/10.1080/02701960.2012.699010" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Interdisciplinary collaboration in Gerontology and Geriatrics in Latin America
-                                                                </p>
-                                                                <p>
-                                                                    Canadá, Gerontology & Geriatrics Education ISSN: 0270-1960, 2013 vol:34 fasc: 2 págs: 161 - 175, DOI: 10.1080/02701960.2012.699010
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO
+                                                                    Gomez F, Curcio CL. Interdisciplinary Collaboration in Gerontology and Geriatrics in Latin America: Conceptual Approaches and Health Care Teams. Gerontol Geriatr Educ [Internet]. 2013 Apr;34(2):161–75. Available from: http://www.tandfonline.com/doi/abs/10.1080/02701960.2012.699010
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -318,13 +311,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.dovepress.com/differing-approaches-to-falls-and-fracture-prevention-between-australi-peer-reviewed-article-CIA" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Differing approaches to falls and fracture prevention between Australia and Colombia
-                                                                </p>
-                                                                <p>
-                                                                    Nueva Zelanda, Clinical Interventions In Aging ISSN: 1178-1998, 2013 vol:8 fasc: págs: 61 - 67, DOI:10.2147/CIA.S40221
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO
+                                                                    Duque G, Gomez CL, Curcio P, Suriyaarachchi O, Demontiero G. Differing approaches to falls and fracture prevention between Australia and Colombia. Clin Interv Aging [Internet]. 2013 Jan 20;8:61. Available from: http://www.dovepress.com/differing-approaches-to-falls-and-fracture-prevention-between-australi-peer-reviewed-article-CIA
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -353,13 +340,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.unisanitas.edu.co/Revista/45/08%20ANCIANOS%20DFN.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Fragilidad en ancianos colombianos.
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Revista Medica Sanitas ISSN: 0123-4250, 2012 vol:15 fasc: 4 págs: 22 - 29, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO, GUDALUPE MARIA HENAO
+                                                                    Fernando J, Montes G, Lucía C, Borrero C, Henao GM. Fragilidad en ancianos Colombianos. RevMedicaSanitas [Internet]. 2012;15(4):8–16. Available from: http://www.unisanitas.edu.co/Revista/45/08 ANCIANOS DFN.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -368,13 +349,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/22996789" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Applicability of the MoCA-S test in populations with little education in Colombia
-                                                                </p>
-                                                                <p>
-                                                                    Canadá, International Journal Of Geriatric Psychiatry ISSN: 1099-1166, 2012 vol:28 fasc: 8 págs: 813 - 820, DOI:10.1002/gps.388
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, MARIA VICTORIA ZUNZUNEGUI, BEATRIZ EUGENIA ALVARADO LLANO
+                                                                    Gómez F, Zunzunegui M, Lord C, Alvarado B, García A. Applicability of the MoCA-S test in populations with little education in Colombia. Int J Geriatr Psychiatry [Internet]. 2013 Aug;28(8):813–20. Available from: http://www.ncbi.nlm.nih.gov/pubmed/22996789
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -383,13 +358,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v17n2/v17n2a13.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Temor a caer en ancianos: controversias en torno a un concepto y a su medición.
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Hacia La Promoción De La Salud ISSN: 0121-7577, 2012 vol:17 fasc: 2 págs: 186 - 204, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    <strong>Autores:</strong> JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO
+                                                                    Curcio C-L, Montes FG, Decs B). TEMOR A CAER EN ANCIANOS: CONTROVERSIAS EN TORNO A UN CONCEPTO Y A SU MEDICIÓN Temor a caer en ancianos: controversias en torno a un concepto y a su medición FEAR OF FALLING IN THE ELDERLY: CONTROVERSY AROUND A CONCEPT AND ITS ASSESSMENT. 2012;17(172):186–204. Available from: http://www.scielo.org.co/pdf/hpsal/v17n2/v17n2a13.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -418,13 +387,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.acgg.org.co/pdf/revista-25-4.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Validez convergente y de constructo de la escala de autoeficacia realacionada con caídas (FES)
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Revista De La Asociación Colombiana De Gerontología Y Geriatría ISSN: 0122-6916, 2011 vol:25 fasc: 4 págs: 1558 - 1569, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: CARMEN LUCIA CURCIO BORRERO
+                                                                    Curcio B. C. L., Gómez M JF. Validez convergente y de constructo de la escala de autoeficacia realacionada con caídas (FES) Colombia. Rev la Asoc Colomb Gerontol y Geriatría [Internet]. 2011;25(4). Available from: http://www.acgg.org.co/pdf/revista-25-4.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -433,13 +396,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-87482011000400002" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Conocimiento de síntomas y factores de riesgo de enfermedad cerebro vascular en una población urbana Colombiana
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Acta Neurológica Colombiana ISSN: 0120-8748, 2011 vol:27 fasc: 4 págs: 195 - 204, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: RICARDO DIAZ CABEZAS, MARIO IVAN RUANO RESTREPO
+                                                                    Díaz Cabezas R, Ruano Restrepo MI. Conocimiento de síntomas y factores de riesgo de enfermedad cerebro vascular en una población urbana colombiana [Internet]. Vol. 27, Acta Neurológica Colombiana. [s.n.]; 2011. 195-204 p. Available from: http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-87482011000400002
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -448,13 +405,7 @@
                                                         <a class="tile-content ink-reaction" href="http://catalogo.juanncorpas.edu.co/cgi-bin/koha/opac-detail.pl?biblionumber=10663" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Obesidad Sarcopenica y síndrome de apnea del sueño en ancianos.
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Revista De La Asociación Colombiana De Gerontología Y Geriatría ISSN: 0122-6916, 2011 vol:25 fasc: 3 págs: 1549 - 1557, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: JOSE FERNANDO GOMEZ MONTES, EDWIN HARVEY ETAYO RUIZ RUIZ
+                                                                    Binet-Grosclaude A, Gómez Montes JF. Obesidad Sarcopenica y síndrome de apnea del sueño en ancianos. [Internet]. Bruylant; 2011. Available from: http://catalogo.juanncorpas.edu.co/cgi-bin/koha/opac-detail.pl?biblionumber=10663
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -463,13 +414,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-24482011000300002" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Prevalencia y persistencia del insomnio crónico. Estdio Sueca II
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Acta Médica Colombiana ISSN: 0120-2448, 2011 vol:36 fasc: 3 págs: 119 - 124, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: RICARDO DIAZ CABEZAS, MARIO IVAN RUANO RESTREPO
+                                                                    Asociación Colombiana de Medicina Interna. R, Ruano MI. Acta médica colombiana: Prevalencia y persistencia del insomnio crónico estudio SUECA II [Internet]. Vol. 36, Acta Medica Colombiana. La Asociación; 2011. 119-124 p. Available from: http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0120-24482011000300002
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -478,13 +423,7 @@
                                                         <a class="tile-content ink-reaction" href="https://www.ncbi.nlm.nih.gov/pubmed/21623472" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    DIZZINESS AS A GERIATRIC CONDITION AMONG RURAL COMMUNITY-DWELLING OLDER ADULTS
-                                                                </p>
-                                                                <p>
-                                                                    Francia, Journal Of Nutrition, Health & Aging ISSN: 1279-7707, 2011 vol:15 fasc: 6 págs: 490 - 497, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: JOSE FERNANDO GOMEZ MONTES, CARMEN LUCIA CURCIO BORRERO
+                                                                    Gomez F, Curcio CL, Duque G. Dizziness as a geriatric condition among rural community-dwelling older adults. J Nutr Health Aging [Internet]. 2011 Jun;15(6):490–7. Available from: http://www.ncbi.nlm.nih.gov/pubmed/21623472
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -493,13 +432,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v16n2/v16n2a03.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    SENTIDO Y PROCESO DEL TEMOR A CAER EN ANCIANOS
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Hacia La Promoción De La Salud ISSN: 0121-7577, 2011 vol:16 fasc: 2 págs: 32 - 51, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: CARMEN LUCIA CURCIO BORRERO
+                                                                    Curcio CL, Corriveau H, Beaulieu M. SENTIDO Y PROCESO DEL TEMOR A CAER EN ANCIANOS MEANING AND FEAR OF FALLING PROCESS IN THE ELDERLY. 2011;16(162):32–51. Available from: http://www.scielo.org.co/pdf/hpsal/v16n2/v16n2a03.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -508,13 +441,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/amc/v36n2/v36n2a06.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Criptococosis diseminada en anciano con VIH
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Acta Médica Colombiana ISSN: 0120-2448, 2011 vol:36 fasc: 2 págs: 85 - 89, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: RICARDO DIAZ CABEZAS, ALFREDO POSADA JARAMILLO
+                                                                    Escobar cols AM, Diaz R, Posada A. Criptococosis diseminada en anciano con VIH Colombia. 2011; Available from: http://www.scielo.org.co/pdf/amc/v36n2/v36n2a06.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -523,13 +450,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/amc/v36n1/v36n1a03.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Dolor crónico nociceptivo y neuropático en población adulta de Manizales, Colombia
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Acta Médica Colombiana ISSN: 0120-2448, 2011 vol:36 fasc: 1 págs: 10 - 17, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: RICARDO DIAZ CABEZAS, FELIPE MARULANDA MEJIA
+                                                                    Diaz R, Marulanda F. Dolor crónico nociceptivo y neuropático en población adulta de Manizales (Colombia). 2011;36(1). Available from: http://www.scielo.org.co/pdf/amc/v36n1/v36n1a03.pdf
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -558,13 +479,7 @@
                                                         <a class="tile-content ink-reaction" href="http://www.scielo.org.co/pdf/hpsal/v15n1/v15n1a10.pdf" target="_blank">
                                                             <div class="tile-text">
                                                                 <p>
-                                                                    Investigación y envejecimiento: del dato a la teoría
-                                                                </p>
-                                                                <p>
-                                                                    Colombia, Hacia La Promoción De La Salud ISSN: 0121-7577, 2010 vol:15 fasc: 1 págs: 144 - 166, DOI:
-                                                                </p>
-                                                                <p>
-                                                                    Autores: CARMEN LUCIA CURCIO BORRERO
+                                                                    Lucía C, Borrero C. INVESTIGACIÓN Y ENVEJECIMIENTO: DEL DATO A LA TEORÍA RESEARCH AND AGING: FROM DATA TO THEORY. 2010;15(151):144–66. Available from: http://www.scielo.org.co/pdf/hpsal/v15n1/v15n1a10.pdf
                                                                 </p>
                                                             </div>
                                                         </a>

@@ -122,7 +122,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-7">
-                                <header><strong>ACOMPAÑAMIENTO PSICOSOCIAL Y EDUCATIVO A ADULTOS MAYORES USUARIOS DEL LABORATORIO DE ENVEJECIMIENTO DE LA U DE CALDAS.  "Todos envejecemos"</strong></header>
+                                <header><strong>ACOMPAÑAMIENTO PSICOSOCIAL Y EDUCATIVO A ADULTOS MAYORES USUARIOS DEL LABORATORIO DE ENVEJECIMIENTO.  "Todos envejecemos"</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
