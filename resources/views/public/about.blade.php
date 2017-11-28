@@ -283,7 +283,7 @@
                         </div><!--end .card-body -->
                         <div class="card-body height-3 scroll style-primary">
                             <p>Educador Físico – Doctor en Ciencias de la Motricidad Humana</p>
-                            <p>Coordinadora de la Maestría en Actividad Física para la Salud</p>
+                            <p>Coordinador de la Maestría en Actividad Física para la Salud</p>
                             <p>
                                 <strong>Docente</strong><br>
                                 Programa de Pregrado: <br>

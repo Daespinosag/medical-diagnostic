@@ -26,7 +26,7 @@
                     <div class="panel-group" id="accordion2">
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-1">
-                                <header><strong>ATENEO DE GERIATRÍA</strong></header>
+                                <header><strong>Ateneo de geriatría</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -42,7 +42,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-2">
-                                <header><strong>CLINICA DE INESTABILIDAD, VERTIGO,  CAIDAS  Y  FRACTURAS  EN ANCIANOS</strong></header>
+                                <header><strong>Clinica de inestabilidad, vertigo,  caidas  y  fracturas  en ancianos</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -58,7 +58,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-3">
-                                <header><strong>VALORACIÓN Y SEGUIMIENTO DE PACIENTES CON FRACTURA DE CADERA POR FRAGILIDAD</strong></header>
+                                <header><strong>Valoración y seguimiento de pacientes con fractura de cadera por fragilidad</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -74,7 +74,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-4">
-                                <header><strong>CLÍNICA DE MEMORÍA</strong></header>
+                                <header><strong>Clínica de memoría</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -90,7 +90,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-5">
-                                <header><strong>CAPACITACIÓN DE MÉDICOS GENERALES</strong></header>
+                                <header><strong>Capacitación de médicos generales</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -106,7 +106,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-6">
-                                <header><strong>VALORACION DOMICILIARIA  MULTIDIMENSIONAL</strong></header>
+                                <header><strong>Valoracion domiciliaria multidimensional</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
@@ -122,7 +122,7 @@
                         </div><!--end .panel -->
                         <div class="card panel">
                             <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#accordion2-7">
-                                <header><strong>ACOMPAÑAMIENTO PSICOSOCIAL Y EDUCATIVO A ADULTOS MAYORES USUARIOS DEL LABORATORIO DE ENVEJECIMIENTO.  "Todos envejecemos"</strong></header>
+                                <header><strong>Acompañamiento psicosocial y educativo a adultos mayores usuarios del laboratorio de envejecimiento. "Todos envejecemos"</strong></header>
                                 <div class="tools">
                                     <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
                                 </div>
