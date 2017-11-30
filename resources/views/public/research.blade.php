@@ -22,40 +22,121 @@
                 <div class="col-lg-12">
                     <h2 class="text-primary">Lineas de investigación</h2>
                 </div><!--end .col -->
-                {{--<div class="col-lg-12">
-                    <article class="margin-bottom-xxl">
-                        <p>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor
-                        </p>
-                    </article>
-                </div><!--end .col -->--}}
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body no-padding">
-                            <ul class="list">
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">Geriatría clínica</div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">Mareo, inestabilidad, vértigo, caídas y fracturas</div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">Capacidad funcional y actividad física</div>
-                                    </a>
-                                </li>
-                                <li class="tile">
-                                    <a class="tile-content ink-reaction">
-                                        <div class="tile-text">Envejecimiento y vejez</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!--end .card-body -->
-                    </div><!--end .card -->
+                    <div class="col-lg-12">
+                        <div class="panel-group" id="accordion9">
+                        {{--<div class="card panel expanded">
+                            <div class="card-head" data-toggle="collapse" data-parent="#accordion1" data-target="#accordion1-1">
+                                <header>Curso 1</header>
+                                <div class="tools">
+                                    <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                </div>
+                            </div>
+                            <div id="accordion1-1" class="collapse in">
+                                <div class="card-body"><p>Per at postea mediocritatem, vim numquam aliquid eu, in nam sale gubergren. Fuisset delicatissimi duo, qui ut animal noluisse erroribus. Ea eum veniam audire. Dicant vituperata consequuntur.</p>
+                                </div>
+                            </div>
+                        </div>--}}<!--end .panel -->
+                            <div class="card panel">
+                                <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion9" data-target="#accordion9-1">
+                                    <header><strong>Geriatría clínica</strong></header>
+                                    <div class="tools">
+                                        <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <div id="accordion9-1" class="collapse">
+                                    <div class="card-body">
+                                        <p>
+                                            <strong>Fecha de creación:</strong> 1994
+                                        </p>
+                                        <p>
+                                            <strong>Descripción del objeto de estudio:</strong> La Geriatría Clínica ha sido definida como la rama de la gerontología y la medicina que trata la salud y la enfermedad de las personas de edad avanzada en todos sus aspectos: preventivo, clínico, terapéutico, de rehabilitación y de vigilancia continua.
+                                        </p>
+                                        <p>
+                                            <strong>Áreas problemáticas:</strong>
+                                            <ul>
+                                                <li>Osteoporosis.</li>
+                                                <li>Accidente  Cerebro Vascular.</li>
+                                                <li>Desórdenes Iatrogénicos.</li>
+                                                <li>Síndromes metabólicos.</li>
+                                                <li>Salud Mental.</li>
+                                                <li>Incontinencia.</li>
+                                                <li>Hipertensión arterial.</li>
+                                                <li>Úlceras por presión.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--end .panel -->
+                            <div class="card panel">
+                                <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion9" data-target="#accordion9-2">
+                                    <header><strong>Mareo, inestabilidad, vértigo, caídas y fracturas</strong></header>
+                                    <div class="tools">
+                                        <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <div id="accordion9-2" class="collapse">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div><!--end .panel -->
+                            <div class="card panel">
+                                <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion9" data-target="#accordion9-3">
+                                    <header><strong>Capacidad funcional y actividad física</strong></header>
+                                    <div class="tools">
+                                        <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <div id="accordion9-3" class="collapse">
+                                    <div class="card-body">
+                                        <p>
+                                            <strong>Fecha de creación:</strong> 1997
+                                        </p>
+                                        <p>
+                                            <strong>Descripción del objeto de estudio:</strong> Dentro de este contexto, la capacidad funcional al igual que la salud, es un proceso individual, aunque determinado por las normas y costumbres del grupo al cual se pertenece, es cambiante y se define como la posibilidad de actuar con autonomía, entendida como la posibilidad de decidir, asumir las consecuencias de las decisiones, confrontarlas con lo esperado y deseado para poder continuar o hacer transformaciones, lo cual determina la autoafirmación y a su vez, la calidad de vida del individuo. Pero esta autonomía necesita un soporte de independencia, entendida como la capacidad de realizar tareas y asumir roles sociales en la cotidianeidad, en un amplio rango de complejidad, sin necesidad de dirección, supervisión o asistencia, por tanto se constituye en una dimensión física.
+                                        </p>
+                                        <p>
+                                            <strong>Áreas problemáticas:</strong>
+                                            <ul>
+                                                <li>Discapacidad y limitación funcional.</li>
+                                                <li>Caídas y sus consecuencias.</li>
+                                                <li>Actividad física y ejercicio físico.</li>
+                                                <li>Deterioro sensorial.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--end .panel -->
+                            <div class="card panel">
+                                <div class="card-head collapsed" data-toggle="collapse" data-parent="#accordion9" data-target="#accordion9-4">
+                                    <header><strong>Envejecimiento y vejez</strong></header>
+                                    <div class="tools">
+                                        <a class="btn btn-icon-toggle"><i class="fa fa-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <div id="accordion9-4" class="collapse">
+                                    <div class="card-body">
+                                        <p>
+                                            <strong>Fecha de creación:</strong> 2003
+                                        </p>
+                                        <p>
+                                            <strong>Descripción del objeto de estudio:</strong> La gerontología,  hace referencia a la vejez y los procesos de envejecimiento. Se debe reconocer  que su origen tiene que estar ligado al del hombre mismo, tanto con sus creencias acerca de la salud y las doctrinas religiosas, así como con las fuerzas económicas y sociales presentes en ese momento y las manifestaciones artísticas propias de cada cultura.
+                                        </p>
+                                        <p>
+                                            <strong>Áreas problemáticas:</strong>
+                                            <ul>
+                                                <li>Capacitación, educación e información.</li>
+                                                <li>Atención en salud.</li>
+                                                <li>Arte y vejez.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--end .panel -->
+                            <!--end .panel -->
+                        </div><!--end .panel-group -->
+                    </div><!--end .col -->
                 </div><!--end .col -->
             </div>
 

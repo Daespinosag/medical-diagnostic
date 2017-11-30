@@ -48,11 +48,32 @@
                             <li data-target="#myCarousel" data-slide-to="17"></li>
                             <li data-target="#myCarousel" data-slide-to="18"></li>
                             <li data-target="#myCarousel" data-slide-to="19"></li>
+                            <li data-target="#myCarousel" data-slide-to="20"></li>
+                            <li data-target="#myCarousel" data-slide-to="21"></li>
+                            <li data-target="#myCarousel" data-slide-to="22"></li>
                         </ol>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img src="{{ asset('assets/img/logo-grupo.png') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_21.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_22.jpg') }}" alt="Clínica de caídas">
+                                <div class="carousel-caption">
+                                    {{--<p>Clínica de caídas</p>--}}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('assets/img/foto_23.jpg') }}" alt="Clínica de caídas">
                                 <div class="carousel-caption">
                                     {{--<p>Clínica de caídas</p>--}}
                                 </div>
